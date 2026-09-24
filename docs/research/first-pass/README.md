@@ -29,3 +29,5 @@ under `exv-epl` and `exv-6l0`.
 - [Atomic datasets, PAW and augmentation](paw.md)
 - [Electrostatics, charge assembly and Hamiltonian fields](electrostatics.md)
 - [Exchange-correlation, orbital corrections and magnetic constraints](xc.md)
+- [Electronic iterations, eigensolvers, mixing and occupations](electronic-solution.md)
+- [Nonlocal exchange and dispersion](nonlocal-interactions.md)
