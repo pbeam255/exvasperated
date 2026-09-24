@@ -27,3 +27,5 @@ under `exv-epl` and `exv-6l0`.
 - [Geometry, reciprocal sampling and symmetry](geometry.md)
 - [Numerical representations and Fourier contracts](representation.md)
 - [Atomic datasets, PAW and augmentation](paw.md)
+- [Electrostatics, charge assembly and Hamiltonian fields](electrostatics.md)
+- [Exchange-correlation, orbital corrections and magnetic constraints](xc.md)
