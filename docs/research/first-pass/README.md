@@ -35,3 +35,5 @@ under `exv-epl` and `exv-6l0`.
 - [Perturbations, polarization and response observables](response.md)
 - [Vibrations, electron–phonon coupling and transport](vibrations.md)
 - [Localized orbitals, interpolation and embedding](localized.md)
+- [Screening, quasiparticles and many-body response](many-body.md)
+- [Machine-learned force fields: Fortran workflow and regression](ml-fortran.md)
