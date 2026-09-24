@@ -46,8 +46,9 @@ orientation. The source-study order organizes the first stage of this sequence.
 1. **Deep VASP studies and detailed reports.** Work through the source partitions
    in bounded passes, eventually analyzing every file. Bring back detailed
    reports explaining the science, implementation behavior, interactions,
-   assumptions, limitations and unresolved questions. Report findings as studies
-   finish so they can inform subsequent studies.
+   assumptions, limitations and unresolved questions. Report findings at the
+   end of useful passes, including partial studies, so they can inform subsequent
+   work and identify what to revisit.
 2. **Synthesize parity and improvement opportunities.** Use the reports to
    establish what researchers need from a replacement and where we see ways to
    improve it. Develop the capability and workflow picture across partitions,
@@ -76,6 +77,21 @@ synthesis. Bounded research experiments serve named questions. Findings may send
 us back to an earlier question or revise a design; preserve that reasoning.
 Product implementation follows the research, design, specification and planning
 work. The source partition and VASP's own organization do not select our design.
+
+The user explicitly expects iterative understanding across studies. Some areas
+will become clear in one pass; others yield more when we establish most of the
+picture, work on related areas, and return with the missing context. The user's
+rough 80-85 percent example describes this judgment, not a measurable completion
+target. A productive pass does not require closing every question in its area.
+
+When moving on, report what is understood, what remains uncertain, which later
+work may resolve it, and what should prompt a return. Record actionable follow-up
+in beads and preserve the reasoning in the report. Choose the next study for
+the understanding it can add. The overall sequence allows these revisits and
+progress with explicit open questions; it does not require every study to be
+exhausted before synthesis or the reference campaign. Claims depending on open
+questions remain provisional. Eventual per-file analysis and the scientific
+acceptance requirements still apply.
 
 ### Required v1-alpha execution targets
 

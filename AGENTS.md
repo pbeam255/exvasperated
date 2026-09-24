@@ -14,7 +14,10 @@ Git and releases. Document findings in original prose with references.
 The source partition is a research navigation aid. Inventory membership and
 source hashes do not establish completed analysis or scientific correctness.
 Deep studies are bounded and follow the recorded study order, subject to findings
-and user direction. Do not import the reference architecture by default.
+and user direction. A useful pass may leave open questions: report them, work on
+related areas, and return when new context helps. Preserve follow-up without
+forcing complete closure of each area before progressing. Do not import the
+reference architecture by default.
 
 ## Work tracking and delivery
 

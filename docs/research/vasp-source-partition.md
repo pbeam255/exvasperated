@@ -201,12 +201,20 @@ assumptions, numerical choices, mutation/ownership, failures and relevant build
 conditions. Identify meaningful counterexamples or experiments where appropriate.
 Preserve unresolved cross-file questions rather than filling them with guesses.
 
-Each area should culminate in a detailed report brought back to the user,
-synthesizing its behavior and interactions. A
+Each useful study pass should produce a detailed report brought back to the user,
+synthesizing the behavior and interactions understood so far. A
 collection of isolated file summaries would miss the complexity this exercise is
 intended to uncover. Mathematical claims, source observations and results from
 experiments remain distinguishable. Write all analyses in original prose; source
 locations and public interface documentation provide the references.
+
+An area may take several visits. Move to another study when it is likely to
+supply missing context or make better progress, and return as those connections
+become clearer. Each partial report should identify the remaining questions,
+their effects on current conclusions, and the findings or related work that
+should prompt a revisit. Keep actionable follow-up in beads. Completing a bounded
+pass and settling an entire area are distinct outcomes; no percentage estimate
+substitutes for explaining what is understood and what remains open.
 
 Reports should also identify the parity obligations, possible improvements and
 open scientific or engineering questions that the later research campaign must
