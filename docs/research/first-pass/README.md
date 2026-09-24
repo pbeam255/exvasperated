@@ -18,6 +18,19 @@ the report records how the author addressed them. A corrected report is not sent
 through another automatic review round. Work and follow-up are tracked in beads
 under `exv-epl` and `exv-6l0`.
 
+## Delivery status
+
+Completed 2026-09-24: 20 reports, each independently reviewed once at depth one,
+with warranted findings incorporated. Every one of the 588 inventory files has
+a recorded place in the reports' reading scopes. This includes explicit unread
+and partially read material; it is not completion of every-file analysis.
+
+The delivery contains source findings and return questions, with later work
+preserved in beads. Document links, filename accounting and Git whitespace
+checks were checked. No scientific calculation or hardware validation was
+performed for this first pass. Work stops here before parity synthesis, the
+broad reference campaign and replacement design.
+
 ## Reports
 
 - [Execution, build selection and lifecycle](execution.md)
@@ -39,3 +52,4 @@ under `exv-epl` and `exv-6l0`.
 - [Machine-learned force fields: Fortran workflow and regression](ml-fortran.md)
 - [Machine-learned force fields: C++ descriptors and prediction](ml-cpp.md)
 - [Plugins, foreign interfaces and host callbacks](plugins.md)
+- [Numerical methods, solver dispatch and bundled libraries](numerics.md)
