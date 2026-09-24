@@ -40,6 +40,11 @@ and does not prescribe our replacement's component boundaries.
 
 ### Order of operations
 
+The current requested delivery is a first pass through all 20 source-study areas
+only. Each report receives one independent subagent review at depth one; fix
+warranted findings and move on without another review round. Stop after this
+reviewed first pass. The broader research campaign and design are subsequent work.
+
 On 2026-09-24 the user established the following project sequence after the
 orientation. The source-study order organizes the first stage of this sequence.
 
