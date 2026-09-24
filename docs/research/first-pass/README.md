@@ -23,3 +23,5 @@ under `exv-epl` and `exv-6l0`.
 - [Execution, build selection and lifecycle](execution.md)
 - [Numerical foundations and shared state](foundations.md)
 - [Input interpretation, output and continuation](io.md)
+- [Parallel execution, accelerators and resource ownership](parallel.md)
+- [Geometry, reciprocal sampling and symmetry](geometry.md)
