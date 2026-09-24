@@ -1,5 +1,11 @@
 {"created_at":"2026-09-24T07:25:02Z","created_by":"Patrick Beam","depends_on_id":"exv-vsr","issue_id":"exv-6l0","type":"discovered-from"}
 {"created_at":"2026-09-24T07:35:12Z","created_by":"Patrick Beam","depends_on_id":"exv-6l0","issue_id":"exv-6l0.1","type":"parent-child"}
+{"created_at":"2026-09-24T08:43:23Z","created_by":"Patrick Beam","depends_on_id":"exv-6l0","issue_id":"exv-6l0.10","type":"parent-child"}
+{"created_at":"2026-09-24T08:43:23Z","created_by":"Patrick Beam","depends_on_id":"exv-epl.10","issue_id":"exv-6l0.10","type":"discovered-from"}
+{"created_at":"2026-09-24T08:47:59Z","created_by":"Patrick Beam","depends_on_id":"exv-6l0","issue_id":"exv-6l0.11","type":"parent-child"}
+{"created_at":"2026-09-24T08:47:59Z","created_by":"Patrick Beam","depends_on_id":"exv-epl.11","issue_id":"exv-6l0.11","type":"discovered-from"}
+{"created_at":"2026-09-24T08:52:25Z","created_by":"Patrick Beam","depends_on_id":"exv-6l0","issue_id":"exv-6l0.12","type":"parent-child"}
+{"created_at":"2026-09-24T08:52:25Z","created_by":"Patrick Beam","depends_on_id":"exv-epl.12","issue_id":"exv-6l0.12","type":"discovered-from"}
 {"created_at":"2026-09-24T07:56:13Z","created_by":"Patrick Beam","depends_on_id":"exv-6l0","issue_id":"exv-6l0.2","type":"parent-child"}
 {"created_at":"2026-09-24T08:10:13Z","created_by":"Patrick Beam","depends_on_id":"exv-6l0","issue_id":"exv-6l0.3","type":"parent-child"}
 {"created_at":"2026-09-24T08:14:06Z","created_by":"Patrick Beam","depends_on_id":"exv-6l0","issue_id":"exv-6l0.4","type":"parent-child"}
@@ -13,6 +19,9 @@
 {"created_at":"2026-09-24T07:53:34Z","created_by":"Patrick Beam","depends_on_id":"exv-epl","issue_id":"exv-epl.1","type":"parent-child"}
 {"created_at":"2026-09-24T08:32:21Z","created_by":"Patrick Beam","depends_on_id":"exv-epl","issue_id":"exv-epl.10","type":"parent-child"}
 {"created_at":"2026-09-24T08:39:10Z","created_by":"Patrick Beam","depends_on_id":"exv-epl","issue_id":"exv-epl.11","type":"parent-child"}
+{"created_at":"2026-09-24T08:43:45Z","created_by":"Patrick Beam","depends_on_id":"exv-epl","issue_id":"exv-epl.12","type":"parent-child"}
+{"created_at":"2026-09-24T08:47:59Z","created_by":"Patrick Beam","depends_on_id":"exv-epl","issue_id":"exv-epl.13","type":"parent-child"}
+{"created_at":"2026-09-24T08:55:19Z","created_by":"Patrick Beam","depends_on_id":"exv-epl","issue_id":"exv-epl.14","type":"parent-child"}
 {"created_at":"2026-09-24T07:54:42Z","created_by":"Patrick Beam","depends_on_id":"exv-epl","issue_id":"exv-epl.2","type":"parent-child"}
 {"created_at":"2026-09-24T07:58:30Z","created_by":"Patrick Beam","depends_on_id":"exv-epl","issue_id":"exv-epl.3","type":"parent-child"}
 {"created_at":"2026-09-24T08:03:58Z","created_by":"Patrick Beam","depends_on_id":"exv-epl","issue_id":"exv-epl.4","type":"parent-child"}
