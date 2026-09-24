@@ -25,3 +25,5 @@ under `exv-epl` and `exv-6l0`.
 - [Input interpretation, output and continuation](io.md)
 - [Parallel execution, accelerators and resource ownership](parallel.md)
 - [Geometry, reciprocal sampling and symmetry](geometry.md)
+- [Numerical representations and Fourier contracts](representation.md)
+- [Atomic datasets, PAW and augmentation](paw.md)
