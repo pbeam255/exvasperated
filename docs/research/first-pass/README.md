@@ -37,3 +37,5 @@ under `exv-epl` and `exv-6l0`.
 - [Localized orbitals, interpolation and embedding](localized.md)
 - [Screening, quasiparticles and many-body response](many-body.md)
 - [Machine-learned force fields: Fortran workflow and regression](ml-fortran.md)
+- [Machine-learned force fields: C++ descriptors and prediction](ml-cpp.md)
+- [Plugins, foreign interfaces and host callbacks](plugins.md)
