@@ -38,6 +38,45 @@ Keep later reviews bounded, follow interactions across partitions, and distingui
 unread, partially examined and deeply analyzed material. The partition is revisable
 and does not prescribe our replacement's component boundaries.
 
+### Order of operations
+
+On 2026-09-24 the user established the following project sequence after the
+orientation. The source-study order organizes the first stage of this sequence.
+
+1. **Deep VASP studies and detailed reports.** Work through the source partitions
+   in bounded passes, eventually analyzing every file. Bring back detailed
+   reports explaining the science, implementation behavior, interactions,
+   assumptions, limitations and unresolved questions. Report findings as studies
+   finish so they can inform subsequent studies.
+2. **Synthesize parity and improvement opportunities.** Use the reports to
+   establish what researchers need from a replacement and where we see ways to
+   improve it. Develop the capability and workflow picture across partitions,
+   including all three alpha execution targets. Keep proposed improvements
+   distinguishable from established findings and evaluate their tradeoffs.
+3. **Conduct the major research and reference campaign.** Let that synthesis
+   determine the questions and breadth of an extensive investigation of primary
+   literature, independent implementations, numerical methods, scientific data,
+   benchmarks and execution approaches. Acquire and assess references with
+   provenance and license terms; develop comparisons and bounded experiments
+   that resolve the identified questions. Bring back a scientific and engineering
+   synthesis that can support design choices.
+4. **Design the system.** Develop the extensive architecture and scientific
+   design from the parity requirements, improvement ideas and research findings.
+   Resolve component responsibilities, representations, numerical choices,
+   interfaces, failure behavior and execution across CPU, NVIDIA GPU and AMD GPU.
+5. **Specify and plan.** Make the design precise through equations, contracts
+   and suitable quasi-formal specifications. Derive a concrete implementation
+   sequence with scientific acceptance criteria and paired implementation/tests.
+6. **Execute.** Implement, test and validate against those specifications and
+   criteria, then release. Correctness work advances with each capability.
+
+Focused reference lookups can clarify individual source claims during studies;
+the broad acquisition campaign follows the reports and parity/improvement
+synthesis. Bounded research experiments serve named questions. Findings may send
+us back to an earlier question or revise a design; preserve that reasoning.
+Product implementation follows the research, design, specification and planning
+work. The source partition and VASP's own organization do not select our design.
+
 ### Required v1-alpha execution targets
 
 On 2026-09-24 the user established CPU, NVIDIA GPU and AMD GPU execution as

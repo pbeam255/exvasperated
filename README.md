@@ -11,6 +11,11 @@ the available VASP 6.5.1 source is the initial inspection reference.
 The **v1-alpha end state must run on CPU, NVIDIA GPUs and AMD GPUs**. These
 execution targets shape the design and validation work from the beginning.
 
+The project sequence is deep VASP studies and detailed reports, synthesis of
+parity and improvement opportunities, an extensive research and reference
+campaign, system design, specification and planning, then implementation,
+validation and release.
+
 - [Project direction and working preferences](INERTIA.md)
 - [Source partition and proposed study order](docs/research/vasp-source-partition.md)
 - [Initial parity reconnaissance](docs/research/vasp-parity-orientation.md)

@@ -5,6 +5,12 @@ tree. The user wants deep analysis of every file over the course of the project.
 This orientation establishes manageable study areas and an order for that work;
 it does not claim those analyses are finished.
 
+This map organizes the first stage of the
+[project sequence](../../INERTIA.md#order-of-operations): deep studies with
+detailed reports. Those reports inform the parity and improvement synthesis
+that scopes the major research and reference campaign. System design,
+specification, planning and implementation follow that research.
+
 The user requires **CPU, NVIDIA GPU and AMD GPU execution in v1-alpha**. All
 three are constraints on the early studies. Each study should identify the
 assumptions it makes about data placement, precision, numerical libraries,
@@ -195,11 +201,19 @@ assumptions, numerical choices, mutation/ownership, failures and relevant build
 conditions. Identify meaningful counterexamples or experiments where appropriate.
 Preserve unresolved cross-file questions rather than filling them with guesses.
 
-Each area should culminate in a synthesis of its behavior and interactions. A
+Each area should culminate in a detailed report brought back to the user,
+synthesizing its behavior and interactions. A
 collection of isolated file summaries would miss the complexity this exercise is
 intended to uncover. Mathematical claims, source observations and results from
 experiments remain distinguishable. Write all analyses in original prose; source
 locations and public interface documentation provide the references.
+
+Reports should also identify the parity obligations, possible improvements and
+open scientific or engineering questions that the later research campaign must
+address. Keep proposed improvements distinguishable from observations of VASP.
+Use focused references when needed to understand a source claim; the full
+literature and reference-acquisition campaign is scoped from the study reports
+and their synthesis.
 
 The present orientation does not mark any file as deeply analyzed. It records
 selected findings and complete partition membership. Beads holds the ongoing

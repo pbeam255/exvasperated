@@ -123,11 +123,15 @@ combinations and continuation. The bundled test collection is useful research
 material in quarantine. Its fixtures, comparison code and thresholds are not our
 test suite, and its size does not demonstrate coverage of the full program.
 
-The next research synthesis must connect capabilities and workflows to primary
-scientific literature, source behavior and observables before it can justify the
-system design. Architectural ownership, library choices, performance targets and
-the implementation sequence remain open. Beads tracks that work; this document
-records the present observations and their limits.
+The next stage is detailed VASP study reports, followed by a synthesis of parity
+obligations and improvement opportunities. That synthesis scopes the major
+research and reference campaign, which must connect capabilities and workflows
+to primary scientific literature, independent references, source behavior and
+observables before it can justify system design. Design, specification and
+implementation/test planning then precede product implementation. See the
+[project sequence](../../INERTIA.md#order-of-operations). Architectural ownership,
+library choices, performance targets and the implementation sequence remain open.
+Beads tracks that work; this document records the present observations and limits.
 
 ## License selection
 
