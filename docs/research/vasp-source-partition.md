@@ -5,6 +5,11 @@ tree. The user wants deep analysis of every file over the course of the project.
 This orientation establishes manageable study areas and an order for that work;
 it does not claim those analyses are finished.
 
+The user requires **CPU, NVIDIA GPU and AMD GPU execution in v1-alpha**. All
+three are constraints on the early studies. Each study should identify the
+assumptions it makes about data placement, precision, numerical libraries,
+parallel operations and target-specific behavior where those affect its subject.
+
 ## What is partitioned
 
 The [file inventory](vasp-source-inventory.csv) assigns **588 files to 20 study
@@ -95,14 +100,19 @@ The proposed order is:
 1. **Establish the run contract.** Study `execution`, `foundations` and `io`:
    build variants, lifecycle, state identity, units, input interpretation,
    stopping and continuation. At this stage identify the entry contracts for
-   parallel execution, numerical libraries and plugins. Produce a map of a job
-   from invocation through final output, with unsupported and failure paths.
+   parallel execution, numerical libraries and plugins, accounting for the
+   required CPU, NVIDIA GPU and AMD GPU alpha targets. Identify reference build
+   branches, missing implementations and external dependencies separately for
+   each target. Produce a map of a job from invocation through final output,
+   with unsupported and failure paths.
 2. **Understand representations and atomic data.** Study `geometry`,
    `representation` and `paw`. Follow `parallel` and `numerics` in the context of
    the data they distribute and operate on. Explain normalization, indexing,
    symmetries, projector meaning and transfers between representations. Inspect
    bundled library provenance and variants before deciding what deserves
-   independent reuse; every bundled file still receives analysis.
+   independent reuse; every bundled file still receives analysis. Investigate
+   data layouts, host/device ownership and numerical-library availability for
+   all three targets before those choices become architectural commitments.
 3. **Close the electronic energy calculation.** Study `electrostatics`, `xc`
    and `electronic_solution`, then `nonlocal_interactions` and revisit their
    effects on the solve. Connect the operator, density, energy terms,
@@ -124,7 +134,9 @@ The proposed order is:
    `ml_fortran` and `ml_cpp` with force, stress, dynamics and model-data semantics
    established. Complete the full `plugins`, `parallel` and `numerics` reviews
    alongside their remaining consumers. Revisit whole jobs, restarts, external
-   consumers and feature combinations. These areas are surveyed in the opening
+   consumers and feature combinations. Define alpha workloads and scientific
+   acceptance on CPU, NVIDIA GPU and AMD GPU, including evidence of execution
+   on each target. These areas are surveyed in the opening
    pass and followed throughout; their constraints cannot be deferred until here.
 
 This is a study order, not an implementation roadmap. Dependencies are cyclic;
@@ -195,4 +207,6 @@ research work under `exv-6l0`; this document is the rationale for its organizati
 The first proposed deep study is the executable lifecycle and build-selection
 contract, beginning with the build description, object list, conditional
 configuration, main driver and parallel startup, consulting shared state and
-input entry points as needed.
+input entry points as needed. CPU, NVIDIA GPU and AMD GPU paths and dependencies
+are part of this opening study. Hardware generations, toolchains and backend
+implementation choices require subsequent design and evidence.

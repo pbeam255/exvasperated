@@ -8,6 +8,9 @@ The project is in research and design. There is no electronic-structure engine
 or usable compatibility implementation yet. Full capability parity is the goal;
 the available VASP 6.5.1 source is the initial inspection reference.
 
+The **v1-alpha end state must run on CPU, NVIDIA GPUs and AMD GPUs**. These
+execution targets shape the design and validation work from the beginning.
+
 - [Project direction and working preferences](INERTIA.md)
 - [Source partition and proposed study order](docs/research/vasp-source-partition.md)
 - [Initial parity reconnaissance](docs/research/vasp-parity-orientation.md)

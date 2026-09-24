@@ -38,6 +38,22 @@ Keep later reviews bounded, follow interactions across partitions, and distingui
 unread, partially examined and deeply analyzed material. The partition is revisable
 and does not prescribe our replacement's component boundaries.
 
+### Required v1-alpha execution targets
+
+On 2026-09-24 the user established CPU, NVIDIA GPU and AMD GPU execution as
+requirements of the v1-alpha end state. All three targets constrain the design
+from the beginning. Carry them into the initial build/lifecycle study and into
+representation, memory ownership, numerical-library, precision, parallelism,
+packaging and testing decisions.
+
+The alpha acceptance plan must identify the supported hardware and toolchains,
+the scientific workloads covered on each target, and evidence of actual execution
+on that hardware. Define scientific accuracy and comparisons across targets in
+terms of the observables and numerical methods. Hardware generations, CPU
+architectures, portability mechanisms and performance targets remain design
+questions. This requirement selects execution targets, not a GPU programming
+framework or numerical backend.
+
 ### Quarantine and independent reconstruction
 
 The user explicitly permits deep reading of VASP source and running VASP locally,
