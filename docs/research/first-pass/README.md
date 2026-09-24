@@ -31,3 +31,5 @@ under `exv-epl` and `exv-6l0`.
 - [Exchange-correlation, orbital corrections and magnetic constraints](xc.md)
 - [Electronic iterations, eigensolvers, mixing and occupations](electronic-solution.md)
 - [Nonlocal exchange and dispersion](nonlocal-interactions.md)
+- [Forces, cell stress and ionic motion](ions.md)
+- [Perturbations, polarization and response observables](response.md)
