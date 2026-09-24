@@ -33,3 +33,5 @@ under `exv-epl` and `exv-6l0`.
 - [Nonlocal exchange and dispersion](nonlocal-interactions.md)
 - [Forces, cell stress and ionic motion](ions.md)
 - [Perturbations, polarization and response observables](response.md)
+- [Vibrations, electron–phonon coupling and transport](vibrations.md)
+- [Localized orbitals, interpolation and embedding](localized.md)
