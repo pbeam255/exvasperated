@@ -59,6 +59,16 @@ them. An expected outcome or a cleaner abstraction does not establish scientific
 validity. Test routines and their specified interactions with independent checks
 that can expose subtle errors.
 
+On 2026-09-25, while discussing an append-only calculation log, the user accepted
+the narrower persistence commitment: selecting a recorded point recovers the
+state actually recorded there, including its retained history. Continuing from
+that point can append a new branch while preserving the existing history.
+Computational restoration does not establish physical reversibility or undo a
+thermodynamic process. Deterministic numerical replay is not an established
+project goal or a premise of this storage design. Whether the recorded state is
+sufficient for a particular continuation remains a method-specific scientific
+question. Recording cadence, payload layout and retention still require design.
+
 ### Order of operations
 
 The reviewed first pass through all 20 source-study areas was completed on

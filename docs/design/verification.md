@@ -17,6 +17,8 @@ plain notation and transition tables. No model checker has been run.
 | Scientific association | An operation cannot accept data associated with a different required representation | Static lifetime/type associations where possible; checked runtime identity elsewhere |
 | Collective ordering | Participating ranks initiate matching operations in the same order on a communicator | Include subgroups/overlap and earlier local failure; exclude an invented recovery guarantee after rank loss |
 | Checkpoint coherence | Every published payload belongs to the same defined method boundary | Driver supplies a coherent snapshot; external state participates where required |
+| Recorded-state restoration | Selecting a retained log point recovers its recorded state and retained history | Include parent/shared-payload dependencies; future trajectory equality is a separate, unestablished claim |
+| Branch preservation | Continuing from an earlier point leaves the previously recorded future unchanged | Branch identity and parent links persist; explicit pruning must preserve dependencies of retained points |
 | Publication | No final generation is visible as committed before all its required files succeed | Actual filesystem publication/durability assumptions are qualified |
 | Preservation | Failure while creating a new generation leaves an older committed generation unchanged | Retention happens after successful publication; storage may itself fail |
 | Outcome fidelity | Process completion never changes the reported method outcome | Output/cleanup failure is represented separately |
@@ -46,6 +48,7 @@ prove that an SCF branch is physically desired, or attach certificates to result
 | Checkpoint published but hint update fails | Reader can discover valid final generation independently | Crash-point tests around publication |
 | Resume with different MPI layout | Restore logical arrays and method state under a defined mapping | Rank-count permutation tests plus numerical-path study |
 | Resume with missing history | Strict native resume fails; explicit initialization remains possible | Schema/migration and scientific split-run tests |
+| Restore an older log point and continue | Recover recorded values/history and append a branch without changing the original future | Lossless storage round trips, parent/dependency checks and branch preservation tests |
 | Same coordinates reached through different histories | Distinct state remains possible; no position-only cache equivalence | Hysteretic/bias/branch-sensitive workloads |
 | External client sends unrelated next configuration | No unearned trajectory-continuity assumption | i-PI/session request tests |
 | Consumer expects additional outputs | Compatibility preparation checks support; writers expose real quantities | ASE/py4vasp full operations and partial-run cases |

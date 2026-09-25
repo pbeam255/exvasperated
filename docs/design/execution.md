@@ -167,11 +167,12 @@ Each numerical operation states its compute precision and reduction strategy.
 The initial electronic baseline is real/complex FP64. Mixed precision or emulated
 arithmetic is introduced through explicitly selected, independently checked
 methods, rather than silently enabled by a backend's faster default.
-Expose supported deterministic settings as numerical/execution choices with
-specified scope. Do not promise bitwise equality across CPU/GPU, rank counts,
-compiler versions or libraries. Method-specific comparison uses the quantities
-and tolerances derived for that method; a stricter replay mode can be offered
-where actually established.
+Deterministic numerical replay is not an established project goal. Persistence
+restores recorded state and retained history without requiring identical future
+execution. Method-specific scientific comparisons must establish the relevant
+quantities, histories, distributions or trajectories and their justified equality
+criteria or tolerances. Any future deterministic execution proposal first needs
+an explicit purpose and scope; it does not follow from checkpointing support.
 
 Measure whole driver phases, transfers, communication and device work. Host enqueue
 time is not GPU elapsed time. Profiling uses bounded buffers and explicit

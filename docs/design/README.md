@@ -61,7 +61,9 @@ remain a separate possible product.
 6. **Continuation has several explicit meanings.** Native resume preserves the
    method's defined state. Initialization from prior results and conversion to a
    different representation are separate operations. A file that lacks required
-   history cannot silently become a complete native resume.
+   history cannot silently become a complete native resume. The accepted log
+   commitment is restoration of recorded state and retained history; continuation
+   can append a branch. Deterministic future replay is not a project requirement.
 7. **Resource lifetime includes asynchronous work.** Pending device/MPI work keeps
    its data alive; output obtains a stable readable view before serialization.
    Library-call return and GPU completion are distinct events.

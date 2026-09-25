@@ -31,9 +31,34 @@ final run summary.
 
 ## 2. Native storage proposal
 
+### Accepted restoration commitment
+
+Following the user's append-only log proposal and clarification on 2026-09-25:
+**selecting a recorded point recovers the state actually recorded there, including
+its retained history.** Continuing from that point appends a branch and preserves
+the previously recorded future. Restoration reads recorded state; it does not
+depend on rerunning the numerical procedure to reproduce that state.
+
+This operation does not establish physical reversibility or undo a thermodynamic
+process. Deterministic numerical replay is not an established project goal. The
+method must separately establish whether the recorded state suffices for the
+requested continuation. A point containing only selected observables can support
+inspection without supporting resume.
+
+The logical history may reference immutable, distributed array payloads. Each
+committed entry identifies its parent and its complete recorded contents, either
+directly or through retained dependencies. Snapshot placement, exact encodings,
+recording cadence and physical layout remain proposals to refine. A promised
+restore point must retain every payload needed to recover its recorded state;
+pruning cannot silently break those references.
+
+### Proposed physical storage
+
 Use a versioned native format with **HDF5 array containers** and a small readable
 index for each published generation/segment. This is a proposal pending binding,
 parallel-IO and filesystem experiments. Compatibility files use their own adapters.
+The generation/segment layout below is a candidate payload organization for the
+logical history; parent links and entry indexing still need specification.
 Native persistence never serializes Rust object layout, pointers or enum memory.
 Checkpoint payloads preserve the working scalar encoding by default, with only
 lossless compression. Reduced-precision export is a distinct explicit operation;
@@ -112,11 +137,13 @@ allowed by the method's resume rules. Changing time step, solver, dataset, basis
 policy, occupations, physical field or learning model requires method-specific
 interpretation. The core cannot classify all such changes as harmless settings.
 
-A supported resume claim preserves the defined algorithmic state. It is not a
-promise of bitwise trajectory identity after a different rank count, compiler or
-hardware changes floating-point order. Stronger replay claims require a qualified
-execution configuration and method-specific tests. Statistical agreement alone
-cannot demonstrate that all state required for a particular continuation was saved.
+A supported resume claim preserves the defined algorithmic state. Restoring the
+recorded values and obtaining identical future numerical trajectories are separate
+claims. The latter is not required by this design, even with unchanged execution
+settings. Any future replay proposal must first establish its purpose, equality
+criterion, scope and scientific relevance before feasibility is investigated.
+Statistical agreement alone cannot demonstrate that all state required for a
+particular continuation was saved.
 
 ### State each family must decide to retain
 
@@ -164,9 +191,9 @@ recoverable state. An unexpected failure can lose work since that generation.
    to its final name and persists the parent directory where supported.
    Publication is the final name plus a
    complete readable index and matching payloads.
-6. Only after publication may a latest-generation hint be updated and old
-   generations be retired under the retention policy. Keep at least one prior
-   recoverable generation during replacement.
+6. Only after publication may a branch-head hint be updated. Existing entries and
+   branches remain intact. Any later explicit pruning policy must retain all
+   dependencies of retained restore points and state which points it removes.
 
 The generation sequence is allocated once by the calculation's output owner;
 writers must not collide. Same-filesystem rename and successful writes do not
@@ -212,7 +239,8 @@ not pick the newest file with a matching element name.
 
 ## 6. Outputs, restart segments and external side effects
 
-Native resumed runs create new result segments linked to the chosen checkpoint.
+Native resumed runs append a branch linked to the selected recorded state, with
+new result segments linked to that branch and checkpoint.
 They do not append behind a trajectory tail that may have advanced beyond that
 checkpoint. Accepted-step/frame identifiers expose any intentional repeated
 portion; the reader follows the selected continuation, preserving the original
