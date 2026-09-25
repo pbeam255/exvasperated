@@ -12,6 +12,15 @@ algorithms and discriminating tests. Keep useful reasoning, sources, measurement
 and counterexamples in ordinary revisable notes. Extensive verification does not
 justify administrative scaffolding.
 
+Use **teeth tests** in place of ADR prescriptions: for a proposed "shall" or
+"shall not", build a substantive check, demonstrate red for a relevant violation,
+then make it green through adherence. Code tests, compiler guards and other
+executable checks qualify. A failure must concern the intended behavior, not a
+missing document, arbitrary assertion or broken harness. Keep the check able to
+catch regression. If no meaningful red demonstration is possible, the statement
+is at best a good intention; do not present it as enforced. This practice adds no
+registry, certificate or approval process.
+
 ## Research boundary
 
 VASP source inspection and execution are authorized. Independently write our

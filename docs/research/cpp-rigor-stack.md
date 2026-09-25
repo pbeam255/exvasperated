@@ -258,6 +258,14 @@ Keep inexpensive checks per change; run expensive component-specific exploration
 and hardware checks on appropriate schedules. Tooling qualification is distinct
 from a mutation campaign. Preserve useful counterexamples as regressions.
 
+The user's **teeth tests** rule applies to prescriptions made through this stack:
+demonstrate a substantive red check for a relevant violation, then green through
+adherence, retaining the check against regression. Compiler guards qualify when
+they reject the intended misuse. Merely enabling a tool or describing a desired
+property does not supply teeth. Without a meaningful red demonstration, a
+prescription is at best a good intention. See the
+[verification note](../design/verification.md#teeth-tests) for the definition.
+
 Local inspection found Apple Clang 17 targeting arm64 macOS and CMake 4.3.0.
 Both `clang++` and `/usr/bin/g++` identify as Apple Clang, so those commands do
 not provide compiler diversity. `clang-tidy` and `cppcheck` were absent from PATH;

@@ -9,6 +9,30 @@ counterexamples and measurements. Keep the supporting notes directly useful and
 revisable. Do not add certification/evidence objects, authority hierarchies,
 approval rituals or ADR machinery to the application or development process.
 
+## Teeth tests
+
+For a prescription that would otherwise live in an ADR, create a substantive
+check, demonstrate that the relevant violation makes it red, then make it green
+through adherence. Keep the check so the violation can be caught again. Code
+tests, compiler guards, static checks and executable model checks can supply
+teeth where they actually exercise the prescribed behavior. If meaningful red
+cannot be demonstrated, the statement is at best a good intention.
+
+Examples of the intended shape, not implemented tests:
+
+- An ownership boundary rejects copying its owner while permitted moves work.
+  Check that rejection concerns copying, not an unrelated compilation failure.
+- A no-allocation operation fails its allocation check when exercised with an
+  allocating implementation, and passes when the operation adheres.
+- An asynchronous lifetime test exposes premature reclamation with an operation
+  still outstanding, and passes when ownership survives through completion.
+
+The check's scope limits what it establishes. A model check concerns its model;
+a resource check concerns the exercised path and measured resources. Do not
+turn checking for a document, type name or configuration setting into a substitute
+for the behavior. No new registry or administrative machinery accompanies teeth
+tests. The proposals below do not become demonstrated teeth tests by being listed.
+
 ## 1. Core properties worth specifying precisely
 
 Use small executable protocol models where they can expose an error. Quint is a

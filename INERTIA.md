@@ -240,6 +240,17 @@ counterexamples, measurements and failure diagnostics for doing the work;
 documentation and tool output acquire no special authority. The scale of the
 verification effort does not justify an administrative architecture around it.
 
+The user defines **teeth tests** as the replacement for ADR prescriptions. For
+anything an ADR would have said "thou shalt" or "thou shalt not", establish a
+substantive check that can be demonstrated red, then make it green through
+adherence. The mechanism may be a code test, compiler guard or another executable
+check. Demonstrate failure for the relevant violation and success because the
+implementation adheres; keep it capable of catching regression. A missing
+document or unrelated build failure supplies no teeth. If meaningful
+red cannot be demonstrated, the statement is at best a good intention. Preserve
+useful reasoning in ordinary notes without treating prose as enforcement. This
+is a working technique, not a new registry, reporting layer or approval ritual.
+
 Preserve declared physics and explicit failures. Do not silently smooth, clip,
 extrapolate, choose a root or change a physical model to make a calculation finish.
 Verification, comparisons with independent implementations and physical validation
