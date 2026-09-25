@@ -230,6 +230,16 @@ layer as a substitute for understanding. Keep useful numerical diagnostics and
 calculation details inspectable. Distinguish numerical error, uncertain inputs
 and physical model limitations. Derive tolerances from the observable and claim.
 
+The user emphatically reinforced this on 2026-09-25: no certification,
+evidentiary, authority or ADR theater anywhere in the product or development
+process. Do not introduce certificate/evidence objects, authority hierarchies,
+approval rituals, ADR machinery or compliance-style scaffolding. Keep reasoning
+in ordinary, revisable technical notes and correctness in equations, types,
+representations, algorithms and tests. Preserve useful sources, assumptions,
+counterexamples, measurements and failure diagnostics for doing the work;
+documentation and tool output acquire no special authority. The scale of the
+verification effort does not justify an administrative architecture around it.
+
 Preserve declared physics and explicit failures. Do not silently smooth, clip,
 extrapolate, choose a root or change a physical model to make a calculation finish.
 Verification, comparisons with independent implementations and physical validation

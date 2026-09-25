@@ -3,6 +3,15 @@
 Read the current Exvasperated section of `INERTIA.md` before working. Its imported
 Forge history is background, not an implementation plan for this repository.
 
+## Design and working style
+
+No certification, evidentiary, authority or ADR theater in the product or working
+process. Do not build certificate/evidence objects, approval rituals, authority
+hierarchies or ADR machinery. Put rigor into equations, types, representations,
+algorithms and discriminating tests. Keep useful reasoning, sources, measurements
+and counterexamples in ordinary revisable notes. Extensive verification does not
+justify administrative scaffolding.
+
 ## Research boundary
 
 VASP source inspection and execution are authorized. Independently write our

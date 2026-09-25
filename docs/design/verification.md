@@ -4,6 +4,11 @@ Part of [design draft 0.1](README.md). These are proposed obligations and tests,
 not tests already passed by an engine. Source reading, architecture reasoning,
 executable verification and physical validation establish different things.
 
+Verification consists of concrete mathematical reasoning, executable checks,
+counterexamples and measurements. Keep the supporting notes directly useful and
+revisable. Do not add certification/evidence objects, authority hierarchies,
+approval rituals or ADR machinery to the application or development process.
+
 ## 1. Core properties worth specifying precisely
 
 Use small executable protocol models where they can expose an error. Quint is a
