@@ -1,6 +1,6 @@
 # Verification and completion of the design
 
-Part of [design draft 0.1](README.md). These are proposed obligations and tests,
+Part of [design draft 0.2](README.md). These are proposed obligations and tests,
 not tests already passed by an engine. Source reading, architecture reasoning,
 executable verification and physical validation establish different things.
 
@@ -174,7 +174,7 @@ This is a dependency order, not authorization to begin implementation in this
 turn or a scientific scope reduction.
 
 1. Complete core protocol/API details and select bounded execution/storage
-   experiments. Resolve actual Rust/FFI, MPI-thread and filesystem behavior.
+   experiments. Resolve actual host/FFI, MPI-thread and storage behavior.
 2. Deeply study representations, required numerics and atomic data for the first
    scientifically meaningful calculation. Specify it and its difficult tests.
 3. Deliver a vertical native CPU calculation with its real scientific routines,
@@ -196,21 +196,21 @@ redefines the ambition of broad VASP parity without researcher downgrades.
 
 | Decision still requiring evidence | Current proposal | What could change it |
 | --- | --- | --- |
-| Native array/container binding | HDF5, explicit native schema | Rust binding quality, collective IO, target filesystem measurements |
-| Large checkpoints | Immutable indexed generation; sharded or collective payload | File-count costs, throughput and portability experiments |
+| Native storage and array binding | Storage operations defined; DB/container/deployment open; HDF5 remains a candidate | Mature component fit, language bindings, actual workload and storage requirements |
+| Large checkpoints | Immutable logical state with retained dependencies; physical layout open | Size, cadence, throughput and portability experiments |
 | MPI concurrency | Initializing-thread communication | Proven need for additional progress/concurrency and a safe supported MPI mode |
 | Numerical/GPU implementations | Narrow adapters, FP64 baseline, no chosen compiler/library | Scientific error and end-to-end performance comparisons |
 | Cache reconstruction on resume | Family-specific decision | Demonstrated effects on finite-precision or physical continuation |
-| Native input/API details | Versioned TOML and typed Rust entry points | Concrete user workflows and composed method requirements |
+| Native input/API details | Versioned TOML candidate and typed entry points in the selected language | Concrete user workflows and composed method requirements |
 | Compatibility baseline | Versioned 6.5.1 research anchor | User workflows, current public behavior and versioned oracle evidence |
-| OS/hardware floor | Linux HPC qualification first; exact matrix open | Available targets and adoption needs |
+| OS/hardware floor | Linux-first development, secondary macOS port; deployment open | Actual deployment requirements and adoption needs |
 | External state protocol | Explicit synchronous sessions and staged contributions | A concrete coupled method needing richer asynchronous behavior |
 
 Actionable follow-ups are in beads. The design work is tracked as `exv-61f`;
 `exv-8lk` retains focused subsystem expeditions, including deeper core execution/
 compatibility work, and `exv-6l0` retains eventual every-file VASP analysis.
 The concrete core follow-ups are `exv-0ex` (protocol specifications and executable
-models), `exv-bl1` (Rust/CPU/NVIDIA/MPI integration experiments), `exv-w0s`
+models), `exv-bl1` (host/CPU/NVIDIA/MPI integration experiments), `exv-w0s`
 (persistence and output ownership qualification), and `exv-mqh` (versioned
 compatibility workflows and core API details).
 

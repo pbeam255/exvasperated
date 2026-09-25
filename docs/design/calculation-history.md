@@ -5,6 +5,12 @@ after the user's accepted restoration commitment. This specifies proposed core
 operations and storage semantics. Exact schemas, method payloads, recording
 cadence and filesystem bindings remain subject to their focused studies.
 
+Draft 0.2 retains the logical restoration/branching semantics. Its physical
+file-based publication protocol is a candidate, not a storage or deployment
+decision. The [core storage boundary](core-structure.md#5-storage-responsibilities-without-premature-deployment-choices)
+leaves database and array-container choices open. The model in section 7 concerns
+the earlier abstract file-publication candidate, not an eventual DB implementation.
+
 ## 1. What the history owns
 
 Selecting a retained point recovers the state recorded there, including its
@@ -13,7 +19,7 @@ future. This operation establishes neither physical reversibility nor identical
 future numerical execution. The scientific method determines whether those saved
 contents suffice for the requested continuation.
 
-The history is the authoritative persistent record. During computation the driver
+The history holds the persistent calculation state. During computation the driver
 owns mutable working state in host/device memory. A completed append establishes
 a new persistent point; work after that point can be lost on failure. Persistence
 does not require every arithmetic operation to allocate an immutable object or
@@ -249,7 +255,7 @@ request remains unresolved until its protocol establishes what happened.
 
 Compatibility files are exports of selected native quantities/state or directly
 requested outputs with the same scientific meanings. Their legacy append rules
-cannot mutate the authoritative native history. Exported VASP restart files may
+cannot mutate the native history. Exported VASP restart files may
 carry less history than the native method record; document that specific limit.
 
 ## 7. Bounded protocol exploration

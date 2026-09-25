@@ -1,6 +1,6 @@
 # Calculation model and scientific composition
 
-Part of [design draft 0.1](README.md). This specifies the core's responsibilities
+Part of [design draft 0.2](README.md). This specifies the core's responsibilities
 and proposed ownership. Scientific routine internals remain at outline depth.
 The [reading study](../research/core-design-study.md) supplies the source basis.
 
@@ -32,11 +32,13 @@ identical method choices; independent rank-local filesystem discovery is avoided
 numerical setup and allocation. The interface must state that difference; a
 preparation command is not advertised as a harmless syntax check.
 
-## 2. Principal objects and ownership
+## 2. Principal data and ownership
 
-These names describe intended responsibilities, not final Rust APIs.
+These names describe data and ownership, not final language APIs or an OOP model.
+Use algebraic data types and explicit operations. Consumers interact through
+public interfaces; the [core structure](core-structure.md) defines those boundaries.
 
-| Object | Meaning and owner |
+| Data | Meaning and owner |
 | --- | --- |
 | `CalculationSpec` | Immutable resolved physical choices, procedure, numerical controls, initialization and requested products; owned by the application |
 | `AtomicDataSet` | Immutable imported atomic ingredients with functional/relativistic/generator information and units; shared when genuinely identical |
@@ -101,8 +103,9 @@ Examples of domain APIs to design in their respective expeditions:
 
 Avoid one universal `step(state) -> state` interface: it would conceal the
 meaning of a step, coupled evaluations and observable availability. Nor should
-all methods pretend to be energy minimizers. Domain traits can still represent
-real shared operations, such as applying a linear operator to a block of vectors.
+all methods pretend to be energy minimizers. Shared operation signatures can
+express applying a linear operator to a block of vectors without an inheritance
+hierarchy or an object-oriented framework.
 
 A driver returns an outcome appropriate to its procedure: electronic stopping
 criterion met, ionic convergence met, requested time interval completed,
@@ -164,7 +167,7 @@ trait hierarchy.
 
 A cached projector block belongs to a particular geometry/basis/data combination.
 It is not a free-floating buffer with a “valid” bit maintained by the app. Prefer
-construction scope, immutable parents and narrow update methods. Reuse workspace
+construction scope, immutable parents and narrow update operations. Reuse workspace
 allocations separately from cached numerical values. The backend may cache a plan
 keyed by shape/layout/context because those are its actual dependencies.
 

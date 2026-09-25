@@ -1,6 +1,6 @@
 # Interfaces, compatibility and delivery
 
-Part of [design draft 0.1](README.md). Minimal disruption means preserving the
+Part of [design draft 0.2](README.md). Minimal disruption means preserving the
 scientific and operational behaviors used by real researchers and tools. The
 compatibility interface and native interface share the same scientific engine.
 
@@ -177,9 +177,9 @@ units as well as array ordering and file shape.
 
 ## 5. Embedding and extension boundaries
 
-Provide a native library API in the selected implementation language. The initial
-Rust sketch remains conditional on the open stack decision. It creates a context,
-constructs/prepares a calculation, executes a selected method, and returns a structured outcome and
+Provide a native library API in the selected implementation language. It creates
+a context, constructs/prepares a calculation, executes a selected method, and
+returns a structured outcome and
 owned/borrowed results with explicit lifetimes. The CLI adds process exit policy.
 Native APIs can evolve during alpha; persistence schemas evolve explicitly.
 
@@ -220,7 +220,7 @@ all participating ranks under a specified collective protocol. Rank-local and
 global contributions are distinct. Exceptions and partial outputs do not commit
 half of a composed update.
 
-External providers are trusted code, not automatically sandboxed by Rust. Their
+External providers are trusted code, not automatically sandboxed by the host language. Their
 state must participate in checkpoint/rollback if that calculation promises those
 operations. An embedded host owns its fatal-runtime policy; it must agree to the
 MPI failure behavior before distributed execution. A subcommunicator is not a
@@ -229,6 +229,10 @@ promise that abort cannot affect the rest of the host job.
 ## 6. Packaging and operational usability
 
 ### Run-directory ownership
+
+The following is the earlier filesystem-based candidate. Deployment and storage
+choices remain open under the [core storage boundary](core-structure.md#5-storage-responsibilities-without-premature-deployment-choices).
+Do not infer a custom locking/publication implementation is selected by this sketch.
 
 Before opening outputs, the designated writer acquires exclusive run-directory
 ownership through a filesystem primitive qualified on the supported target

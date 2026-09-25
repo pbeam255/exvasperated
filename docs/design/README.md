@@ -1,6 +1,6 @@
 # Exvasperated: overarching design draft
 
-**Draft 0.1 — 2026-09-25.** Proposed application architecture grounded in a
+**Draft 0.2 — 2026-09-25.** Proposed application architecture grounded in a
 [focused reading pass](../research/core-design-study.md), the
 [broad reference campaign](../research/reference-campaign/README.md), and the
 [initial source studies](../research/first-pass/README.md). This is a design for
@@ -8,6 +8,12 @@ review, not an implemented engine or a frozen specification. The user's current
 request authorizes this overarching design and a thoroughly considered app core.
 Every scientific subsystem still requires its focused expedition before detailed
 design and implementation.
+
+This revision incorporates interface-only composition, algebraic data types,
+resident ownership, memory layout, teeth tests and the bounded development/review
+cycle. Linux is the primary development direction; deployment, storage technology
+and implementation languages remain open. Numerical libraries are candidates to
+test, alongside our own implementations.
 
 ## What the program is
 
@@ -32,6 +38,8 @@ remain a separate possible product.
 
 | Document | Design content |
 | --- | --- |
+| [Core structure and memory](core-structure.md) | Component interfaces, algebraic data, resident ownership, layouts, resource bounds and open storage responsibilities |
+| [Specifications and implementations](specifications-and-implementations.md) | Scientific specs, implementation contests, independent oracles, teeth tests and automated work |
 | [Calculation model and composition](calculation-model.md) | Domain objects, construction, ownership, state changes, driver composition and the 15 scientific families |
 | [Execution and lifecycle](execution.md) | Application states, CPU/NVIDIA placement, MPI, asynchronous memory, stopping, errors and cleanup |
 | [Results and continuation](results-and-continuation.md) | Output meanings, native storage, checkpoint publication, resume/import/migration and failure cases |
@@ -39,7 +47,7 @@ remain a separate possible product.
 | [Interfaces and compatibility](interfaces-and-compatibility.md) | CLI/library boundaries, configuration, VASP profiles, downstream tools, extensions and packaging |
 | [Verification and design completion](verification.md) | Adversarial cases, protocol models, scientific acceptance, implementation sequence and open decisions |
 
-## Main architectural decisions
+## Proposed architecture
 
 1. **One scientific engine, several entry interfaces.** Native input, VASP
    compatibility and library callers construct the same explicit calculation
@@ -72,6 +80,15 @@ remain a separate possible product.
    format behavior, downstream consumers, continuation and operational outcomes
    define the target. Full VASP parity remains the ambition; coverage claims are
    limited to demonstrated combinations.
+9. **System boundaries are public interfaces.** Scientific families, execution,
+   storage and writers own their private representations. Consumers use explicit
+   operations and exposed views; no component reaches into another's internals.
+10. **Data layout and resource use are designed with control flow.** Operations
+    specify placement, indexing, access, scratch and completion. Bounds have
+    defined full-capacity/failure behavior; no generic global zero-waste promise.
+11. **Specifications and tests support competing implementations.** Numerical
+    libraries, our routines and generated kernels face the same scientific
+    questions with their actual layout/integration costs included.
 
 ## Architecture
 
@@ -98,15 +115,15 @@ This is a responsibility diagram. Method calls are ordinary typed calls and
 structured iteration. Local execution can use streams, events and bounded work
 queues without turning scientific composition into a universal graph language.
 
-## Proposed organization, illustrated in Rust
+## Proposed dependency organization
 
 Stack selection is open following the user's 2026-09-25 clarification; see the
 [stack discussion](../research/stack-and-symbolic-computation.md). These names
-illustrate responsibilities using Rust and do not select the implementation
-language or require a particular foreign interface.
+describe language-neutral responsibilities and do not select a language,
+object-oriented hierarchy, foreign interface or storage engine.
 
-Start with a small workspace; module boundaries matter more than crate count.
-The following are dependency boundaries, not a requirement to create all crates
+Start with a small workspace; module boundaries matter more than package count.
+The following are dependency boundaries, not a requirement to create all packages
 before the first calculation exists.
 
 | Boundary | Owns | May depend on |
@@ -125,9 +142,9 @@ so scientific code does not need a dependency on a particular file container.
 Small observer/control interfaces can live beside driver APIs to avoid dependency
 cycles. The CLI remains a thin layer over `exv-app`.
 
-If Rust is selected, safe Rust is the default. Foreign libraries and device launch
-code live behind narrow operation-specific adapters. A Rust signature alone does not establish
-foreign numerical behavior or asynchronous memory safety. Hot loops dispatch on
+Foreign libraries and device launch code live behind narrow operation-specific
+adapters. A host-language signature alone does not establish foreign numerical
+behavior or asynchronous memory safety. Hot loops dispatch on
 concrete implementations; runtime backend selection occurs around substantial
 operations, not each scalar arithmetic operation.
 
@@ -137,20 +154,22 @@ Shared access needs a concrete use; there is no proposed lease-management servic
 
 ## What is deliberately left open
 
-The draft proposes HDF5 for native array containers, explicit immutable checkpoint
-generations, a synchronous method API with internal asynchronous execution, and
-MPI calls on the initializing thread as the first distributed execution model.
-Those choices have concrete consequences and tests in the companion documents.
-They remain subject to bounded implementation experiments.
+The draft contains HDF5/immutable-generation storage sketches for investigation,
+a synchronous method API with internal asynchronous execution, and MPI calls on
+the initializing thread as an initial distributed execution proposal. Storage
+engine, metadata organization and deployment remain open. Reuse mature database
+and storage operations where appropriate before constructing their equivalents.
+The [core storage boundary](core-structure.md#5-storage-responsibilities-without-premature-deployment-choices)
+states the needed operations without selecting their implementation.
 The calculation-history refinement treats generations as payload storage for an
 append-only logical history. Recorded-state restoration is the accepted semantic
 commitment; exact entry schemas and recording cadence remain proposed work.
 
 No FFT/eigensolver library or CUDA compiler has been selected. cuda-oxide, cudarc,
 CubeCL and native library paths remain candidates with different roles. CPU and
-NVIDIA are alpha requirements; AMD remains a second wave. Initial production
-qualification should target Linux HPC environments; the exact OS/architecture
-matrix, including macOS CPU support, is still a release decision.
+NVIDIA are alpha requirements; AMD remains a second wave. Develop primarily on
+Linux with macOS as a secondary port of the same core. This does not presume a
+deployment environment; exact OS/architecture and storage support remain open.
 
 Detailed scientific representations, history-reset rules, default tolerances,
 convergence policies and algorithm selections cannot be settled from the broad

@@ -1,6 +1,6 @@
 # Execution, lifecycle and resource ownership
 
-Part of [design draft 0.1](README.md). The core executes researcher-selected
+Part of [design draft 0.2](README.md). The core executes researcher-selected
 procedures on CPU and NVIDIA, with AMD later. It does not select a physical branch
 or substitute another scientific method in response to a runtime problem.
 
@@ -62,7 +62,7 @@ rank cannot return from preparation while peers enter the next data collective.
 Communicators express actual decompositions: independent calculations/images,
 reciprocal samples, bands/subspaces or spatial/FFT partitions as needed by the
 method. There is no universal fixed communicator tree imposed on all families.
-Construct each selected topology deterministically on its participating ranks.
+Construct the selected topology consistently across its participating ranks.
 Print effective rank/device mapping and numerical-library configuration.
 
 Driver communication phases have a common operation order on each communicator.
@@ -132,16 +132,19 @@ The safe execution API must ensure:
 - A submitted operation keeps every allocation, workspace, plan, stream and
   context it uses alive until completion, including raw-pointer FFI accesses.
 - A host-readable result is available only after the required completion/transfer.
-- Reused workspace waits for all previous users. A dropped Rust wrapper cannot
+- Reused workspace waits for all previous users. A dropped host handle cannot
   make an in-flight allocation reusable.
 - Failure during submission or event recording does not release possibly active
   memory; drain where safe, otherwise retain it until context/job teardown.
 
-A proposed implementation is an execution scope that owns in-flight resources
-and returns result handles tied to that scope. Finishing the scope observes device
-and communication completion. Internal backend event dependencies can avoid
-whole-device waits. This requires a separate unsafe/lifetime design before code;
-ordinary Rust borrow durations do not prove device completion.
+Prefer moving owning handles into pending operations while allocations remain
+resident. Completion returns results and reusable resources. An execution context
+owns the relevant runtime, with explicit failure cleanup; it need not centrally
+track every scientific value. Internal event dependencies can avoid whole-device
+waits. The [ownership refinement](core-structure.md#3-ownership-and-asynchronous-execution)
+distinguishes rejection before submission from uncertain in-flight work. Host
+lifetimes alone do not prove device completion; concrete adapter design remains
+required before code.
 
 The [cudarc reading](../research/core-design-study.md#6-a-rust-borrow-ending-does-not-mean-a-gpu-operation-finished)
 provides a concrete comparison. Its tracking cannot automatically account for
@@ -155,7 +158,7 @@ accepts a device pointer. Support a deliberate pinned-host staging path. Test bo
 routes on selected MPI/device combinations; raw buffer ownership lasts until the
 MPI request completes. No background progress is assumed without measurement.
 
-## 5. CPU concurrency, reproducibility and performance
+## 5. CPU concurrency, numerical behavior and performance
 
 Choose one explicit threading arrangement for a workload: application workers,
 threaded native BLAS/FFT, or a measured combination. Avoid accidental nested

@@ -1,10 +1,17 @@
 # Results, persistence and continuation
 
-Part of [design draft 0.1](README.md). Persistence must preserve the meaning of
+Part of [design draft 0.2](README.md). Persistence must preserve the meaning of
 what was calculated and the state required by the chosen continuation procedure.
 Container readability is only one requirement.
 The [calculation-history refinement](calculation-history.md) specifies the logical
 entry/branch model and separates visible publication from save acknowledgement.
+
+The physical layout and publication protocol below remain candidates for study.
+The user has left database/storage selection and deployment open. The
+[storage boundary](core-structure.md#5-storage-responsibilities-without-premature-deployment-choices)
+defines the operations we need; investigate mature components before adopting
+custom indexing or transaction machinery. The earlier filesystem sketch does
+not select the eventual persistence implementation.
 
 ## 1. Result semantics
 
@@ -62,7 +69,7 @@ parallel-IO and filesystem experiments. Compatibility files use their own adapte
 The generation/segment layout below is a candidate payload organization for the
 logical history. The refinement proposes parent links and complete field indexes;
 their precise byte schemas and physical layout still need specification.
-Native persistence never serializes Rust object layout, pointers or enum memory.
+Native persistence never serializes private language layout, pointers or enum memory.
 Checkpoint payloads preserve the working scalar encoding by default, with only
 lossless compression. Reduced-precision export is a distinct explicit operation;
 it cannot silently narrow native continuation state.

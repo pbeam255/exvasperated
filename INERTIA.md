@@ -294,6 +294,14 @@ This supersedes the earlier preference for merely periodic adversarial reviews.
 These written instructions do not establish automated enforcement; that requires
 demonstrated teeth. Ordinary technical notes remain revisable aids to reasoning.
 
+The user clarified the reuse tenet during the design continuation: avoid
+reimplementing strong existing infrastructure merely from habit, but do not
+presume a database, storage arrangement or deployment environment yet. Numerical
+libraries are all on trial before adoption. Existing packages, independently
+written routines and generated/specialized kernels face the operation's scientific
+specification, tests and performance requirements. We may implement some or all
+numerics ourselves; library reputation does not decide the comparison.
+
 ### Stack and implementation preferences
 
 Preserve declared physics and explicit failures. Do not silently smooth, clip,
