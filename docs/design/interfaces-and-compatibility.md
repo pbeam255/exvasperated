@@ -1,8 +1,9 @@
 # Interfaces, compatibility and delivery
 
-Part of [design draft 0.2](README.md). Minimal disruption means preserving the
-scientific and operational behaviors used by real researchers and tools. The
-compatibility interface and native interface share the same scientific engine.
+Part of [design draft 0.2](README.md). Researchers should be able to switch without
+changing how they prepare calculations, run jobs or use the results. Native and
+compatibility interfaces call the same engine. The tests must cover the methods
+and workflows people actually use.
 
 ## 1. Entry points
 
@@ -23,7 +24,7 @@ exvasperated version
 History commands use stable entry identifiers; a step number or timestamp alone
 does not select an unambiguous point. `resume` starts a new branch from that
 point after method-specific preparation. `history inspect` reads recorded data
-without starting a scientific driver. Native initialization from selected prior
+without running a calculation. Native initialization from selected prior
 quantities is a distinct input operation. See the
 [history operations](calculation-history.md#3-operations-available-to-callers).
 The illustrative `--branch` value is a human label; a new stable branch identifier
@@ -32,7 +33,7 @@ is allocated for the session, with conflicting labels rejected.
 Native input is a versioned declarative document, proposed as TOML. It expresses
 a selected calculation and its explicit composition, not an inferred experimental
 intent. Complex workflows can compose library calls or separate runs. Introduce
-additional native composition syntax only for concrete scientific procedures;
+additional native composition syntax only for specific calculation procedures;
 there is no initial general workflow DSL.
 
 The CLI returns a concise human explanation plus stable machine-readable outcome
@@ -56,7 +57,7 @@ structured summary carries the actual method outcome, delivery status and cause;
 an exit integer cannot carry all three. Compatibility profiles can map legacy
 process behavior separately, with the native summary preserving those facts.
 
-## 2. Configuration semantics
+## 2. What configuration means
 
 Native configuration separates:
 
@@ -65,17 +66,17 @@ Native configuration separates:
 - The requested method, its numerical controls and explicit child methods.
 - Initialization versus resume/import.
 - Execution resources and supported placement choices.
-- Requested scientific output and operational stopping/checkpoint policy.
+- Requested results and operational stopping/checkpoint policy.
 
 The parser preserves source locations. It rejects duplicate native keys and
 unknown native options, rather than silently accepting a typo. Profile-specific
 compatibility parsing follows its own observed/documented syntax and precedence;
 those rules do not leak into the native grammar. No inherited global mutable
-parameter map is exposed to scientific routines.
+parameter map is exposed to calculation routines.
 
 Resolution computes context-dependent defaults in a defined order and presents
 the effective configuration, including the origin of values that users commonly
-need to understand. Static defaults are versioned. A change in default scientific
+need to understand. Static defaults are versioned. A change in default calculation
 method is a documented behavior change, not a backend upgrade side effect.
 
 Environment variables affect only documented operational choices such as data
@@ -86,21 +87,20 @@ programs. Explicit foreign executable interfaces use documented argv/working-
 directory behavior.
 
 Changing an input while a run is in progress does not mutate the resolved native
-calculation. Supported stop/control channels are separate. A scientific interface
-that intentionally reads evolving external input has its own synchronization and
-method semantics.
+calculation. Stop/control requests use separate channels. An interface that reads
+changing external input must specify when it reads and how those updates affect
+the method.
 
 ## 3. VASP compatibility profiles
 
-A profile identifies target version/build-mode behavior and demonstrated feature
-combinations. The first research anchor is 6.5.1; newer public documentation is
+A profile names the VASP version and build mode it aims to match, plus the
+combinations of features it has demonstrated. The first research anchor is 6.5.1; newer public documentation is
 not automatically evidence for that version. Release notes state the tested
-consumers and workflows. A profile is an adapter implementation with tests, not
-an additional runtime certification service.
+consumers and workflows. A profile is an adapter implementation with tests.
 
-The adapter translates source-located input into domain construction operations.
-It resolves public defaults, input-file precedence and initialization behavior,
-then uses the same scientific drivers as native mode. Where a native method
+The adapter parses input with source locations, resolves public defaults,
+input-file precedence and initialization behavior, then constructs the calculation
+using the same drivers as native mode. Where a native method
 cannot express a requested behavior, the profile reports the unsupported request.
 It does not silently substitute an unrelated approximation.
 
@@ -118,18 +118,18 @@ a calculation's initialization and basis policy.
 | --- | --- | --- |
 | Launch and directory | Profile/mode selection, MPI use, working-directory and image contexts | Existing job script with executable substitution |
 | Input syntax and meaning | Public tokens, defaults, repetitions, units, order and inactive options | Independent minimal inputs plus paired oracle probes |
-| Atomic data | User-supplied data interpreted through the chosen formulation | Matched science and transferability checks, not only parser success |
-| Structure/trajectories | Atom order, cell/coordinate conventions, constraints and velocity/history data | Consumer round trips and split-run scientific comparisons |
+| Atomic data | User-supplied data interpreted through the chosen formulation | Matched calculations and transferability checks, not only parser success |
+| Structure/trajectories | Atom order, cell/coordinate conventions, constraints and velocity/history data | Consumer round trips and comparisons of uninterrupted and resumed calculations |
 | Electronic files | Basis/spin/normalization, augmentation and restart policy | Import/export with matched representation and explicit limitations |
 | Text/XML/HDF5 results | Quantities, ordering, schema and partial/failure behavior | Actual downstream operations using pinned consumer versions |
 | Completion/stopping | Process outcome, diagnostics, stop requests and available outputs | Scheduler and interrupted-run scenarios |
-| Plugins/external coupling | Callback meanings, units, order, state and distribution | End-to-end interface and scientific composition tests |
+| Plugins/external coupling | Callback meanings, units, order, state and distribution | End-to-end tests of the interface and the coupled calculation |
 
 A recognized but inactive option needs profile-specific handling. A recognized
-active option whose meaning is unsupported must fail before scientific execution.
+active option whose meaning is unsupported must fail before the calculation runs.
 Unknown options should produce a precise diagnostic; a permissive behavior is
 allowed only if the named profile deliberately defines it. Merely consuming a
-parameter does not establish implementation of its scientific effect.
+parameter does not establish implementation of its effect on the calculation.
 
 ### Public interfaces and independent implementation
 
@@ -161,8 +161,9 @@ file validation. [ASE adapter](https://ase.gitlab.io/ase/_modules/ase/calculator
 Initial compatibility test subjects should include an existing ASE VASP
 calculation and restart, py4vasp result inspection, a shell/MPI job, a relaxation
 followed by postprocessing, and a trajectory interruption/continuation. Add
-phonon, localized-orbital and correlated workflows as their science is delivered.
-Separate scientific disagreement from interface/ordering/unit errors.
+phonon, localized-orbital and correlated workflows as those methods are implemented.
+Distinguish disagreements about the model or numerical method from interface,
+ordering or unit errors.
 
 The actual producer remains Exvasperated. Compatibility format-version fields
 can identify the emulated schema expected by a consumer; also expose the real
@@ -170,8 +171,7 @@ producer/version and profile without polluting fixed grammars. Define the exact
 placement in the format expedition. Never use a VASP version number to imply
 that the proprietary executable performed the calculation.
 
-Compatibility results are generated from the same evaluated domain results as
-native output. Writers do not recompute a different energy or invent missing
+Compatibility writers read the same calculated results as native writers. Writers do not recompute a different energy or invent missing
 observables to satisfy a consumer. Cross-format comparisons check meaning and
 units as well as array ordering and file shape.
 
@@ -197,7 +197,7 @@ does not require the foreign routine to acquire a right to free the storage.
 Shared read-only inputs and scoped borrows remain available where concretely
 needed. A language boundary is not an instruction to copy, repack or migrate data.
 
-Extensions attach at scientifically meaningful operations:
+Extensions supply specific parts of a calculation, with interfaces such as:
 
 | Interface | What must be specified |
 | --- | --- |
@@ -207,10 +207,10 @@ Extensions attach at scientifically meaningful operations:
 | Bias or learned model | Algorithm state, acquisition/continuation semantics, requested observables |
 | External dynamics driver | Request/session identity, force-provider initialization and continuity assumptions |
 
-There is no universal mutable “additions” object. The method applies a returned
-contribution according to its defined composition. Missing derivatives are
-reported, not filled with zero. Extension order is explicit; discovery order of
-installed packages never decides physical composition.
+The method applies each returned contribution according to its rules. Extensions
+do not edit a shared mutable “additions” object. Missing derivatives are
+reported, not filled with zero. Specify the order in which extensions act; the order of package discovery cannot
+decide the calculation.
 
 Baseline host callbacks receive read-only borrowed inputs valid for the call and
 return owned results. They cannot retain raw borrowed pointers. Asynchronous or
@@ -232,7 +232,7 @@ promise that abort cannot affect the rest of the host job.
 
 The following is the earlier filesystem-based candidate. Deployment and storage
 choices remain open under the [core storage boundary](core-structure.md#5-storage-responsibilities-without-premature-deployment-choices).
-Do not infer a custom locking/publication implementation is selected by this sketch.
+This sketch does not choose a custom locking or publication implementation.
 
 Before opening outputs, the designated writer acquires exclusive run-directory
 ownership through a filesystem primitive qualified on the supported target
@@ -242,7 +242,7 @@ without treating a timestamp or PID from another node as proof that an owner is
 dead. A stale ownership record requires an explicit recovery operation that
 preserves prior outputs; ordinary startup does not steal it automatically.
 
-Native fresh runs use a new directory or refuse conflicting scientific outputs.
+Native fresh runs use a new directory or refuse conflicting calculation outputs.
 Resume appends a branch and new segments/generations under exclusive archive
 writer ownership. Concurrent readers use immutable entries; simultaneous branch
 writers in one archive need a separately qualified protocol. Compatibility mode

@@ -251,6 +251,12 @@ red cannot be demonstrated, the statement is at best a good intention. Preserve
 useful reasoning in ordinary notes without treating prose as enforcement. This
 is a working technique, not a new registry, reporting layer or approval ritual.
 
+On 2026-09-25 the user requested plain, concrete design prose. Name the data,
+operations and effects instead of leaning on labels such as “scientific state.”
+Explain who stores, updates or releases something when discussing ownership.
+Use technical terms where they add precision; avoid wording aimed at sounding
+credible. This is a writing preference, not a new enforcement process.
+
 ### Engineering tenets established 2026-09-25
 
 The user requires the following throughout this project:

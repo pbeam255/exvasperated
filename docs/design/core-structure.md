@@ -1,45 +1,43 @@
 # Core structure, interfaces and memory
 
-Part of [design draft 0.2](README.md). This refines the application core using
-the established project tenets. Names below describe responsibilities and data,
-not a chosen language, class hierarchy, package count or deployment topology.
-No implementation or demonstrated teeth tests are introduced by this document.
+Part of [design draft 0.2](README.md). This describes the proposed components,
+what data they keep, and how they call each other. Language, package boundaries
+and deployment remain open. The tests described here have not been implemented.
 
 ## 1. Component boundaries
 
-Each component owns its private state and exposes operations with declared input,
-output, ownership and failure behavior. A public view is deliberately supplied
-data; it is not permission to inspect private layouts. Calls can be direct and
-in-process. Interface separation does not imply copying, serialization, RPC or
-per-element dynamic dispatch.
+A component exposes operations and selected views of its data. Callers use those
+interfaces; they do not read its private fields or storage. Each operation states
+what it accepts, what it returns, who can change or release the data, and how it
+can fail. Calls can pass existing arrays directly within one process.
 
-| Component | Owns or interprets | Public operations | What its consumers do not inspect |
+| Component | Responsible for | Public operations | Private details |
 | --- | --- | --- | --- |
-| Input dialect | Syntax, locations, precedence and public compatibility rules | Parse and resolve to a calculation request | Parser storage or private configuration maps |
-| Application | Selected procedure, process lifecycle and delivery policy | Inspect, prepare, run, stop, return outcome | No scientific algorithm is reconstructed from a driver's internals |
-| Scientific family | Its model/representation, working state and history semantics | Construct, evaluate, transform, continue, expose specified results/state | Private caches, iteration vectors, branch-history implementation |
-| Method composition | Selected child calculations and scientifically defined ordering | Execute the concrete procedure; expose coherent boundaries | Children are accessed only through their scientific operations |
-| Numerical/backend adapter | Allocation mechanism, kernel/library implementation, completion mechanism | Specific numerical operations, movement, completion and resource release | Vendor contexts, raw allocation internals, library-private handles |
-| History and storage | Recorded entries, ancestry, payload dependencies and publication | Append, list, inspect, restore, branch and export | Physical schema, filenames and backend transaction machinery |
-| Result/compatibility writer | Requested external format | Consume public result/record views and write outputs | Driver memory, private history schema or another writer's files |
+| Input adapter | Syntax, source locations, defaults and compatibility rules | Parse and resolve a calculation request | Parser storage and configuration maps |
+| Application | Selected procedure, startup, shutdown and required outputs | Inspect, prepare, run, stop, return outcome | Launch and output coordination |
+| Calculation module | A group of related routines, such as electronic solvers; their data and history | Construct, evaluate, transform, continue, read results, save state | Caches, iteration vectors and history storage |
+| Method driver | The loop that calls routines in the order required by the selected method | Run the procedure, stop or save at supported stages | Loop bookkeeping and child-session storage |
+| Numerical/backend adapter | Allocations, kernels, library calls and completion | Compute, move data, wait for completion, release resources | Vendor contexts, allocation internals and library handles |
+| History and storage | Saved entries, parent links, array blocks and publication | Append, list, inspect, restore, branch and export | Schema, filenames and transactions |
+| Result/compatibility writer | A requested output format | Write from public result or saved-state views | Formatting and writer buffers |
 
-These are dependency directions. A scientific family need not know a database
-schema; a storage adapter need not understand how to advance its scientific method.
-Family-owned encoders/decoders expose the intended recorded representation.
-Debugging and research can inspect source; running systems must not use private
-implementation knowledge as their integration interface.
+The electronic solver need not know a database schema. The storage adapter need
+not know how to advance an SCF iteration. Each calculation module defines the
+values its encoder saves and its decoder restores. A writer receives those values
+through the module's interface; it does not dig through the solver's memory.
+Source inspection remains part of debugging and research.
 
-Public build targets expose only intended headers/modules. Backend-specific
-details stay private to their adapters. Proposed teeth: a consumer attempting to
-access an internal representation fails for that reason, while its public use
-works. A directory convention alone cannot establish this boundary.
+Build targets should expose only the intended headers/modules. A proposed teeth
+test would compile a caller using the public interface and reject one reaching
+into private data. The rejection must be caused by that access. Putting files in
+a directory named “private” is insufficient.
 
 ## 2. Composition through data and operations
 
-Use product types for simultaneously present data and sum types for actual
-alternatives. Each alternative carries its own necessary data. Avoid unrelated
-booleans admitting nonsensical combinations, inheritance trees, universal base
-classes and mutable dictionaries of every possible scientific option.
+Use product types to group fields that belong together and sum types for
+alternatives. Each alternative carries the data it needs. Avoid collections of
+booleans that permit impossible combinations, inheritance trees, universal base
+classes and mutable dictionaries containing every calculation option.
 
 Illustrative distinctions, to refine with each method:
 
@@ -53,38 +51,42 @@ Delivery = Written(location)
          | Uncertain(operation_identity)
 ```
 
-The second sum belongs to an operation that can actually have an uncertain
-external outcome. It is not a universal status field. Method outcomes retain
-their own vocabulary: an integration interval completing and an SCF stopping
-criterion being met remain distinct facts.
+Use `Uncertain` when the caller cannot establish whether an operation succeeded:
+for example, when a reply is lost or storage synchronization fails after data
+becomes visible. Include it only where such uncertainty can occur. Calculation
+outcomes also need specific names: completing a requested time interval and
+meeting an SCF stopping criterion are different results.
 
-The application resolves the chosen driver once at a suitable boundary. The
-driver is ordinary scientific control flow invoking family operations. Stable
-small alternatives can use static dispatch; runtime choices can dispatch once
-per substantial operation. Layout and specialization decisions must not cause a
-combinatorial explosion of compiled variants without measured benefit.
+The application selects a driver during setup. That driver is an ordinary loop
+calling calculation routines. Small, stable choices can be resolved at compile
+time; runtime choices can be resolved once per substantial operation. Specialize
+layouts and kernels where measurements justify the added compiled variants.
 
-Scientific composition is explicit in the selected method. A nuclear integrator
-requests force evaluations at its defined stages; a force operation returns its
-result and updated electronic session. The parent does not extract and edit the
-child's mixer arrays. Child state needed for continuation is obtained through the
-child's record operation and included at a coherent composite boundary.
+For example, a nuclear integrator requests forces at specified stages. The force
+routine returns the forces and the updated electronic session used to calculate
+them. The integrator calls that session's operations; it does not edit the
+session's mixer arrays. When saving, it asks the session for its record and saves
+it with the matching positions, momenta and integrator stage.
 
-A proposed input combination can be unavailable. Unsupported composition is an
-explicit construction result, never an excuse to silently select a different
-physical approximation. Experiment interpretation and suggestions remain outside
-this core. Detailed numerical control and branch semantics remain subjects of the
-focused scientific expeditions.
+Reject unsupported combinations during construction. Do not silently select a
+different physical approximation. Experiment interpretation and suggestions
+remain outside this core. Detailed solver controls and treatment of branches
+still require focused study of each method.
 
 ## 3. Ownership and asynchronous execution
 
-The method owns its scientific state. Owning values retain their allocations;
-the backend supplies the correct allocation/release operations. Submitting work
-transfers the affected owners into the pending operation while storage stays
-resident. Completion yields the resulting owned values. This requires no central
-lease office or global mutable table of resource validity.
+An SCF loop keeps its orbitals, density and mixing history between calls. A
+molecular-dynamics loop keeps positions, momenta and integrator history. Their
+operations control updates to those values. Each buffer has an owner responsible
+for keeping its allocation alive and eventually releasing it through the correct
+backend operation.
 
-Illustrative operation shape, not an ABI or a generic task framework:
+When a routine submits GPU or MPI work, it hands the affected buffer owners to
+the pending operation. The bytes stay where they are. Once the work finishes,
+the caller gets the results and reusable buffers back. There is no central lease
+registry.
+
+Illustrative operation shape, not a final ABI or task framework:
 
 ```text
 submit(inputs, destination, workspace, selected_operation)
@@ -96,113 +98,106 @@ finish(pending)
      | Failed(cause, resources_with_known_safe_disposition)
 ```
 
-`NotSubmitted` requires knowing no work can access the resources. If launch may
-have happened, event recording fails, or completion cannot be established, the
-adapter must retain the resources in an unresolved/failed execution context until
-safe teardown. It cannot return them as reusable through either branch above.
-The concrete backend must represent that case explicitly; these sketches are not
-a complete failure-state enumeration. Dropping a handle or requesting cancellation
-does not establish that a device or MPI operation has stopped accessing memory.
+`NotSubmitted` means submission was rejected before work could use the buffers.
+Work that ran, even partly, follows the completion/failure path regardless of
+whether its buffers are now safe to release. If launch may have happened,
+recording a completion event fails, or completion cannot be confirmed,
+the adapter keeps the resources until it can safely tear down the execution
+context. It must not return them as reusable. The final API needs an explicit
+case for this; the sketch above is incomplete. Cancelling work or dropping a
+handle does not establish that a device or MPI operation has stopped using memory.
 
-Shared immutable inputs and scoped views are available for actual computational
-needs. Their lifetime must cover every use, including foreign calls. Explicit
-resource ownership may move while read-only data remains shared; mutable aliases
-require a defined disjointness or synchronization argument. A view carries no
-right to outlive its owner or free a foreign allocation.
+Read-only inputs can be shared, and routines can receive temporary views into
+existing arrays. Those arrays must stay alive for every use, including foreign
+calls. Multiple mutable views require either disjoint regions or explicit
+synchronization. A view cannot outlive its owner or free a foreign allocation.
 
-Separate reusable storage from valid cached numerical values. Reusing an
-allocation does not authorize reusing its prior contents after geometry, basis or
-model changes. A method defines those changes through operations on its own state.
+Reusable storage and reusable values are different. After a geometry, basis or
+model change, an allocation may still fit while its cached projector values are
+stale. The calculation module's update operations decide which values to rebuild.
 
 ## 4. Layout is part of each numerical operation
 
-An operation specification includes both scientific representation and physical
-storage requirements:
+Specify what an array represents and how the routine accesses its storage:
 
 | Aspect | Questions to settle |
 | --- | --- |
-| Meaning | Basis/grid, units, normalization, component ordering and scientific stage |
-| Indexing | Logical extents, partition map, strides, checked offset/size arithmetic |
-| Placement | Host/device location and accessibility, alignment, intended locality |
-| Access | Read-only inputs, mutation, permitted overlap and aliasing, completion |
-| Resources | Persistent bytes, scratch, packing/staging, pending output, bounded concurrency |
-| Numerical behavior | Precision, reductions, exceptional inputs, failure result and tolerance model |
+| Meaning | Basis/grid, units, normalization, component order and calculation stage |
+| Indexing | Dimensions, partition map, strides, checked offset/size arithmetic |
+| Placement | Host/device location and accessibility, alignment and locality |
+| Access | Read-only inputs, mutation, permitted overlap and completion |
+| Resources | Persistent storage, scratch, packing/staging, pending output and maximum concurrent work |
+| Numerical behavior | Precision, reductions, exceptional inputs, failures and error tolerances |
 
-The representation constructor establishes the necessary associations once where
-possible. Inner loops receive data suitable for their work. Equal dimensions
-alone do not establish equal bases. No-alias/alignment assumptions supplied to a
-compiler must follow from actual construction and ownership.
+Constructors should check associations such as an array's basis once where
+possible, so inner loops receive suitable data. Equal dimensions do not mean
+equal bases. Compiler assumptions about alignment or non-overlapping pointers
+must hold for the actual allocations and calls.
 
-Choose contiguous arrays, AoS/SoA, blocking, tiling, arenas, rings or other layouts
-from access patterns and measurements. A ring is useful only where its lifetime
-and access pattern fit. Its capacity and overwrite behavior must never silently
-discard required scientific history. Padding, duplicated small data or packing
-can improve total throughput; count their full cost instead of minimizing each
-local byte count independently.
+Choose contiguous arrays, arrays of structures or structures of arrays, tiles,
+arenas, rings and other layouts from access patterns and measurements. A ring
+fits some workloads; overwriting it must never silently discard required history.
+Padding, duplicated small data or packing can improve total throughput. Measure
+their total cost.
 
-Plan peak simultaneous resources, not just final arrays. Include trial/accepted
-states, child workspaces, communication staging and snapshots where those coexist.
-Bound work in flight and handle a full queue explicitly. Required output can
-apply backpressure; optional progress may be coalesced according to its declared
-policy. Neither overflow nor out-of-memory licenses lowering precision, changing
-the physical model or silently reducing required output.
+Budget peak simultaneous memory: trial and accepted states, child workspaces,
+communication buffers and snapshots may all coexist. Limit work in flight and
+specify what happens when a queue fills. Required output can make the calculation
+wait; optional progress messages may be combined under a stated policy. Neither
+a full queue nor exhausted memory permits silently lowering precision, changing
+the model or dropping required output.
 
-Keep control/metadata work outside numerical inner loops where the selected
-algorithm allows it. CPU and GPU may use different layouts and routines under
-the same scientific operation. A conversion or transfer is an explicit operation
-with a measured cost, not a hidden consequence of a language boundary.
+Keep bookkeeping outside numerical inner loops where the algorithm allows it.
+CPU and GPU implementations may use different layouts for the same operation.
+Make conversions and transfers explicit and measure their cost, including those
+at language boundaries.
 
 ## 5. Storage responsibilities without premature deployment choices
 
-The database tenet generalizes to reusing strong existing implementations before
-rebuilding their machinery. Transactions, integrity constraints, indexing,
-queries, codecs and array containers deserve that presumption. Determine the
-needed behavior before selecting which mature component supplies it.
+Before rebuilding transactions, constraints, indexes, queries, codecs or array
+containers, investigate mature implementations. Establish what we need and use
+the component that does it well.
 
-Numerical libraries are explicitly on trial before adoption. Existing libraries,
-our own routines and generated/specialized kernels must face the scientific spec,
-independent tests and resource measurements. We may write some or all numerics;
-infrastructure reuse does not predetermine those choices.
+Numerical libraries still go on trial. Compare existing libraries, our own
+routines and generated kernels against the operation's specification, independent
+tests and resource requirements. We may write some or all of the numerics.
 
 The core currently needs these history operations:
 
-- Append a method record and its required payload references at a coherent point.
-- Distinguish publication, durable acknowledgement and uncertain outcomes.
-- Select a point or branch unambiguously; preserve recorded future branches.
-- Restore the recorded values and retained history without rerunning science.
-- Inspect observations even when continuation state is unavailable.
-- Export the selected records and required dependencies with explicit omissions.
+- Save the method's values and required array references at a supported stage.
+- Distinguish data being visible to readers from a save confirmed as durable,
+  and represent cases where the writer cannot tell whether a save succeeded.
+- Select a saved point or branch without ambiguity; preserve existing branches.
+- Restore saved values and retained history without rerunning the calculation.
+- Inspect observations even when the saved data cannot support continuation.
+- Export selected records and their required data, stating any omissions.
 
-These needs do not select a DB engine, SQL schema, storage service, filesystem,
-writer topology or array container. They do not require all numerical arrays to
-be database rows or require an independent catalog service. Live numerical state
-remains method-owned memory; persistence uses the method's exposed record.
+These operations leave the database, schema, service, filesystem, number of
+writers and array container open. Arrays need not become database rows, and a
+separate catalog service is not required. Running calculations keep their working
+arrays in memory; storage receives the records the calculation modules expose.
 
-Study storage options against the actual requirements later. Delegate the work
-the selected DB does well, through the storage interface. If metadata and array
-payloads use separate stores, their publication/failure relationship is a real
-design obligation: a metadata transaction alone does not establish persistence
-of external payloads. Avoid custom transaction/indexing machinery merely because
-the prototype file layout already contains it.
+Evaluate storage options against these needs. Use the selected database through
+the storage interface. If metadata and arrays live in separate stores, specify
+how they are published and recovered together. A metadata transaction does not
+make external arrays durable. The prototype file layout is no reason to commit
+to custom transaction or indexing code.
 
-Earlier HDF5/shard and filesystem-publication sketches in
-[results](results-and-continuation.md) and [history](calculation-history.md) are
-concrete candidates for reasoning, not selected deployment requirements. The
-existing Python explorer addresses that specific abstract protocol; it does not
-verify an eventual database-backed implementation. Linux-first development and
-CPU/NVIDIA alpha support do not prescribe where researchers store their data.
+The HDF5/shard and filesystem sketches in [results](results-and-continuation.md)
+and [history](calculation-history.md) remain candidates. The Python explorer
+examines that abstract file protocol; it does not test a future database
+implementation. Linux development and CPU/NVIDIA support do not prescribe where
+researchers store data.
 
 ## 6. Reuse and substitution
 
-An implementation boundary names a scientific or infrastructural operation, its
-data and its behavior. It does not promise that every library is interchangeable.
-For a numerical replacement, compare domains, precision, error/failure behavior,
-layout, workspace and asynchronous lifetime as well as runtime. For a storage
-replacement, compare the restoration and publication behavior the caller uses.
+An interface defines an operation, its data and its behavior. Before replacing a
+numerical implementation, compare supported inputs, precision, errors, failures,
+layout, workspace and asynchronous lifetimes as well as speed. Before replacing
+storage, compare the save and restore behavior callers rely on.
 
-Keep the operation interface as narrow as the real responsibility permits. The
-first working implementation can be direct; multiple actual implementations can
-motivate further factoring. No universal plugin registry, service locator,
-scalar-level tensor interface or dependency-injection framework is required.
-The [specification and implementation organization](specifications-and-implementations.md)
-describes how alternatives face the same external questions.
+Keep interfaces specific to their job. Start with a direct implementation and
+factor out shared code when actual alternatives show what is shared. No universal
+plugin registry, service locator, scalar-level tensor interface or dependency-
+injection framework is required. See [specifications and implementations](specifications-and-implementations.md)
+for how we compare alternatives.

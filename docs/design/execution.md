@@ -2,7 +2,7 @@
 
 Part of [design draft 0.2](README.md). The core executes researcher-selected
 procedures on CPU and NVIDIA, with AMD later. It does not select a physical branch
-or substitute another scientific method in response to a runtime problem.
+or substitute another calculation method in response to a runtime problem.
 
 ## 1. Application lifecycle
 
@@ -25,16 +25,16 @@ stateDiagram-v2
     Aborted --> [*]
 ```
 
-This lifecycle concerns resources and process behavior. A driver's internal
-algorithm has its own states. `Run` can contain nested SCF iterations, integration
+These states describe startup, execution and shutdown. Each driver's algorithm
+has its own states within them. `Run` can contain nested SCF iterations, integration
 stages, response solves or repeated evaluations; the core does not flatten them.
 
 | Phase | Owned resources and permitted effects |
 | --- | --- |
 | Bootstrap | Parse minimal launch options; initialize or attach to MPI; discover ranks/devices and small diagnostic channel |
-| Resolve | Input owner resolves scientific choices and shares them; reject unavailable operations; preserve existing calculation files |
+| Resolve | Designated rank resolves calculation choices and shares them; reject unavailable operations; preserve existing calculation files |
 | Prepare | Establish communicators, allocate and construct driver; open new output segment only after output ownership is established |
-| Run | Driver advances science and exposes coherent output/stop boundaries; execution may overlap local work and transfers |
+| Run | Driver runs the calculation and provides defined stages for output and stopping; execution may overlap local work and transfers |
 | Finish | Drain required work, publish requested results/checkpoint and outcome, explicitly release resources |
 | Failed | Preserve prior published checkpoints; report error and available partial results; attempt only feasible coordinated cleanup |
 
@@ -59,13 +59,14 @@ a success/error result before peers enter dependent work. Device discovery and
 allocation failures are likewise reported at planned agreement boundaries. A
 rank cannot return from preparation while peers enter the next data collective.
 
-Communicators express actual decompositions: independent calculations/images,
-reciprocal samples, bands/subspaces or spatial/FFT partitions as needed by the
-method. There is no universal fixed communicator tree imposed on all families.
-Construct the selected topology consistently across its participating ranks.
+Create MPI communicators for the groups that work together: independent
+calculations/images, reciprocal samples, bands/subspaces or spatial/FFT partitions,
+as the method requires. Different methods may need different arrangements. Every
+participating rank must construct the same arrangement.
 Print effective rank/device mapping and numerical-library configuration.
 
-Driver communication phases have a common operation order on each communicator.
+Within a communication phase, ranks initiate matching operations in the same
+order on each communicator.
 Independent overlapping activities use distinct communicators where appropriate.
 Local callback timing does not determine collective order. A dedicated control
 communicator prevents message confusion, but does not make a blocked process
@@ -111,19 +112,19 @@ report oversubscription and obey explicit placement. Do not assume global rank
 modulo the physical GPU count is the intended assignment. Exact discovery and
 scheduler integration remain part of target qualification.
 
-The numerical adapter surface is operation-specific: transform plans, matrix
-products, factorizations/eigensolvers, reductions and family kernels. It includes
+Numerical adapters expose specific operations: transform plans, matrix products,
+factorizations/eigensolvers, reductions and kernels for particular calculations. It includes
 precision/compute mode, shapes/strides, workspace, stream, status and completion.
 No scalar-level virtual tensor API is required. A family may choose a fused kernel
 where its mathematics and measurements justify it.
 
 ## 4. Asynchronous ownership
 
-A scientific value's logical identity and its storage location differ. A typed
-field/view names its representation; its storage can be host or device resident.
-A redistribution or transfer produces a view of the same logical entries through
-a defined index map. An orbital basis projection changes the represented object
-and belongs to the scientific family.
+An orbital array refers to a particular basis whether its bytes are on the CPU
+or GPU. Its type or view carries that association. Moving or redistributing the
+array preserves its logical entries through an explicit index map. Projecting
+orbitals into a different basis changes the represented values and belongs in the
+calculation module.
 
 The safe execution API must ensure:
 
@@ -139,8 +140,8 @@ The safe execution API must ensure:
 
 Prefer moving owning handles into pending operations while allocations remain
 resident. Completion returns results and reusable resources. An execution context
-owns the relevant runtime, with explicit failure cleanup; it need not centrally
-track every scientific value. Internal event dependencies can avoid whole-device
+manages the runtime and its failure cleanup; it need not keep a central table of
+every calculation value. Internal event dependencies can avoid whole-device
 waits. The [ownership refinement](core-structure.md#3-ownership-and-asynchronous-execution)
 distinguishes rejection before submission from uncertain in-flight work. Host
 lifetimes alone do not prove device completion; concrete adapter design remains
@@ -172,9 +173,9 @@ arithmetic is introduced through explicitly selected, independently checked
 methods, rather than silently enabled by a backend's faster default.
 Deterministic numerical replay is not an established project goal. Persistence
 restores recorded state and retained history without requiring identical future
-execution. Method-specific scientific comparisons must establish the relevant
-quantities, histories, distributions or trajectories and their justified equality
-criteria or tolerances. Any future deterministic execution proposal first needs
+execution. For each method, specify which quantities, histories, distributions
+or trajectories to compare, and why the chosen equality criteria or tolerances
+are appropriate. Any future deterministic execution proposal first needs
 an explicit purpose and scope; it does not follow from checkpointing support.
 
 Measure whole driver phases, transfers, communication and device work. Host enqueue
@@ -185,15 +186,15 @@ can change overlap. Memory reports include live workspaces and pending IO.
 ## 6. Stops, callbacks and failures
 
 Signal handlers set only a stop request using platform-safe machinery. They do
-not allocate, invoke MPI, write HDF5 or serialize scientific state. Drivers poll
+not allocate, invoke MPI, write HDF5 or serialize calculation arrays and history. Drivers poll
 at specified boundaries and coordinate the request among their ranks. A wall-time
 budget should reserve estimated checkpoint time, while making clear that a long
 uninterruptible operation may overrun it.
 
-Observers receive immutable bounded views of method progress. They cannot mutate
-the scientific procedure. A stop request is a separate narrow channel. Scientific
-extensions are explicit operations described in [interfaces](interfaces-and-compatibility.md),
-with their own state and callback ordering.
+Progress callbacks receive read-only views with bounded buffering. They cannot
+change the calculation. Stop requests use a separate interface. Extensions that
+participate in the calculation have explicit operations, data and call order;
+see [interfaces](interfaces-and-compatibility.md).
 
 | Event | Proposed behavior |
 | --- | --- |
@@ -206,12 +207,13 @@ with their own state and callback ordering.
 | Optional human log fails | Report if possible; follow the declared optional-output policy |
 | Device context/MPI becomes unusable | Terminate affected job; preserve previously committed checkpoints |
 
-Observer backpressure is bounded. Required scientific output can slow the driver;
+Bound the queue feeding observers. Required result output can slow the driver;
 optional progress messages may be coalesced under an explicit policy. Queues must
 not retain unbounded snapshots of wavefunctions or trajectories.
 
-Teardown is explicit and fallible: finish dependent work, close outputs and
-extensions, release plans/handles/buffers, then finalize owned runtimes. Destructors
+Cleanup runs explicitly and can fail: finish dependent work, close outputs and
+extensions, release plans/handles/buffers, then finalize runtimes initialized by
+this application. Destructors
 provide a final local safeguard, not hidden MPI collectives or the main error
 reporting path. Panics and foreign exceptions never cross a C ABI boundary;
-catching one is not sufficient to resume a distributed scientific calculation.
+catching one is not sufficient to resume a distributed calculation.

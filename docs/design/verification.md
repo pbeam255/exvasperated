@@ -1,19 +1,18 @@
 # Verification and completion of the design
 
-Part of [design draft 0.2](README.md). These are proposed obligations and tests,
-not tests already passed by an engine. Source reading, architecture reasoning,
-executable verification and physical validation establish different things.
+Part of [design draft 0.2](README.md). These are proposed requirements and tests;
+no engine has passed them. Reading source, reasoning about a design, running tests
+and comparing a physical model with experiment answer different questions.
 
-Verification consists of concrete mathematical reasoning, executable checks,
-counterexamples and measurements. Keep the supporting notes directly useful and
-revisable. Do not add certification/evidence objects, authority hierarchies,
+Use derivations, executable checks, counterexamples and measurements to find
+errors. Keep useful notes and revise them as we learn. Do not add certification/evidence objects, authority hierarchies,
 approval rituals or ADR machinery to the application or development process.
 
 ## Teeth tests
 
 For a prescription that would otherwise live in an ADR, create a substantive
-check, demonstrate that the relevant violation makes it red, then make it green
-through adherence. Keep the check so the violation can be caught again. Code
+check, show that breaking the rule makes it fail, then implement the rule and
+make it pass. Keep the check so the violation can be caught again. Code
 tests, compiler guards, static checks and executable model checks can supply
 teeth where they actually exercise the prescribed behavior. If meaningful red
 cannot be demonstrated, the statement is at best a good intention.
@@ -23,9 +22,9 @@ Examples of the intended shape, not implemented tests:
 - An ownership boundary rejects copying its owner while permitted moves work.
   Check that rejection concerns copying, not an unrelated compilation failure.
 - A no-allocation operation fails its allocation check when exercised with an
-  allocating implementation, and passes when the operation adheres.
+  allocating implementation, and passes when it stays within the limit.
 - An asynchronous lifetime test exposes premature reclamation with an operation
-  still outstanding, and passes when ownership survives through completion.
+  still outstanding, and passes when the buffer stays allocated until the work finishes.
 
 The check's scope limits what it establishes. A model check concerns its model;
 a resource check concerns the exercised path and measured resources. Do not
@@ -36,7 +35,7 @@ tests. The proposals below do not become demonstrated teeth tests by being liste
 ## Implementation cycle
 
 Work from a plan, section by section: demonstrate substantive tests red with real
-errors; implement; make those tests green through adherence; perform adversarial
+errors; implement; make those tests pass by meeting the requirement; perform adversarial
 tribunal code review; fix findings; one subagent validation; fix stragglers;
 STOP and report. A second round of review, checking or equivalent work requires
 explicit operator approval, even if substantial work remains. Do not revalidate
@@ -64,15 +63,15 @@ recovery. MPI/lifecycle models remain unimplemented; Quint has not been run.
 | Property | Precise intended statement | Necessary scope/assumptions |
 | --- | --- | --- |
 | Resource lifetime | An allocation cannot be reclaimed while any submitted operation can access it | Include foreign accesses, failure paths and event-recording failures |
-| Scientific association | An operation cannot accept data associated with a different required representation | Static lifetime/type associations where possible; checked runtime identity elsewhere |
+| Matching representations | An operation rejects arrays belonging to the wrong basis, grid or other required representation | Encode the association in types/lifetimes where possible; check identity at runtime elsewhere |
 | Collective ordering | Participating ranks initiate matching operations in the same order on a communicator | Include subgroups/overlap and earlier local failure; exclude an invented recovery guarantee after rank loss |
-| Checkpoint coherence | Every published payload belongs to the same defined method boundary | Driver supplies a coherent snapshot; external state participates where required |
+| Matching checkpoint stages | All saved fields describe the same supported pause point | Driver coordinates the snapshot, including external state where required |
 | Recorded-state restoration | Selecting a retained log point recovers its recorded state and retained history | Include parent/shared-payload dependencies; future trajectory equality is a separate, unestablished claim |
 | Branch preservation | Continuing from an earlier point leaves the previously recorded future unchanged | Branch identity and parent links persist; explicit pruning must preserve dependencies of retained points |
 | Publication | No final generation is visible as committed before all its required files succeed | Actual filesystem publication/durability assumptions are qualified |
 | Preservation | Failure while creating a new generation leaves an older committed generation unchanged | No automatic deletion in the proposed baseline; storage may itself fail |
 | Save acknowledgement | A successful save acknowledgement follows durable publication of its entry and dependencies | Visibility alone is insufficient; uncertain outcomes are recovered by entry identity |
-| Outcome fidelity | Process completion never changes the reported method outcome | Output/cleanup failure is represented separately |
+| Accurate outcome reporting | Finishing the process never changes the calculation's reported outcome | Output/cleanup failure is represented separately |
 | Result ownership | A writer/observer cannot see a field mutated while it reads it | Applies to host borrows and asynchronous device work |
 
 For a checkpoint model, let `g` identify a generation; track each writer as
@@ -98,26 +97,26 @@ prove that an SCF branch is physically desired, or attach certificates to result
 | One checkpoint shard fails | New generation stays unpublished; prior generation is preserved | Filesystem write/close/space failures |
 | Checkpoint published but hint update fails | Reader can discover valid final generation independently | Crash-point tests around publication |
 | Resume with different MPI layout | Restore logical arrays and method state under a defined mapping | Rank-count permutation tests plus numerical-path study |
-| Resume with missing history | Strict native resume fails; explicit initialization remains possible | Schema/migration and scientific split-run tests |
+| Resume with missing history | Strict native resume fails; explicit initialization remains possible | Schema/migration tests and comparisons of uninterrupted and resumed calculations |
 | Restore an older log point and continue | Recover recorded values/history and append a branch without changing the original future | Lossless storage round trips, parent/dependency checks and branch preservation tests |
 | Same coordinates reached through different histories | Distinct state remains possible; no position-only cache equivalence | Hysteretic/bias/branch-sensitive workloads |
 | External client sends unrelated next configuration | No unearned trajectory-continuity assumption | i-PI/session request tests |
 | Consumer expects additional outputs | Compatibility preparation checks support; writers expose real quantities | ASE/py4vasp full operations and partial-run cases |
 | Two runs use the same output directory | One owns the directory or both use distinct names; no file collision | Concurrent launch and stale-owner recovery tests |
-| Required output fails after science completes | Overall delivery failure with scientific result status retained | IO failure propagation through CLI/library |
+| Required output fails after computation finishes | Report delivery failure and retain the calculation outcome | IO failure propagation through CLI/library |
 | Rank disappears in a collective | Job failure; no promise of checkpointing the current state | Launcher timeout/abort tests and prior-checkpoint recovery |
 
-This is a bounded paper review of the architecture. These scenarios are not
-claimed as executed implementation tests. A later bounded history protocol model
+These scenarios were used to examine the design on paper. They have not been run
+against an implementation. A later bounded history protocol model
 checks publication/recovery under its stated abstractions. Add concrete tests with
 the corresponding implementation increment; avoid a late catch-up testing campaign.
 
-## 3. Scientific acceptance
+## 3. Checking the calculations
 
-Each subsystem expedition derives equations, domains, conventions, approximation
-choices and discriminating cases before detailed design. Its implementation plan
-pairs each operation with tests capable of rejecting a plausible scientific error.
-Test composition as well as individual routines.
+Before designing each subsystem in detail, study its equations, applicable inputs,
+conventions and approximations. Derive cases that distinguish correct results
+from plausible wrong ones. Plan tests alongside each operation, including tests
+of routines used together.
 
 The comparison set should combine:
 
@@ -129,7 +128,8 @@ The comparison set should combine:
 - VASP oracle agreement under a recorded version/build/input configuration.
 - Experimental comparisons where validating the physical model is the question.
 
-No single scalar tolerance or universal “converged” flag spans these claims.
+These comparisons need different criteria; one tolerance or “converged” flag
+cannot settle them all.
 Phase/gauge freedom, eigenvector degeneracy, metastable branches and stochastic
 trajectories require the appropriate observable or distribution comparison.
 Hysteresis is not a defect to be removed by forcing histories to agree.
@@ -144,8 +144,8 @@ complete capability coverage.
 ## 4. Execution and interface acceptance
 
 Qualify CPU serial/threaded/MPI and NVIDIA single/distributed execution for the
-scientific combinations offered. Record hardware, toolkit, compiler, MPI and
-native libraries. Compare scientific results before timing. Include data layout,
+combinations of methods offered. Record hardware, toolkit, compiler, MPI and
+native libraries. Compare results before timing. Include data layout,
 transfers, reductions, memory pressure and persistence, not just GEMM or a toy
 kernel. CPU/GPU differences are investigated rather than normalized away.
 
@@ -171,25 +171,26 @@ configuration or assert a diagram exists.
 ## 5. Proposed implementation sequence after design refinement
 
 This is a dependency order, not authorization to begin implementation in this
-turn or a scientific scope reduction.
+turn or a reduction in the intended range of calculations.
 
 1. Complete core protocol/API details and select bounded execution/storage
    experiments. Resolve actual host/FFI, MPI-thread and storage behavior.
 2. Deeply study representations, required numerics and atomic data for the first
-   scientifically meaningful calculation. Specify it and its difficult tests.
-3. Deliver a vertical native CPU calculation with its real scientific routines,
-   structured outcome, output and meaningful tests. Avoid a large empty framework.
+   calculation chosen for research use. Specify it and its difficult tests.
+3. Deliver one complete native CPU calculation: its routines, reported outcome,
+   output and tests. Avoid a large empty framework.
 4. Implement native continuation and interruption for that method, together with
    split-run and failure tests. Add MPI/NVIDIA execution and the numerical
    comparisons needed to qualify them; these are alpha work, not optional later
    optimizations.
 5. Deliver the corresponding compatibility workflow through real consumers,
    including initialization/continuation and failure cases.
-6. Expand scientific families/compositions through their focused expeditions and
-   paired design/implementation/tests; broaden both backend and workflow coverage.
+6. Add groups of routines and combinations of methods through focused studies,
+   with design, implementation and tests developed together. Broaden both backend
+   and workflow coverage.
 
-The first vertical calculation and alpha capability set still require explicit
-scientific selection. Neither this sequence nor a limited first calculation
+The first complete calculation and the methods included in alpha still need to
+be chosen for their research value. Neither this sequence nor a limited first calculation
 redefines the ambition of broad VASP parity without researcher downgrades.
 
 ## 6. Open decisions and tradeoffs
@@ -199,7 +200,7 @@ redefines the ambition of broad VASP parity without researcher downgrades.
 | Native storage and array binding | Storage operations defined; DB/container/deployment open; HDF5 remains a candidate | Mature component fit, language bindings, actual workload and storage requirements |
 | Large checkpoints | Immutable logical state with retained dependencies; physical layout open | Size, cadence, throughput and portability experiments |
 | MPI concurrency | Initializing-thread communication | Proven need for additional progress/concurrency and a safe supported MPI mode |
-| Numerical/GPU implementations | Narrow adapters, FP64 baseline, no chosen compiler/library | Scientific error and end-to-end performance comparisons |
+| Numerical/GPU implementations | Narrow adapters, FP64 baseline, no chosen compiler/library | Accuracy and end-to-end performance comparisons |
 | Cache reconstruction on resume | Family-specific decision | Demonstrated effects on finite-precision or physical continuation |
 | Native input/API details | Versioned TOML candidate and typed entry points in the selected language | Concrete user workflows and composed method requirements |
 | Compatibility baseline | Versioned 6.5.1 research anchor | User workflows, current public behavior and versioned oracle evidence |
@@ -218,8 +219,8 @@ compatibility workflows and core API details).
 
 Selected source/paper/documentation reading is recorded in the
 [study](../research/core-design-study.md), including its limits. The application
-proposal was checked against the failure scenarios above and revised where a
-coherent boundary, output ownership or cleanup path needed to be explicit.
+proposal was checked against the failure scenarios above and revised to clarify
+save points, which component writes each output, and cleanup paths.
 Local Markdown links/anchors, supplementary acquisition hashes and Git whitespace
 were checked for the initial draft. A subsequent history refinement ran the
 original finite protocol explorer: 60 reachable states, 73 transitions and 66

@@ -1,10 +1,10 @@
 # Results, persistence and continuation
 
-Part of [design draft 0.2](README.md). Persistence must preserve the meaning of
-what was calculated and the state required by the chosen continuation procedure.
-Container readability is only one requirement.
-The [calculation-history refinement](calculation-history.md) specifies the logical
-entry/branch model and separates visible publication from save acknowledgement.
+Part of [design draft 0.2](README.md). Saved results must say what was calculated.
+Continuing a calculation also requires the values and history its method needs;
+a readable file alone is not enough. [Calculation history](calculation-history.md)
+describes entries and branches, and distinguishes a save visible to readers from
+a save confirmed as durable.
 
 The physical layout and publication protocol below remain candidates for study.
 The user has left database/storage selection and deployment open. The
@@ -13,11 +13,11 @@ defines the operations we need; investigate mature components before adopting
 custom indexing or transaction machinery. The earlier filesystem sketch does
 not select the eventual persistence implementation.
 
-## 1. Result semantics
+## 1. What a result contains
 
-Drivers expose distinct views for iteration diagnostics, evaluated observables
-and continuation. Their types describe actual scientific quantities and stage,
-without attaching a generic “valid science” object.
+Drivers provide separate views for iteration diagnostics, calculated quantities
+and data needed to continue. Each names the quantities it contains and the stage
+at which they were evaluated.
 
 A result identifies its geometry, representation, model choices and evaluation
 point. Named energy components distinguish total energy, free energy and other
@@ -34,9 +34,9 @@ complete trajectory frame without their actual stage meaning.
 
 The result API represents unavailable or unevaluated quantities explicitly. An
 absent stress is not a zero tensor. A result from an exhausted iteration budget
-can be useful and inspectable while retaining that method outcome. Scientific
-completion and successful delivery of the requested files remain distinct in the
-final run summary.
+can still be useful; its reported outcome must retain the fact that the budget
+was exhausted. The final summary separately reports whether the calculation met
+its completion condition and whether the requested files were delivered.
 
 ## 2. Native storage proposal
 
@@ -63,9 +63,9 @@ pruning cannot silently break those references.
 
 ### Proposed physical storage
 
-Use a versioned native format with **HDF5 array containers** and a small readable
-index for each published generation/segment. This is a proposal pending binding,
-parallel-IO and filesystem experiments. Compatibility files use their own adapters.
+The candidate layout uses a versioned native format with **HDF5 array containers**
+and a small readable index for each completed generation/segment. It still needs
+binding, parallel-IO and filesystem experiments. Compatibility files use their own adapters.
 The generation/segment layout below is a candidate payload organization for the
 logical history. The refinement proposes parent links and complete field indexes;
 their precise byte schemas and physical layout still need specification.
@@ -97,22 +97,21 @@ run/
 
 Names are illustrative, not a final file-format specification. The summary is
 atomically replaced where the filesystem supports the required behavior. Progress
-is for observation; it is not replayed to reconstruct scientific state. A torn
+is for observation; it is not replayed to reconstruct the calculation. A torn
 last progress record does not invalidate an earlier committed checkpoint.
 
 Each committed segment is immutable. Its index gives schema version, logical
 array descriptions and file membership; checksums detect incomplete/corrupt
 payloads. Small jobs can use one HDF5 file. Large jobs use explicitly indexed
-shards or collective parallel HDF5, selected by measured IO behavior. MPI rank
-number is not a scientific array index.
+shards or collective parallel HDF5, selected by measured IO behavior. An array entry keeps its logical index regardless of which MPI rank stores it.
 Result segments use the same temporary-write, successful-close and final-name
 publication discipline as checkpoints. An actively written segment is not exposed
 as committed native output.
 
 Include the effective input, program/method/schema versions, atomic-data identity,
 precision and relevant backend settings once at useful granularity. This is
-ordinary reproducibility information and diagnostics. It does not create an
-accounting system around every calculation operation.
+information needed to interpret and compare runs; record it at useful boundaries,
+not as bookkeeping around every numerical call.
 
 Large output is streamed through bounded chunks. Writers must not gather every
 wavefunction onto rank zero. HDF5 access modes and collective metadata operations
@@ -151,7 +150,7 @@ A supported resume claim preserves the defined algorithmic state. Restoring the
 recorded values and obtaining identical future numerical trajectories are separate
 claims. The latter is not required by this design, even with unchanged execution
 settings. Any future replay proposal must first establish its purpose, equality
-criterion, scope and scientific relevance before feasibility is investigated.
+criterion, scope and use in research before feasibility is investigated.
 Statistical agreement alone cannot demonstrate that all state required for a
 particular continuation was saved.
 
@@ -171,21 +170,22 @@ particular continuation was saved.
 - External components: serialized session state or an explicit supported reset
   procedure. An external side effect that cannot be restored limits resume.
 
-This list is a prompt for each scientific expedition, not a completed universal
-checkpoint schema. A family defines its checkpoint payload at a named boundary
-and its decoder/migrations alongside the algorithm. Derived data may be omitted
+Each subsystem study must determine which of these values its methods need. This
+is not a complete checkpoint schema. Each method defines what to save and at
+which stages, with decoding and migration code kept alongside the algorithm. Derived data may be omitted
 only after establishing what reconstruction means for that resume claim.
 
 ## 4. Snapshot and publication protocol
 
-Baseline checkpointing pauses the relevant driver at a **method-defined coherent
-boundary**. It need not copy all scientific state at every step. Until another
-checkpoint is safely published, the previous committed generation is the
-recoverable state. An unexpected failure can lose work since that generation.
+Baseline checkpointing pauses the driver at a stage the method supports for
+continuation. All saved fields must match that stage: for example, positions,
+momenta and an integrator stage marker must describe the same pause point.
+A checkpoint need not be taken at every step. Until the next save succeeds, an
+unexpected failure can lose work since the previous committed checkpoint.
 
-1. The driver establishes a boundary common to all participating subsystems and
-   ranks, including required external state. It completes device/MPI operations
-   that affect the payload.
+1. The driver brings all participating subsystems and ranks to the same supported
+   save point, including external components whose state is required. It completes
+   device/MPI operations that affect the saved data.
 2. It exposes an immutable snapshot view. Synchronous serialization holds that
    view until completion. Future asynchronous serialization must either own a
    separate snapshot or retain/freeze the referenced allocations until copied.
@@ -218,15 +218,15 @@ No post-failure collective is assumed to work after rank death. In that case the
 last published generation remains the recovery candidate. A complete but not yet
 published temporary generation is not automatically promoted by the reader.
 
-A checkpoint deadline requests the next available scientific boundary. It cannot
-force a mathematically incomplete substep to masquerade as a complete state.
+A checkpoint deadline requests the next stage that supports saving. It cannot
+make an incomplete substep count as a complete step.
 Methods with extremely long steps should investigate substep checkpoints with
 explicit saved stage/history; the app cannot invent them.
 
 ## 5. Reading, migration and resource changes
 
 On read, validate schema versions, required files, dimensions, checksums and
-logical indexing before exposing scientific state. Enforce allocation-size limits
+logical indexing before returning decoded calculation data. Enforce allocation-size limits
 and checked size arithmetic. Unknown mandatory method state is an error; optional
 fields have explicit schema rules. Never deserialize executable host objects.
 
@@ -241,13 +241,13 @@ logical arrays. Saved basis ordering, phases and method state must survive. A
 fresh geometry-based reconstruction that chooses a different order or branch
 is not equivalent by default. Histories tied to a decomposition need a defined
 mapping or a declared restriction on resume. The file format should support
-repartitioning; particular scientific methods may initially restrict it.
+repartitioning; particular methods may initially restrict it.
 
 Atomic-data references include content identity and interpretation metadata.
 Portable runs can include an explicitly requested data package under its own
 terms; default output should not silently duplicate entire private data libraries.
-A resume must locate the same required data or a scientifically defined conversion,
-not pick the newest file with a matching element name.
+A resume must locate the required dataset. Using another dataset requires a
+conversion defined for that method; matching the element name is insufficient.
 
 ## 6. Outputs, restart segments and external side effects
 
@@ -264,8 +264,8 @@ to reach disk; a checkpoint may succeed while an optional plot export fails.
 The summary reports those actual outcomes. Required outputs are fixed by the
 request; the program does not downgrade them to optional after an IO failure.
 
-Scientific callbacks with external mutations complicate rollback. Prefer staged
-returns that are applied once at a method boundary. A protocol that provides only
+A callback that changes an external system makes rollback harder. Where possible,
+have it return a proposed update for the method to apply once at a specified stage. A protocol that provides only
 “send request, receive response” cannot promise exactly-once external effects
 after a crash. Do not automatically retry an ambiguous request. Stable request
 identifiers and component-supported deduplication can improve this, but must be
@@ -284,7 +284,7 @@ specified and tested for that interface.
 | New backend changes roundoff | Same decoded logical state, potentially different path | Apply the method's declared resume scope; no bitwise claim |
 
 These cases have been reasoned through on paper. Filesystem crash tests and
-method-specific split-run experiments remain required before implementation is
-accepted. The separate calculation-history refinement also includes a bounded
-executable publication/recovery model; its scope does not cover these scientific
-or filesystem experiments.
+comparisons of uninterrupted and resumed calculations remain required before
+accepting an implementation. The calculation-history page also describes a small
+executable model of publication and recovery. That model does not replace tests
+of the numerical methods or filesystem.

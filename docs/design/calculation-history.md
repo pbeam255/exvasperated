@@ -1,9 +1,9 @@
 # Append-only calculation history
 
-2026-09-25. Refinement of [results and continuation](results-and-continuation.md)
-after the user's accepted restoration commitment. This specifies proposed core
-operations and storage semantics. Exact schemas, method payloads, recording
-cadence and filesystem bindings remain subject to their focused studies.
+2026-09-25. This expands [results and continuation](results-and-continuation.md):
+what a saved entry contains, how to restore it, and how to continue on a new branch.
+Schemas, the values each method saves, recording frequency and filesystem support
+still need focused study.
 
 Draft 0.2 retains the logical restoration/branching semantics. Its physical
 file-based publication protocol is a candidate, not a storage or deployment
@@ -11,19 +11,19 @@ decision. The [core storage boundary](core-structure.md#5-storage-responsibiliti
 leaves database and array-container choices open. The model in section 7 concerns
 the earlier abstract file-publication candidate, not an eventual DB implementation.
 
-## 1. What the history owns
+## 1. What the history stores
 
 Selecting a retained point recovers the state recorded there, including its
 retained history. Continuing appends a branch without modifying the original
 future. This operation establishes neither physical reversibility nor identical
-future numerical execution. The scientific method determines whether those saved
+future numerical execution. The calculation method determines whether those saved
 contents suffice for the requested continuation.
 
-The history holds the persistent calculation state. During computation the driver
-owns mutable working state in host/device memory. A completed append establishes
-a new persistent point; work after that point can be lost on failure. Persistence
-does not require every arithmetic operation to allocate an immutable object or
-write an event. Scientific control flow remains ordinary method code.
+The archive stores saved values and history. The running driver updates its
+working arrays in CPU/GPU memory. A completed save adds a new point to the archive;
+later work can be lost on failure. The driver still uses ordinary loops and
+function calls. It need not allocate an immutable object or write an event for
+each arithmetic operation.
 
 Printed progress and selected observables are readable views of a calculation.
 Their presence alone does not imply that the full method state was recorded.
@@ -45,8 +45,9 @@ time reversal, an inverse numerical operation, or a proof that two paths agree.
 
 ## 2. Entries and payloads
 
-Use a small versioned entry manifest with references to immutable array blocks.
-HDF5 remains the candidate block container; entry semantics do not depend on it.
+The proposed entry uses a small versioned manifest: a description of the saved
+fields and references to immutable array blocks. HDF5 is a candidate container
+for those blocks; what an entry means does not depend on that choice.
 The archive can be physically segmented and distributed across writer shards.
 It need not be one ever-growing file or funnel all arrays through one rank.
 
@@ -58,11 +59,11 @@ It need not be one ever-growing file or funnel all arrays through one rank.
 | Method and schema versions | Select the concrete decoder and stage interpretation |
 | Resolved model, controls, representation and atomic-data references | Establish the context of the saved state |
 | Method stage and counters | Describe where the driver paused; counters have method-defined meaning |
-| Method-owned state records | Explicit scalar values, histories and named array references |
+| Method records | Explicit scalar values, histories and named array references |
 | Payload index | Shapes, scalar encoding, axes, logical extents, byte locations and integrity information |
 
 Immutable configuration/data descriptions can be shared by reference. A changed
-configuration has a new reference and the method's explicit change operation.
+configuration gets a new reference through the method's explicit change operation.
 The record does not need a copy of every static input at each iteration. Required
 external atomic data must remain locatable by content identity; a portable export
 must explicitly include permitted data or declare its external prerequisites.
@@ -70,21 +71,22 @@ must explicitly include permitted data or declare its external prerequisites.
 Observation entries contain the actual quantities and their evaluation stage.
 An association with a nearby saved state is labelled as such; it does not imply
 that the observation was evaluated on exactly that state's fields. Run outcomes
-are separate appendable records so delivery failures do not overwrite a saved
-scientific state. These are ordinary file records, not a scientific certification
-registry. Domain constructors decide whether data can form the requested object.
+are appended separately, so a delivery failure does not overwrite saved calculation
+values. When preparing to continue, the method's constructor checks whether the
+saved data meets its requirements.
 
 ### A complete field index, with shared immutable blocks
 
 Proposed baseline: each saved state has a complete index of its recorded fields.
-Loading it reads that index and the referenced blocks. It does not require replaying
-scientific operations or traversing an unbounded chain of arithmetic deltas.
+Loading reads the index and referenced blocks. It does not rerun the calculation
+or follow an unbounded chain of arithmetic differences between saved points.
 The manifest may reference hierarchical index blocks to bound metadata size.
 
 Unchanged blocks can be referenced again; changed blocks get new storage. Reuse
 requires established immutability or verified exact encoding equality. Equal
 shapes, nearby values or the same physical observable do not establish equality
-of saved state. A checksum is an integrity aid, not a scientific equivalence test.
+of saved state. A checksum helps detect damaged bytes; it cannot decide whether two differently
+represented states are physically equivalent.
 Lossless encodings preserve recorded scalar representations; reduced-precision
 exports have distinct semantics. Arithmetic subtraction/addition of floating-point
 deltas is not assumed to be an exact storage codec.
@@ -101,13 +103,14 @@ necessary even if the entry that first wrote it is not an immediate parent.
 If an ancestry manifest is lost but a point's own complete field index and
 required blocks survive, restoration of those recorded values can still succeed.
 Report the ancestry gap separately. Missing data actually required by the method
-is a different failure; file genealogy does not decide scientific sufficiency.
+is a different failure. An intact chain of parent links does not show that the
+method has everything it needs to continue.
 
 ## 3. Operations available to callers
 
 | Operation | Result and responsibility |
 | --- | --- |
-| List/inspect | Read branch ancestry, recorded stages and selected quantities without running science |
+| List/inspect | Read branch ancestry, recorded stages and selected quantities without running a calculation |
 | Restore | Decode a specified point's recorded values/history into an immutable method record |
 | Continue | Let the selected method construct its session from that record, then append a new branch |
 | Initialize from | Explicitly select quantities from a prior point to construct a new calculation |
@@ -122,22 +125,22 @@ not a substitute for the concrete method decoder and constructor.
 
 Restoration itself performs decoding, integrity checks and data movement. Building
 operators, evaluating forces, regenerating an omitted cache or starting an
-external provider occurs during explicit continuation preparation. Any scientific
-transformation produces a new record with the transformation identified; it does
-not rewrite the old entry and call it the original state.
+external provider happens during preparation to continue. A transformation such
+as basis projection produces a new record naming the transformation. It does not
+rewrite the old entry and call it the original state.
 
 For an exact record restoration, encoding conversion must preserve the represented
 scalar bits, array ordering and stage meaning. If a consumer needs normalization,
 projection, lossy conversion or a semantic migration, expose that as a separate
 operation. Allocation addresses, device handles and MPI resources are recreated;
-they are not persisted scientific state.
+they are not saved calculation values.
 
 ### Branch identity and selection
 
 Every resumed execution session receives a new branch identifier and an explicit
 source entry. The first successfully saved state on that branch names the source
 as parent. Later states name their predecessor. A failed preparation may produce
-an attempt/outcome record without inventing a new scientific state.
+an attempt/outcome record without inventing a new calculation state.
 
 Entry identifiers include archive/session identity and an append sequence. Numeric
 steps and timestamps are descriptive fields; neither uniquely identifies a state.
@@ -151,29 +154,31 @@ qualified coordination protocol; the directory lock is not silently weakened.
 Separate archives can support independent concurrent jobs after explicit export
 or initialization with their declared data dependencies.
 
-There is no archive-wide scientific "latest" once branches exist. A caller chooses
+Once branches exist, an archive-wide “latest” cannot identify the caller's
+intended continuation. A caller chooses
 an entry or a branch. A branch-head hint accelerates lookup; immutable parent links
 establish the history. If recovery discovers competing tips for a purportedly
-linear branch, report the ambiguity instead of choosing by timestamp. Scientific
+linear branch, report the ambiguity instead of choosing by timestamp. Calculation
 states have no generic merge operation. A method that combines prior results
 constructs a new calculation with multiple explicit source references.
 
 ## 4. From working state to a recorded point
 
-The method exposes a snapshot at a stage it understands. A coupled driver owns
-the coordination of its child states; independently saving the newest child
-objects does not establish a coherent composite state. MPI/device operations
-affecting the snapshot must finish before their bytes are serialized.
+Each method defines the stages at which it can provide a snapshot. A driver
+coupling several methods must save their values at matching stages. Saving the
+latest available data from each child independently may mix different stages.
+MPI/device operations affecting the snapshot must finish before its bytes are
+written.
 
 The initial implementation holds a read-only snapshot while serialization runs.
 This may pause the relevant driver. An asynchronous version must own an independent
 snapshot or freeze every referenced allocation until copied. Merely handing an IO
-worker pointers to mutable solver memory is insufficient. The snapshot contains
-domain serialization views, not an application-wide bag of mutable fields.
+worker pointers to solver memory that is still changing is insufficient. Each
+method exposes the named values and arrays to save through its own interface.
 
-The core transports those views. It neither classifies history as disposable nor
-derives a universal step boundary. Saving an intermediate stage is supported only
-when its method defines the corresponding record and continuation constructor.
+The core passes those views to storage. Each method decides what history it needs
+and where it can pause. An intermediate stage can be saved for continuation only
+when the method defines both its record and how to resume from it.
 
 Recording policy separately specifies observations and saved method states.
 Proposed controls select supported method boundaries and a cadence, with explicit
@@ -183,7 +188,7 @@ Storage/memory estimates include snapshot buffers and pending writes. If a requi
 save cannot complete, report failure and retain prior points. Changing requested
 cadence or dropping required fields to relieve pressure requires an explicit policy.
 
-No scientific workload or cadence has been selected here. Their IO cost and useful
+No workload or recording frequency has been selected here. Their IO cost and useful
 rewind granularity need measurement with actual method payloads.
 
 ## 5. Publication, acknowledgement and recovery
@@ -254,7 +259,7 @@ provider state or undo an action outside the archive. An unresolved external
 request remains unresolved until its protocol establishes what happened.
 
 Compatibility files are exports of selected native quantities/state or directly
-requested outputs with the same scientific meanings. Their legacy append rules
+requested outputs with the same quantity definitions and units. Their legacy append rules
 cannot mutate the native history. Exported VASP restart files may
 carry less history than the native method record; document that specific limit.
 
@@ -283,9 +288,9 @@ uncertain publication, and two saved entries with a stale branch hint. All state
 bounded checks pass. These counts describe this small model only.
 
 This is not an implementation test, filesystem simulation, proof for arbitrary
-history sizes, or scientific continuation validation. It abstracts away payload
+history sizes, or a test that a numerical method can continue correctly. It abstracts away payload
 bytes, checksums, torn writes, MPI communication, live-reader synchronization,
 multiple archive writers, repeated recovery and pruning. Those remain under
 `exv-0ex`, `exv-w0s` and `exv-mqh`; method payload sufficiency remains under the
-focused scientific expeditions. The model makes the publication/acknowledgement
+focused subsystem studies. The model makes the publication/acknowledgement
 distinction inspectable without claiming deterministic physical or numerical replay.
