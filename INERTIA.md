@@ -69,8 +69,19 @@ On 2026-09-25 the user requested an outline of the core program and scientific
 routine buckets to guide the next literature and reference expedition. The
 [working outline](docs/research/core-program-outline.md) defines that research
 scope from the studies and the composition boundary above. It is a provisional
-division of responsibilities; detailed architecture, the broad expedition and
-implementation remain subsequent work.
+division of responsibilities; detailed architecture and implementation remain
+subsequent work. The user then authorized the broad literature and reference
+acquisition expedition, recorded in the
+[campaign reports](docs/research/reference-campaign/README.md).
+
+The user further clarified on 2026-09-25: this broad pass can inform the overall
+design, but **each individual subsystem requires a focused, deep expedition and
+scientific re-grounding before its detailed design and implementation**. Revisit
+the equations and their assumptions, corrections to the literature, numerical
+methods, reference implementations, interactions and difficult cases for the
+specific subsystem being undertaken. Acquiring references or mentioning a
+subsystem in the broad survey does not discharge this work. Re-grounding remains
+iterative: related studies and experiments may expose reasons to return.
 
 On 2026-09-24 the user established the following project sequence after the
 orientation. The source-study order organizes the first stage of this sequence.

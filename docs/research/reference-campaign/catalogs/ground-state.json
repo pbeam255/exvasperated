@@ -1,0 +1,1126 @@
+{
+  "area": "ground-state",
+  "retrieved_on": "2026-09-25",
+  "scope": "Broad acquisition for overall design; each subsystem requires a focused deep expedition and scientific regrounding before detailed design or implementation.",
+  "records": [
+    {
+      "id": "ground-paw-review",
+      "kind": "paper",
+      "title": "The Projector Augmented Wave Method: ab-initio molecular dynamics with full wave functions",
+      "authors": [
+        "Blöchl, Peter E.",
+        "Först, Clemens J.",
+        "Schimpl, Johannes"
+      ],
+      "year": 2002,
+      "canonical_url": "https://arxiv.org/abs/cond-mat/0201015",
+      "doi": null,
+      "buckets": [
+        3,
+        8
+      ],
+      "purpose": "Establish PAW transformation, generalized overlap and the relation of energy approximations to derivatives.",
+      "inspection": "Abstract/introduction, transformation passage and section 6 approximation/force discussion; equations not independently derived.",
+      "license": "arXiv distribution license linked on record; not an open downstream reuse grant.",
+      "license_url": "http://arxiv.org/licenses/assumed-1991-2003/",
+      "version": "cond-mat/0201015v2",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/paw-review.pdf",
+          "url": "https://arxiv.org/pdf/cond-mat/0201015",
+          "sha256": "c77d569072b3ce7f83b8002dfd1989120db33a05b257c7950c153e4dc5197ece",
+          "bytes": 471295,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-gpaw-paw",
+      "kind": "paper",
+      "title": "A real-space grid implementation of the Projector Augmented Wave method",
+      "authors": [
+        "Mortensen, J. J.",
+        "Hansen, L. B.",
+        "Jacobsen, K. W."
+      ],
+      "year": 2004,
+      "canonical_url": "https://arxiv.org/abs/cond-mat/0411218",
+      "doi": "10.1103/PhysRevB.71.035109",
+      "buckets": [
+        2,
+        3,
+        4,
+        7,
+        8
+      ],
+      "purpose": "Obtain a discretization-independent PAW comparison using a real-space grid implementation.",
+      "inspection": "Abstract/introduction, projector duality passage and grid translation/force-error discussion; full force derivation remains unread.",
+      "license": "arXiv distribution license linked on record; not an open downstream reuse grant.",
+      "license_url": "http://arxiv.org/licenses/assumed-1991-2003/",
+      "version": "cond-mat/0411218v1",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/gpaw-paw.pdf",
+          "url": "https://arxiv.org/pdf/cond-mat/0411218",
+          "sha256": "49f9163d6c4926ab3f559ab569e65215735766ef19aef60ede81be03218f0e70",
+          "bytes": 263159,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-magnetic-symmetry",
+      "kind": "paper",
+      "title": "Algorithms for magnetic symmetry operation search and identification of magnetic space group from magnetic crystal structure",
+      "authors": [
+        "Shinohara, Kohei",
+        "Togo, Atsushi",
+        "Tanaka, Isao"
+      ],
+      "year": 2022,
+      "canonical_url": "https://arxiv.org/abs/2211.15008",
+      "doi": null,
+      "buckets": [
+        2,
+        5
+      ],
+      "purpose": "Separate magnetic symmetry action from geometry-only symmetry and inspect physical units of tolerances.",
+      "inspection": "Abstract, axial-vector/time-reversal action and coordinate/moment tolerance equations; identification algorithm not rederived.",
+      "license": "CC BY 4.0 (arXiv record)",
+      "license_url": "http://creativecommons.org/licenses/by/4.0/",
+      "version": "2211.15008v2",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/magnetic-symmetry.pdf",
+          "url": "https://arxiv.org/pdf/2211.15008",
+          "sha256": "dac0a482686bcfc02c284348b8fc19ddb40da99892a6564dd6be5bfe0780992a",
+          "bytes": 2667579,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-jth",
+      "kind": "paper",
+      "title": "Generation of Projector Augmented-Wave atomic data: a 71 elements validated table in the XML format",
+      "authors": [
+        "Jollet, François",
+        "Torrent, Marc",
+        "Holzwarth, Natalie"
+      ],
+      "year": 2013,
+      "canonical_url": "https://arxiv.org/abs/1309.7274",
+      "doi": "10.1016/j.cpc.2013.12.023",
+      "buckets": [
+        3,
+        8
+      ],
+      "purpose": "Study independent dataset generation, partial-wave construction and transferability tests.",
+      "inspection": "Abstract/introduction and selected partial-wave/radial construction passages; full generator and transferability analysis deferred.",
+      "license": "arXiv distribution license linked on record; not an open downstream reuse grant.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1309.7274v2",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/jth.pdf",
+          "url": "https://arxiv.org/pdf/1309.7274",
+          "sha256": "b33c99a30a159df0f4f5de70e6f59607c6a77f140909c3a69996e9de3daa049c",
+          "bytes": 235364,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-sssp",
+      "kind": "paper",
+      "title": "Precision and efficiency in solid-state pseudopotential calculations",
+      "authors": [
+        "Prandini, Gianluca",
+        "Marrazzo, Antimo",
+        "Castelli, Ivano E.",
+        "Mounet, Nicolas",
+        "Marzari, Nicola"
+      ],
+      "year": 2018,
+      "canonical_url": "https://arxiv.org/abs/1806.05609",
+      "doi": "10.1038/s41524-018-0127-2",
+      "buckets": [
+        3,
+        7,
+        8
+      ],
+      "purpose": "Find observable-specific pseudopotential convergence tests beyond a total-energy comparison.",
+      "inspection": "Abstract, verification/validation distinction, protocol and cutoff/convergence passages for phonons, bands, cohesive energy and pressure; supplementary results not audited.",
+      "license": "CC BY 4.0 (arXiv record)",
+      "license_url": "http://creativecommons.org/licenses/by/4.0/",
+      "version": "1806.05609v2",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/sssp.pdf",
+          "url": "https://arxiv.org/pdf/1806.05609",
+          "sha256": "5cabc618e321af1ae9590966321055e81b27c7d972a9c6f93a436be3e30be8ed",
+          "bytes": 3088447,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-verification",
+      "kind": "paper",
+      "title": "How to verify the precision of density-functional-theory implementations via reproducible and universal workflows",
+      "authors": [
+        "Bosoni, Emanuele",
+        "Beal, Louis",
+        "Bercx, Marnik",
+        "Blaha, Peter",
+        "Blügel, Stefan",
+        "Bröder, Jens",
+        "Callsen, Martin",
+        "Cottenier, Stefaan",
+        "Degomme, Augustin",
+        "Dikan, Vladimir",
+        "Eimre, Kristjan",
+        "Flage-Larsen, Espen",
+        "Fornari, Marco",
+        "Garcia, Alberto",
+        "Genovese, Luigi",
+        "Giantomassi, Matteo",
+        "Huber, Sebastiaan P.",
+        "Janssen, Henning",
+        "Kastlunger, Georg",
+        "Krack, Matthias",
+        "Kresse, Georg",
+        "Kühne, Thomas D.",
+        "Lejaeghere, Kurt",
+        "Madsen, Georg K. H.",
+        "Marsman, Martijn",
+        "Marzari, Nicola",
+        "Michalicek, Gregor",
+        "Mirhosseini, Hossein",
+        "Müller, Tiziano M. A.",
+        "Petretto, Guido",
+        "Pickard, Chris J.",
+        "Poncé, Samuel",
+        "Rignanese, Gian-Marco",
+        "Rubel, Oleg",
+        "Ruh, Thomas",
+        "Sluydts, Michael",
+        "Vanpoucke, Danny E. P.",
+        "Vijay, Sudarshan",
+        "Wolloch, Michael",
+        "Wortmann, Daniel",
+        "Yakutovich, Aliaksandr V.",
+        "Yu, Jusong",
+        "Zadoks, Austin",
+        "Zhu, Bonan",
+        "Pizzi, Giovanni"
+      ],
+      "year": 2023,
+      "canonical_url": "https://arxiv.org/abs/2305.17274",
+      "doi": "10.1038/s42254-023-00655-3",
+      "buckets": [
+        2,
+        3,
+        7,
+        8
+      ],
+      "purpose": "Establish independent all-electron equation-of-state references and limits on reusing their agreement.",
+      "inspection": "Abstract, key points and dataset/method-comparison passages, including matched smearing/sampling and magnetic/relativistic gaps; 960 raw datasets not acquired.",
+      "license": "CC BY 4.0 (arXiv record)",
+      "license_url": "http://creativecommons.org/licenses/by/4.0/",
+      "version": "2305.17274v1",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/verification.pdf",
+          "url": "https://arxiv.org/pdf/2305.17274",
+          "sha256": "df2e808975813055ed21d70e3914a14c6a4948fcacfa9efe753bb188b9d0336f",
+          "bytes": 10882149,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-scf",
+      "kind": "paper",
+      "title": "Computing the Self-Consistent Field in Kohn-Sham Density Functional Theory",
+      "authors": [
+        "Woods, Nick",
+        "Hasnip, Phil",
+        "Payne, Mike"
+      ],
+      "year": 2019,
+      "canonical_url": "https://arxiv.org/abs/1905.02332",
+      "doi": "10.1088/1361-648X/ab31c0",
+      "buckets": [
+        7
+      ],
+      "purpose": "Investigate convergence robustness, ill-conditioning, initial guesses and nonlinear solver benchmarking.",
+      "inspection": "Abstract/introduction, contents and selected local-minimum/charge-sloshing/benchmark discussion; algorithm derivations and test suite not audited.",
+      "license": "arXiv distribution license linked on record; not an open downstream reuse grant.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1905.02332v2",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/scf.pdf",
+          "url": "https://arxiv.org/pdf/1905.02332",
+          "sha256": "2a839530765ec8fe7dbaa9a65f4df1a99c81425cb1866fcb16625eb7a8a9da05",
+          "bytes": 3050832,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-coulomb",
+      "kind": "paper",
+      "title": "Truncation of Periodic Image Interactions for Confined Systems",
+      "authors": [
+        "Ismail-Beigi, Sohrab"
+      ],
+      "year": 2006,
+      "canonical_url": "https://arxiv.org/abs/cond-mat/0603448",
+      "doi": "10.1103/PhysRevB.73.233103",
+      "buckets": [
+        4,
+        6
+      ],
+      "purpose": "Relate truncated Coulomb kernels and long-wavelength treatment to physical confinement geometry.",
+      "inspection": "Abstract and periodic-image/kernel motivation and sheet passages; limiting integrals and derivatives not rederived.",
+      "license": "arXiv distribution license linked on record; not an open downstream reuse grant.",
+      "license_url": "http://arxiv.org/licenses/assumed-1991-2003/",
+      "version": "cond-mat/0603448v1",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/coulomb.pdf",
+          "url": "https://arxiv.org/pdf/cond-mat/0603448",
+          "sha256": "bb16e9cc1c79637f01d5c2af21d9443ae594f8c2690053a283aae9e52fb896f5",
+          "bytes": 122954,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-r2scan",
+      "kind": "paper",
+      "title": "Accurate and numerically efficient r$^2$SCAN meta-generalized gradient approximation",
+      "authors": [
+        "Furness, James W.",
+        "Kaplan, Aaron D.",
+        "Ning, Jinliang",
+        "Perdew, John P.",
+        "Sun, Jianwei"
+      ],
+      "year": 2020,
+      "canonical_url": "https://arxiv.org/abs/2008.03374",
+      "doi": null,
+      "buckets": [
+        5,
+        8
+      ],
+      "purpose": "Study how regularization changes numerical behavior and exact-constraint adherence.",
+      "inspection": "Abstract/introduction and selected regularization/kinetic-density discussion; supplemental formulas and derivative consistency not audited.",
+      "license": "arXiv distribution license linked on record; not an open downstream reuse grant.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "2008.03374v2",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/r2scan.pdf",
+          "url": "https://arxiv.org/pdf/2008.03374",
+          "sha256": "40241d976c6686486e3c169ae88af7f9bbf4470a19bc00fedfad8a7535c4cdf8",
+          "bytes": 747801,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-libxc-paper",
+      "kind": "paper",
+      "title": "Libxc: a library of exchange and correlation functionals for density functional theory",
+      "authors": [
+        "Marques, Miguel A. L.",
+        "Oliveira, Micael J. T.",
+        "Burnus, Tobias"
+      ],
+      "year": 2012,
+      "canonical_url": "https://arxiv.org/abs/1203.1739",
+      "doi": "10.1016/j.cpc.2012.05.007",
+      "buckets": [
+        5,
+        10
+      ],
+      "purpose": "Identify the distinction between energy evaluation, potential and higher response derivatives.",
+      "inspection": "Abstract/opening and derivative hierarchy/GGA potential passage; this 2012 paper is not evidence of current API coverage or license.",
+      "license": "arXiv distribution license linked on record; not an open downstream reuse grant.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1203.1739v2",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/libxc-paper.pdf",
+          "url": "https://arxiv.org/pdf/1203.1739",
+          "sha256": "cd22b8464ab54d7e88f7e5d3d138aec1ea2761b6e5c2d8dc5d9be1a559518e62",
+          "bytes": 258017,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-ad-dfpt",
+      "kind": "paper",
+      "title": "Algorithmic differentiation for plane-wave DFT: materials design, error control and learning model parameters",
+      "authors": [
+        "Schmitz, Niklas Frederik",
+        "Ploumhans, Bruno",
+        "Herbst, Michael F."
+      ],
+      "year": 2025,
+      "canonical_url": "https://arxiv.org/abs/2509.07785",
+      "doi": "10.1038/s41524-025-01880-3",
+      "buckets": [
+        7,
+        8,
+        10
+      ],
+      "purpose": "Investigate independent derivative construction through algorithmic differentiation combined with electronic response.",
+      "inspection": "Abstract, explicit/implicit derivative discussion and nested differentiation of structural optimization; branch and regularity assumptions still need focused review.",
+      "license": "CC BY 4.0 (arXiv record)",
+      "license_url": "http://creativecommons.org/licenses/by/4.0/",
+      "version": "2509.07785v2",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/ad-dfpt.pdf",
+          "url": "https://arxiv.org/pdf/2509.07785",
+          "sha256": "eb0cca3575f92e8f7f8a75efbe4c8972923824733d1233dcb0fb9163660b48d4",
+          "bytes": 1562823,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-cold-smearing",
+      "kind": "paper",
+      "title": "Thermal Contraction and Disordering of the Al(110) Surface",
+      "authors": [
+        "Marzari, Nicola",
+        "Vanderbilt, David",
+        "De Vita, Alessandro",
+        "Payne, M. C."
+      ],
+      "year": 1999,
+      "canonical_url": "https://arxiv.org/abs/cond-mat/9903147",
+      "doi": "10.1103/PhysRevLett.82.3296",
+      "buckets": [
+        7,
+        8,
+        9
+      ],
+      "purpose": "Connect metallic occupation broadening to energy derivatives and an actual Al surface workload.",
+      "inspection": "Abstract and cold-smearing motivation/formula discussion, including moment conditions, occupancy positivity and free-energy derivatives; dynamics results not audited.",
+      "license": "Copyright 1999 American Physical Society; author-hosted publisher PDF, no open reuse grant inspected.",
+      "license_url": "https://www.physics.rutgers.edu/~dhv/pubs/local_copy/nm_al110.pdf",
+      "version": "Published PRL 82, 3296 (1999); author-hosted PDF",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/cold-smearing.pdf",
+          "url": "https://www.physics.rutgers.edu/~dhv/pubs/local_copy/nm_al110.pdf",
+          "sha256": "816e0194bc02e726d42d229f9781ce8bd7edbb4a1c0bbe7273c8bd8a358e7999",
+          "bytes": 449560,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-pbe",
+      "kind": "paper",
+      "title": "Generalized Gradient Approximation Made Simple",
+      "authors": [
+        "John P. Perdew",
+        "Kieron Burke",
+        "Matthias Ernzerhof"
+      ],
+      "year": 1996,
+      "canonical_url": "https://doi.org/10.1103/PhysRevLett.77.3865",
+      "doi": "10.1103/PhysRevLett.77.3865",
+      "buckets": [
+        5
+      ],
+      "purpose": "Recover the original GGA constraints and construction before choosing an implementation.",
+      "inspection": "Abstract and opening functional/constraint discussion; full formulas and 1997 erratum require focused study.",
+      "license": "Copyright American Physical Society; author-hosted PDF. No open reuse grant inspected.",
+      "license_url": "https://dft.uci.edu/pubs/PBE97.pdf",
+      "version": "Author-hosted publication PDF",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/pbe.pdf",
+          "url": "https://dft.uci.edu/pubs/PBE97.pdf",
+          "sha256": "fa60ddfeb4bc6c2eebc5037cf04dcc802bb6757e98fedcfc0129029fa8dbee91",
+          "bytes": 154271,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-ace",
+      "kind": "paper",
+      "title": "Adaptively Compressed Exchange Operator",
+      "authors": [
+        "Lin Lin"
+      ],
+      "year": 2016,
+      "canonical_url": "https://doi.org/10.1021/acs.jctc.6b00092",
+      "doi": "10.1021/acs.jctc.6b00092",
+      "buckets": [
+        6,
+        7
+      ],
+      "purpose": "Understand exact action on a construction subspace and the required adaptive operator updates.",
+      "inspection": "Abstract and occupied-subspace/adaptive construction motivation; decomposition derivation and convergence behavior not audited.",
+      "license": "Copyright 2016 American Chemical Society; author-hosted publisher PDF. No open reuse grant inspected.",
+      "license_url": "https://math.berkeley.edu/~linlin/publications/ACE.pdf",
+      "version": "Author-hosted publication PDF",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/ace.pdf",
+          "url": "https://math.berkeley.edu/~linlin/publications/ACE.pdf",
+          "sha256": "89571065e8e99386bbb15d2e7955e09cd859bcd13d89f36aab55a0e70026f96d",
+          "bytes": 924108,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-paw-formalism",
+      "kind": "paper",
+      "title": "Electronic structure packages: Two implementations of the projector augmented wave (PAW) formalism",
+      "authors": [
+        "Marc Torrent",
+        "N. A. W. Holzwarth",
+        "François Jollet",
+        "David Harris",
+        "Nicholas Lepley",
+        "Xiao Xu"
+      ],
+      "year": 2010,
+      "canonical_url": "https://users.wfu.edu/natalie/papers/PAWform/PAWformman.sdarticle.pdf",
+      "doi": null,
+      "buckets": [
+        3,
+        5,
+        8
+      ],
+      "purpose": "Investigate differences between PAW formulations, particularly compensation charge in XC.",
+      "inspection": "Abstract/introduction and compensation-density formula discussion; numerical examples not reproduced.",
+      "license": "Copyright 2010 Elsevier B.V., all rights reserved, printed in PDF.",
+      "license_url": "https://users.wfu.edu/natalie/papers/PAWform/PAWformman.sdarticle.pdf",
+      "version": "Author-hosted publication PDF",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/paw-formalism.pdf",
+          "url": "https://users.wfu.edu/natalie/papers/PAWform/PAWformman.sdarticle.pdf",
+          "sha256": "a36ecbbbcbb5e8c936a261e5b03d2bfe5cacff07ea8b00677f1742e7964da6b7",
+          "bytes": 478242,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-paw-correction",
+      "kind": "paper",
+      "title": "Updated comments on projector augmented wave (PAW) implementations within various electronic structure code packages",
+      "authors": [
+        "N. A. W. Holzwarth"
+      ],
+      "year": 2019,
+      "canonical_url": "https://doi.org/10.1016/j.cpc.2019.05.009",
+      "doi": "10.1016/j.cpc.2019.05.009",
+      "buckets": [
+        3,
+        5,
+        8
+      ],
+      "purpose": "Investigate unphysical density arguments and dataset-level remedies in modified PAW XC formulations.",
+      "inspection": "Abstract/introduction and negative-density/remedy discussion; remedy and convergence effects not independently evaluated.",
+      "license": "Copyright 2019 Elsevier B.V., all rights reserved, printed in PDF.",
+      "license_url": "https://users.wfu.edu/natalie/papers/Corrman/Corrman.pdf",
+      "version": "Author-hosted publication PDF",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/paw-correction.pdf",
+          "url": "https://users.wfu.edu/natalie/papers/Corrman/Corrman.pdf",
+          "sha256": "69eb922de87a9cfce9dfe396e5f787891c2309672ed5f60703352e41ee2f293f",
+          "bytes": 979354,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-jth-v2-validation",
+      "kind": "documentation",
+      "title": "Validation of the JTH-v2.0 PAW Dataset for ABINIT",
+      "authors": [
+        "François Jollet",
+        "Marc Torrent",
+        "Natalie Holzwarth"
+      ],
+      "year": 2025,
+      "canonical_url": "https://www.abinit.org/atomic_data/paw/ATOMICDATA/JTH-PBE-v2.0.pdf",
+      "doi": null,
+      "buckets": [
+        3,
+        5,
+        7,
+        8
+      ],
+      "purpose": "Capture current dataset changes affecting overlap positivity, XC density domains and radial resolution.",
+      "inspection": "Section I changes and section II equation-of-state protocol; detailed element tables not audited.",
+      "license": "No explicit document reuse license identified in inspected text; dataset repository terms are recorded separately.",
+      "license_url": "https://www.abinit.org/atomic_data/paw/ATOMICDATA/JTH-PBE-v2.0.pdf",
+      "version": "JTH v2.0, report dated 2025-11-28",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired for local research only; not incorporated into project source or release.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/ground-state/jth-v2-validation.pdf",
+          "url": "https://www.abinit.org/atomic_data/paw/ATOMICDATA/JTH-PBE-v2.0.pdf",
+          "sha256": "48ad5861de35da5ec7ee35cbf834677b76655b409c7bc2ad1428b62ca934cce1",
+          "bytes": 352888,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "ground-blochl-1994",
+      "kind": "paper",
+      "title": "Projector augmented-wave method",
+      "authors": [
+        "Peter E. Blöchl"
+      ],
+      "year": 1994,
+      "canonical_url": "https://doi.org/10.1103/PhysRevB.50.17953",
+      "doi": "10.1103/PhysRevB.50.17953",
+      "buckets": [
+        3,
+        8
+      ],
+      "purpose": "Original PAW derivation and operator/energy definitions.",
+      "inspection": "Metadata/abstract only; full derivation unread.",
+      "license": "Publisher copyright; no open grant established.",
+      "license_url": null,
+      "version": null,
+      "acquisition_status": "metadata-only",
+      "access_note": "Publisher DOI fetch timed out; IBM author publication abstract identified. Later author PAW review acquired; original full text remains to acquire.",
+      "assets": []
+    },
+    {
+      "id": "ground-kresse-joubert",
+      "kind": "paper",
+      "title": "From ultrasoft pseudopotentials to the projector augmented-wave method",
+      "authors": [
+        "Georg Kresse",
+        "Daniel Joubert"
+      ],
+      "year": 1999,
+      "canonical_url": "https://doi.org/10.1103/PhysRevB.59.1758",
+      "doi": "10.1103/PhysRevB.59.1758",
+      "buckets": [
+        3,
+        5,
+        8
+      ],
+      "purpose": "Public derivation of modified PAW functional, Hamiltonian, forces and stress.",
+      "inspection": "Metadata/abstract only; full derivation unread.",
+      "license": "Publisher copyright; no open grant established.",
+      "license_url": null,
+      "version": null,
+      "acquisition_status": "metadata-only",
+      "access_note": "Publisher abstract read; page explicitly requires authorization for full content. No accessible author copy found in bounded search.",
+      "assets": []
+    },
+    {
+      "id": "ground-monkhorst-pack",
+      "kind": "paper",
+      "title": "Special points for Brillouin-zone integrations",
+      "authors": [
+        "Hendrik J. Monkhorst",
+        "James D. Pack"
+      ],
+      "year": 1976,
+      "canonical_url": "https://doi.org/10.1103/PhysRevB.13.5188",
+      "doi": "10.1103/PhysRevB.13.5188",
+      "buckets": [
+        2,
+        7
+      ],
+      "purpose": "Original reciprocal-space integration construction and assumptions.",
+      "inspection": "Metadata/abstract only; full derivation unread.",
+      "license": "Publisher copyright; no open grant established.",
+      "license_url": null,
+      "version": null,
+      "acquisition_status": "metadata-only",
+      "access_note": "Publisher abstract read; full text not acquired in this bounded pass.",
+      "assets": []
+    },
+    {
+      "id": "ground-nielsen-martin",
+      "kind": "paper",
+      "title": "First-Principles Calculation of Stress",
+      "authors": [
+        "O. H. Nielsen",
+        "Richard M. Martin"
+      ],
+      "year": 1983,
+      "canonical_url": "https://doi.org/10.1103/PhysRevLett.50.697",
+      "doi": "10.1103/PhysRevLett.50.697",
+      "buckets": [
+        8
+      ],
+      "purpose": "Original stress theorem as a starting point for cell derivatives and conventions.",
+      "inspection": "Metadata/abstract only; full derivation unread.",
+      "license": "Publisher copyright; no open grant established.",
+      "license_url": null,
+      "version": null,
+      "acquisition_status": "metadata-only",
+      "access_note": "Publisher abstract and author publication listing read; DOI fetch unsuccessful and full text not acquired. Author lecture slides identified but not substituted for paper.",
+      "assets": []
+    },
+    {
+      "id": "ground-dftk",
+      "kind": "implementation",
+      "title": "DFTK: Density-functional toolkit",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/JuliaMolSim/DFTK.jl",
+      "doi": null,
+      "buckets": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "purpose": "Compact plane-wave reference for representations, SCF and derivative/error-control experiments.",
+      "inspection": "README/LICENSE; SCF guide opening; archive paths for mixing, forces/stresses, smearing and error-estimate examples. No routine audit.",
+      "license": "MIT, LICENSE inspected.",
+      "license_url": "https://github.com/JuliaMolSim/DFTK.jl/blob/5a94a1407fa6fa47033e347bd65d7e3dbf163ac4/LICENSE",
+      "version": "5a94a1407fa6fa47033e347bd65d7e3dbf163ac4",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned inert upstream source archive acquired for research. External dependencies and submodule contents are not guaranteed present. No build, install, execution or adoption performed.",
+      "assets": [
+        {
+          "path": "quarantine/references/ground-state/dftk-5a94a1407fa6fa47033e347bd65d7e3dbf163ac4.tar.gz",
+          "url": "https://codeload.github.com/JuliaMolSim/DFTK.jl/tar.gz/5a94a1407fa6fa47033e347bd65d7e3dbf163ac4",
+          "sha256": "d644800dea50c5c30d77772909e24ea8f341b8a634b608e04ac2b762995e9bd1",
+          "bytes": 2852078,
+          "format": "tar.gz"
+        },
+        {
+          "path": "quarantine/references/ground-state/dftk/LICENSE",
+          "url": "https://github.com/JuliaMolSim/DFTK.jl/raw/5a94a1407fa6fa47033e347bd65d7e3dbf163ac4/LICENSE",
+          "sha256": "09afe3d5938da86f84b726d6408a9a7c28f92d5b583bb7a46001fdc853a5514f",
+          "bytes": 1103,
+          "format": "text"
+        },
+        {
+          "path": "quarantine/references/ground-state/dftk/README.md",
+          "url": "https://github.com/JuliaMolSim/DFTK.jl/raw/5a94a1407fa6fa47033e347bd65d7e3dbf163ac4/README.md",
+          "sha256": "be99c015450c8b7342b8a6cd500fc987f32ec4fe6296a80a25bb740fd5c0532d",
+          "bytes": 5480,
+          "format": "text"
+        },
+        {
+          "path": "quarantine/references/ground-state/dftk/README.release_notes",
+          "url": "https://github.com/JuliaMolSim/DFTK.jl/raw/5a94a1407fa6fa47033e347bd65d7e3dbf163ac4/README.release_notes",
+          "sha256": "3c4cf1ecabdbbff07a6d6adcce5a543721e6a2b70e3fab1b50c8deeef03e64ab",
+          "bytes": 159,
+          "format": "text"
+        }
+      ]
+    },
+    {
+      "id": "ground-qe",
+      "kind": "implementation",
+      "title": "Quantum ESPRESSO",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/QEF/q-e",
+      "doi": null,
+      "buckets": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "purpose": "Independent production plane-wave/PAW comparator, including CPU/NVIDIA execution reference.",
+      "inspection": "README, README_GPU and License; electrons and forces driver introductory sections; archive path scan for stress and mixing. No build or body audit.",
+      "license": "Root License contains GPL version 2; README identifies GPLv2. Individual/bundled components not exhaustively checked.",
+      "license_url": "https://github.com/QEF/q-e/blob/61569eb480231b649c47f631df9c5c83537df461/License",
+      "version": "61569eb480231b649c47f631df9c5c83537df461",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned inert upstream source archive acquired for research. External dependencies and submodule contents are not guaranteed present. No build, install, execution or adoption performed.",
+      "assets": [
+        {
+          "path": "quarantine/references/ground-state/qe-61569eb480231b649c47f631df9c5c83537df461.tar.gz",
+          "url": "https://codeload.github.com/QEF/q-e/tar.gz/61569eb480231b649c47f631df9c5c83537df461",
+          "sha256": "57cdcc9decc766d574ae2e80f7b2867e1dc19d03c9ffd0d7100e59ce542c9db5",
+          "bytes": 87717712,
+          "format": "tar.gz"
+        },
+        {
+          "path": "quarantine/references/ground-state/qe/License",
+          "url": "https://github.com/QEF/q-e/raw/61569eb480231b649c47f631df9c5c83537df461/License",
+          "sha256": "204d8eff92f95aac4df6c8122bc1505f468f3a901e5a4cc08940e0ede1938994",
+          "bytes": 18009,
+          "format": "text"
+        },
+        {
+          "path": "quarantine/references/ground-state/qe/README_GPU.md",
+          "url": "https://github.com/QEF/q-e/raw/61569eb480231b649c47f631df9c5c83537df461/README_GPU.md",
+          "sha256": "84c96517efab298517f8e15b715bf8efa292442ce181464493a80a6929b3a694",
+          "bytes": 2674,
+          "format": "text"
+        },
+        {
+          "path": "quarantine/references/ground-state/qe/README.md",
+          "url": "https://github.com/QEF/q-e/raw/61569eb480231b649c47f631df9c5c83537df461/README.md",
+          "sha256": "87299e2ae62a98b738a9b9fa05aa436d67cb31d5ef8dffeb7f393f89344b8932",
+          "bytes": 4367,
+          "format": "text"
+        }
+      ]
+    },
+    {
+      "id": "ground-abinit",
+      "kind": "implementation",
+      "title": "ABINIT",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/abinit/abinit",
+      "doi": null,
+      "buckets": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "purpose": "Independent PAW implementation and atom-data generation/transferability guidance.",
+      "inspection": "README/COPYING; PAW generation tutorial introduction and libPAW table type introduction; XC module path located. No complete kernel audit.",
+      "license": "COPYING states most code/docs GPLv3 and selected Apache-2.0 exceptions; README itself has GPLv2-or-later notice. Resolve per-file terms before reuse.",
+      "license_url": "https://github.com/abinit/abinit/blob/edbeb6602f0856ff3d74d9b7c6cec29eb01fff99/COPYING",
+      "version": "edbeb6602f0856ff3d74d9b7c6cec29eb01fff99",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned inert upstream source archive acquired for research. External dependencies and submodule contents are not guaranteed present. No build, install, execution or adoption performed.",
+      "assets": [
+        {
+          "path": "quarantine/references/ground-state/abinit-edbeb6602f0856ff3d74d9b7c6cec29eb01fff99.tar.gz",
+          "url": "https://codeload.github.com/abinit/abinit/tar.gz/edbeb6602f0856ff3d74d9b7c6cec29eb01fff99",
+          "sha256": "8454de53cbc5bd108149890cb37a8abf3c26f18b9f218e544b65fc0419e46605",
+          "bytes": 176199171,
+          "format": "tar.gz"
+        },
+        {
+          "path": "quarantine/references/ground-state/abinit/README.md",
+          "url": "https://github.com/abinit/abinit/raw/edbeb6602f0856ff3d74d9b7c6cec29eb01fff99/README.md",
+          "sha256": "20cc77184d0c3486ebc71e336023bf5dcb2fdf4cad9a6a94dcdd39156fa7e74a",
+          "bytes": 1221,
+          "format": "text"
+        },
+        {
+          "path": "quarantine/references/ground-state/abinit/COPYING",
+          "url": "https://github.com/abinit/abinit/raw/edbeb6602f0856ff3d74d9b7c6cec29eb01fff99/COPYING",
+          "sha256": "76bd835b6b42e02c9246f89a217a5f22f33276fede9ced430ecdafa50100041d",
+          "bytes": 35621,
+          "format": "text"
+        }
+      ]
+    },
+    {
+      "id": "ground-gpaw",
+      "kind": "implementation",
+      "title": "GPAW",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://gitlab.com/gpaw/gpaw",
+      "doi": null,
+      "buckets": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "purpose": "Compare PAW through plane-wave, localized and real-space representations.",
+      "inspection": "README/LICENSE/COPYING; mixer interface aliases and source path scan. Legacy/new implementations require focused tracing.",
+      "license": "GPL-3.0-or-later, LICENSE inspected.",
+      "license_url": "https://gitlab.com/gpaw/gpaw/-/blob/2c0c73577daf73c25056e4fc2cd1e1fd2ea3aba4/LICENSE",
+      "version": "2c0c73577daf73c25056e4fc2cd1e1fd2ea3aba4",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned inert upstream source archive acquired for research. External dependencies and submodule contents are not guaranteed present. No build, install, execution or adoption performed.",
+      "assets": [
+        {
+          "path": "quarantine/references/ground-state/gpaw-2c0c73577daf73c25056e4fc2cd1e1fd2ea3aba4.tar.gz",
+          "url": "https://gitlab.com/gpaw/gpaw/-/archive/2c0c73577daf73c25056e4fc2cd1e1fd2ea3aba4/gpaw-2c0c73577daf73c25056e4fc2cd1e1fd2ea3aba4.tar.gz",
+          "sha256": "ef646d8f5735a839886d7722533cb6fce69d8bf60391544f1d9d4fe64317d353",
+          "bytes": 3631786,
+          "format": "tar.gz"
+        },
+        {
+          "path": "quarantine/references/ground-state/gpaw/LICENSE",
+          "url": "https://gitlab.com/gpaw/gpaw/-/raw/2c0c73577daf73c25056e4fc2cd1e1fd2ea3aba4/LICENSE",
+          "sha256": "261696c54bc333e620e59920cbc2c4e92b3ecb43337619e6f46375e4c8cbc294",
+          "bytes": 589,
+          "format": "text"
+        },
+        {
+          "path": "quarantine/references/ground-state/gpaw/COPYING",
+          "url": "https://gitlab.com/gpaw/gpaw/-/raw/2c0c73577daf73c25056e4fc2cd1e1fd2ea3aba4/COPYING",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "bytes": 35149,
+          "format": "text"
+        },
+        {
+          "path": "quarantine/references/ground-state/gpaw/README.rst",
+          "url": "https://gitlab.com/gpaw/gpaw/-/raw/2c0c73577daf73c25056e4fc2cd1e1fd2ea3aba4/README.rst",
+          "sha256": "a396f00b6d05fdb9dc6fa308b4cd14f9b7039eced382c361a6922859a974b2a0",
+          "bytes": 3098,
+          "format": "text"
+        }
+      ]
+    },
+    {
+      "id": "ground-libxc",
+      "kind": "implementation",
+      "title": "Libxc",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://gitlab.com/libxc/libxc",
+      "doi": null,
+      "buckets": [
+        5,
+        8,
+        10
+      ],
+      "purpose": "Versioned functional and derivative reference, with independently inspectable symbolic/compiled paths.",
+      "inspection": "README/COPYING and r2SCAN/r2SCAN-L module introductions and parameter declarations; generated formulas not audited.",
+      "license": "MPL-2.0 at acquired commit; COPYING and source headers inspected. Historical BSD descriptions do not apply automatically.",
+      "license_url": "https://gitlab.com/libxc/libxc/-/blob/db80b1dcb8b2ece33d89cfd581f80cec15f817f3/COPYING",
+      "version": "db80b1dcb8b2ece33d89cfd581f80cec15f817f3",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned inert upstream source archive acquired for research. External dependencies and submodule contents are not guaranteed present. No build, install, execution or adoption performed.",
+      "assets": [
+        {
+          "path": "quarantine/references/ground-state/libxc-db80b1dcb8b2ece33d89cfd581f80cec15f817f3.tar.gz",
+          "url": "https://gitlab.com/libxc/libxc/-/archive/db80b1dcb8b2ece33d89cfd581f80cec15f817f3/libxc-db80b1dcb8b2ece33d89cfd581f80cec15f817f3.tar.gz",
+          "sha256": "f346e69aa81c99e13c96bd95dd9f7e7870639120d117b7b890651fa439ac3070",
+          "bytes": 41493660,
+          "format": "tar.gz"
+        },
+        {
+          "path": "quarantine/references/ground-state/libxc/README.md",
+          "url": "https://gitlab.com/libxc/libxc/-/raw/db80b1dcb8b2ece33d89cfd581f80cec15f817f3/README.md",
+          "sha256": "dfcfc782fa803715a4b2c7a80338b028c9b1a0d3255d04c05acbe018dd10a116",
+          "bytes": 12793,
+          "format": "text"
+        },
+        {
+          "path": "quarantine/references/ground-state/libxc/COPYING",
+          "url": "https://gitlab.com/libxc/libxc/-/raw/db80b1dcb8b2ece33d89cfd581f80cec15f817f3/COPYING",
+          "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+          "bytes": 16726,
+          "format": "text"
+        }
+      ]
+    },
+    {
+      "id": "ground-spglib",
+      "kind": "implementation",
+      "title": "Spglib",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/spglib/spglib",
+      "doi": null,
+      "buckets": [
+        2,
+        5
+      ],
+      "purpose": "Reference symmetry search and magnetic operation handling.",
+      "inspection": "README/COPYING and official magnetic API documentation; implementation archive acquired but algorithm bodies unread.",
+      "license": "BSD-3-Clause terms, COPYING inspected.",
+      "license_url": "https://github.com/spglib/spglib/blob/a6b561fb60cdd021a1ac90852c3c2ae14405b2c8/COPYING",
+      "version": "a6b561fb60cdd021a1ac90852c3c2ae14405b2c8",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned inert upstream source archive acquired for research. External dependencies and submodule contents are not guaranteed present. No build, install, execution or adoption performed.",
+      "assets": [
+        {
+          "path": "quarantine/references/ground-state/spglib-a6b561fb60cdd021a1ac90852c3c2ae14405b2c8.tar.gz",
+          "url": "https://codeload.github.com/spglib/spglib/tar.gz/a6b561fb60cdd021a1ac90852c3c2ae14405b2c8",
+          "sha256": "f9f0a6234a9059791b35d249446edd23f0c37ae6a479561c9901c80cb52bcc1a",
+          "bytes": 2442563,
+          "format": "tar.gz"
+        },
+        {
+          "path": "quarantine/references/ground-state/spglib/README.md",
+          "url": "https://github.com/spglib/spglib/raw/a6b561fb60cdd021a1ac90852c3c2ae14405b2c8/README.md",
+          "sha256": "294f6f53da4a096e17ab104f3cc8e2c385f2cbe98e4164ff6c94b717beea9ccc",
+          "bytes": 9333,
+          "format": "text"
+        },
+        {
+          "path": "quarantine/references/ground-state/spglib/COPYING",
+          "url": "https://github.com/spglib/spglib/raw/a6b561fb60cdd021a1ac90852c3c2ae14405b2c8/COPYING",
+          "sha256": "9c4e602ce15bf48206dad105b666ddaeedba747eeda6465807106bc11f4f587f",
+          "bytes": 1446,
+          "format": "text"
+        }
+      ]
+    },
+    {
+      "id": "ground-dftd4",
+      "kind": "implementation",
+      "title": "DFT-D4",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/dftd4/dftd4",
+      "doi": null,
+      "buckets": [
+        6,
+        8
+      ],
+      "purpose": "Independent atomic-charge-dependent dispersion implementation and analytic derivative comparison candidate.",
+      "inspection": "README, COPYING/LESSER, CITATION; dispersion wrapper and model module introductions. Parameter tables and kernels not audited.",
+      "license": "LGPL-3.0-or-later in selected source SPDX headers; COPYING.LESSER and COPYING inspected.",
+      "license_url": "https://github.com/dftd4/dftd4/blob/82fbaf41724ab9a3c0a38ddc978ad0c38c4659b4/COPYING.LESSER",
+      "version": "82fbaf41724ab9a3c0a38ddc978ad0c38c4659b4",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned inert upstream source archive acquired for research. External dependencies and submodule contents are not guaranteed present. No build, install, execution or adoption performed.",
+      "assets": [
+        {
+          "path": "quarantine/references/ground-state/dftd4-82fbaf41724ab9a3c0a38ddc978ad0c38c4659b4.tar.gz",
+          "url": "https://codeload.github.com/dftd4/dftd4/tar.gz/82fbaf41724ab9a3c0a38ddc978ad0c38c4659b4",
+          "sha256": "1c507bc429378858c0315f56b394b6b3695ccf2be61b74f19eda0803ffae1123",
+          "bytes": 495021,
+          "format": "tar.gz"
+        },
+        {
+          "path": "quarantine/references/ground-state/dftd4/COPYING.LESSER",
+          "url": "https://github.com/dftd4/dftd4/raw/82fbaf41724ab9a3c0a38ddc978ad0c38c4659b4/COPYING.LESSER",
+          "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118",
+          "bytes": 7652,
+          "format": "text"
+        },
+        {
+          "path": "quarantine/references/ground-state/dftd4/README.md",
+          "url": "https://github.com/dftd4/dftd4/raw/82fbaf41724ab9a3c0a38ddc978ad0c38c4659b4/README.md",
+          "sha256": "da60bf4b1ce9b1b89511c833ca69f0e34c48626bda9069e43d76b43e11e93700",
+          "bytes": 17764,
+          "format": "text"
+        },
+        {
+          "path": "quarantine/references/ground-state/dftd4/CITATION.bib",
+          "url": "https://github.com/dftd4/dftd4/raw/82fbaf41724ab9a3c0a38ddc978ad0c38c4659b4/CITATION.bib",
+          "sha256": "70404d8fc7f6a76f5dd4a6611efdfabde793a3816bb282b79678879461aac730",
+          "bytes": 2360,
+          "format": "text"
+        },
+        {
+          "path": "quarantine/references/ground-state/dftd4/COPYING",
+          "url": "https://github.com/dftd4/dftd4/raw/82fbaf41724ab9a3c0a38ddc978ad0c38c4659b4/COPYING",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "bytes": 35149,
+          "format": "text"
+        }
+      ]
+    },
+    {
+      "id": "ground-jth-data",
+      "kind": "dataset",
+      "title": "JTH PAW atomic datasets: bounded hydrogen PBE v2.0 sample",
+      "authors": [
+        "François Jollet",
+        "Marc Torrent",
+        "Natalie Holzwarth"
+      ],
+      "year": 2025,
+      "canonical_url": "https://github.com/abinit/paw_jth_datasets",
+      "doi": null,
+      "buckets": [
+        3
+      ],
+      "purpose": "Inspect an independent PAW interchange file and corresponding generator input without acquiring an entire library.",
+      "inspection": "Repository LICENSE/README and H XML metadata: units, generator, functional, partial waves, grid specification. Numerical radial arrays and generator execution unexamined.",
+      "license": "Repository LICENSE is GPLv3; no separate file-specific data license found in inspected H header. Dataset distribution terms need focused review before adoption.",
+      "license_url": "https://github.com/abinit/paw_jth_datasets/blob/a03e3f0b7ac8395550cca88880d8cb7dcd478bb3/LICENSE",
+      "version": "a03e3f0b7ac8395550cca88880d8cb7dcd478bb3",
+      "acquisition_status": "acquired",
+      "access_note": "Acquired H PBE XML and generator input plus root license/README only; not the full JTH library.",
+      "assets": [
+        {
+          "path": "quarantine/references/ground-state/jth-data/LICENSE",
+          "url": "https://raw.githubusercontent.com/abinit/paw_jth_datasets/a03e3f0b7ac8395550cca88880d8cb7dcd478bb3/LICENSE",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "bytes": 35149,
+          "format": "text"
+        },
+        {
+          "path": "quarantine/references/ground-state/jth-data/README.md",
+          "url": "https://raw.githubusercontent.com/abinit/paw_jth_datasets/a03e3f0b7ac8395550cca88880d8cb7dcd478bb3/README.md",
+          "sha256": "4cd113b06c9a704fe4cb608a88973efbbae4a6829767bfa8c4c223c9faae9b2f",
+          "bytes": 100,
+          "format": "md"
+        },
+        {
+          "path": "quarantine/references/ground-state/jth-data/H.GGA_PBE-JTH.xml",
+          "url": "https://raw.githubusercontent.com/abinit/paw_jth_datasets/a03e3f0b7ac8395550cca88880d8cb7dcd478bb3/pseudos/JTH-PBE-v2.0/H/H.GGA_PBE-JTH.xml",
+          "sha256": "88028f96e571fcfe3354c12d053eb5e4081cc64ad3e6db5010d51cc5998f901d",
+          "bytes": 660615,
+          "format": "xml"
+        },
+        {
+          "path": "quarantine/references/ground-state/jth-data/H.GGA_PBE-JTH.atompaw.input",
+          "url": "https://raw.githubusercontent.com/abinit/paw_jth_datasets/a03e3f0b7ac8395550cca88880d8cb7dcd478bb3/pseudos/JTH-PBE-v2.0/H/H.GGA_PBE-JTH.atompaw.input",
+          "sha256": "888983c44cca72a47c7245bd57a3d6bf35b40b51976ba25f7e9155086d5f6632",
+          "bytes": 251,
+          "format": "input"
+        }
+      ]
+    }
+  ]
+}

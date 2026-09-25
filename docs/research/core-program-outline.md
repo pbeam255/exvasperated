@@ -23,6 +23,11 @@ The expedition must reconcile this map with versioned public capabilities and
 real workloads. Complete method coverage and scientifically meaningful feature
 combinations remain to be established.
 
+The [broad reference campaign](reference-campaign/README.md) supplies material for
+the overall design. Before detailed design and implementation of each subsystem,
+undertake a focused deep expedition and scientific re-grounding for that
+subsystem. Broad coverage in this map or catalog is not sufficient preparation.
+
 ## 1. Shape of the program
 
 ```mermaid

@@ -1,0 +1,1168 @@
+{
+  "area": "advanced-methods",
+  "retrieved_on": "2026-09-25",
+  "records": [
+    {
+      "id": "advanced-wannier97",
+      "kind": "paper",
+      "title": "Maximally-localized generalized Wannier functions for composite energy bands",
+      "authors": [
+        "Marzari, Nicola",
+        "Vanderbilt, David"
+      ],
+      "year": 1997,
+      "canonical_url": "https://arxiv.org/abs/cond-mat/9707145",
+      "doi": "10.1103/PhysRevB.56.12847",
+      "buckets": [
+        12
+      ],
+      "purpose": "Localization objective, gauge freedom and finite k mesh.",
+      "inspection": "Abstract and selected local-minimum/phase-branch discussion read; spread-gradient derivation not audited.",
+      "license": "Historical arXiv deposit terms shown on landing page; no general reuse/redistribution grant inferred. Paper retained locally for study.",
+      "license_url": "http://arxiv.org/licenses/assumed-1991-2003/",
+      "version": "cond-mat/9707145v1",
+      "acquisition_status": "acquired",
+      "access_note": "Full text acquired through alternate primary/author/institutional endpoint after earlier retrieval error. Earlier: HTTP Error 406: Not Acceptable",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/wannier97-landing.html",
+          "url": "https://arxiv.org/abs/cond-mat/9707145",
+          "sha256": "84be6b19799a51033afe30c788b2465e2086d65f22d9c5d9f681124558e705e3",
+          "bytes": 43099,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/wannier97.pdf",
+          "url": "https://arxiv.org/pdf/cond-mat/9707145",
+          "sha256": "56bee626804d3f0959b64e1c22b5e74cde8c8ee79a1ca140e0a8b5427e8137e8",
+          "bytes": 503139,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-disentangle01",
+      "kind": "paper",
+      "title": "Maximally-localized Wannier functions for entangled energy bands",
+      "authors": [
+        "Souza, Ivo",
+        "Marzari, Nicola",
+        "Vanderbilt, David"
+      ],
+      "year": 2001,
+      "canonical_url": "https://arxiv.org/abs/cond-mat/0108084",
+      "doi": "10.1103/PhysRevB.65.035109",
+      "buckets": [
+        12
+      ],
+      "purpose": "Band windows, subspace choice and localization as distinct optimization problems.",
+      "inspection": "Abstract and silicon inner-window/initialization example read; full disentanglement derivation not audited.",
+      "license": "Historical arXiv deposit terms shown on landing page; no general reuse/redistribution grant inferred. Paper retained locally for study.",
+      "license_url": "http://arxiv.org/licenses/assumed-1991-2003/",
+      "version": "cond-mat/0108084v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited full text acquired from arXiv; inert reading copy.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/disentangle01-landing.html",
+          "url": "https://arxiv.org/abs/cond-mat/0108084",
+          "sha256": "f554755bb407014652eaf484a918e9654f4e750a98b3e80086e14f9f90ebc772",
+          "bytes": 43974,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/disentangle01.pdf",
+          "url": "https://arxiv.org/pdf/cond-mat/0108084v1",
+          "sha256": "212c45940705cbff3609926b112e1223eae97dce26c5ca44fc416a862ddb5463",
+          "bytes": 3934630,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-dmet12",
+      "kind": "paper",
+      "title": "Density matrix embedding: A simple alternative to dynamical mean-field theory",
+      "authors": [
+        "Knizia, Gerald",
+        "Chan, Garnet Kin-Lic"
+      ],
+      "year": 2012,
+      "canonical_url": "https://arxiv.org/abs/1204.5783",
+      "doi": "10.1103/PhysRevLett.109.186404",
+      "buckets": [
+        12
+      ],
+      "purpose": "Finite entanglement bath, impurity construction and limiting-case checks.",
+      "inspection": "Opening motivation, bath construction setup and density-matrix self-consistency passage read; impurity solver and benchmark reproductions not performed.",
+      "license": "arXiv nonexclusive distribution deposit; does not itself grant general reuse/redistribution rights to readers. Paper retained locally for study; code/model terms separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1204.5783v2",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited full text acquired from arXiv; inert reading copy.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/dmet12-landing.html",
+          "url": "https://arxiv.org/abs/1204.5783",
+          "sha256": "fbe957a7b3126304303f05a6db4219ca9acbd90c329a7d4553b09a5302a768dd",
+          "bytes": 43172,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/dmet12.pdf",
+          "url": "https://arxiv.org/pdf/1204.5783v2",
+          "sha256": "74605a8575d3d4061a473589a81fc45e25bc678be9a009b04612d8a46cb3e20f",
+          "bytes": 304976,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-crpa04",
+      "kind": "paper",
+      "title": "Frequency-dependent local interactions and low-energy effective models from electronic structure calculations",
+      "authors": [
+        "Aryasetiawan, F.",
+        "Imada, M.",
+        "Georges, A.",
+        "Kotliar, G.",
+        "Biermann, S.",
+        "Lichtenstein, A. I."
+      ],
+      "year": 2004,
+      "canonical_url": "https://arxiv.org/abs/cond-mat/0401620",
+      "doi": "10.1103/PhysRevB.70.195104",
+      "buckets": [
+        12,
+        13
+      ],
+      "purpose": "Target-space exclusion, frequency-dependent screened interactions and low-energy reduction.",
+      "inspection": "Opening motivation and polarization partition/screening identity read; entangled-band projection variants and all derivations remain for focused study.",
+      "license": "Historical arXiv deposit terms shown on landing page; no general reuse/redistribution grant inferred. Paper retained locally for study.",
+      "license_url": "http://arxiv.org/licenses/assumed-1991-2003/",
+      "version": "cond-mat/0401620v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited full text acquired from arXiv; inert reading copy.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/crpa04-landing.html",
+          "url": "https://arxiv.org/abs/cond-mat/0401620",
+          "sha256": "aaf8b6c26858525a2acdb2437fe0b3634a622b9d41096d75f941c29ebe40e948",
+          "bytes": 42664,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/crpa04.pdf",
+          "url": "https://arxiv.org/pdf/cond-mat/0401620v1",
+          "sha256": "05d50890e55e130a4fc9dbf87ecbedcc20d79e40baa42093d0fe8c94405d32ef",
+          "bytes": 190742,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-minimax19",
+      "kind": "paper",
+      "title": "Minimax Isometry Method: A compressive sensing approach for Matsubara summation in many-body perturbation theory",
+      "authors": [
+        "Kaltak, Merzuk",
+        "Kresse, Georg"
+      ],
+      "year": 2020,
+      "canonical_url": "https://arxiv.org/abs/1909.01740",
+      "doi": "10.1103/PhysRevB.101.205145",
+      "buckets": [
+        1,
+        13
+      ],
+      "purpose": "Bosonic/fermionic time-frequency compression and transform error.",
+      "inspection": "Opening finite-temperature motivation and concluding error/conservation discussion read; quadrature construction, constants and transform proofs not independently derived.",
+      "license": "arXiv nonexclusive distribution deposit; does not itself grant general reuse/redistribution rights to readers. Paper retained locally for study; code/model terms separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1909.01740v3",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited full text acquired from arXiv; inert reading copy.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/minimax19-landing.html",
+          "url": "https://arxiv.org/abs/1909.01740",
+          "sha256": "e6557ae7c6b75265432990428e679b0ac35f78694c536e60ed3aa2e32120bb03",
+          "bytes": 43003,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/minimax19.pdf",
+          "url": "https://arxiv.org/pdf/1909.01740v3",
+          "sha256": "973566cdb739f05977c0b9ddc572df37f7b147e49e0c3a0a74bbcaf014cbe05f",
+          "bytes": 1168528,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-mp2-solids",
+      "kind": "paper",
+      "title": "Quartic scaling MP2 for solids: A highly parallelized algorithm in the plane wave basis",
+      "authors": [
+        "Schäfer, Tobias",
+        "Ramberger, Benjamin",
+        "Kresse, Georg"
+      ],
+      "year": 2017,
+      "canonical_url": "https://arxiv.org/abs/1611.06797",
+      "doi": "10.1063/1.4976937",
+      "buckets": [
+        13
+      ],
+      "purpose": "Laplace MP2, basis convergence and plane-wave parallelism.",
+      "inspection": "Abstract and introduction read; body equations, basis-extrapolation implementation and scaling measurements not audited.",
+      "license": "arXiv nonexclusive distribution deposit; does not itself grant general reuse/redistribution rights to readers. Paper retained locally for study; code/model terms separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1611.06797v2",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited full text acquired from arXiv; inert reading copy.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/mp2-solids-landing.html",
+          "url": "https://arxiv.org/abs/1611.06797",
+          "sha256": "98a1af34aba74eeb909d6b4c56b7f481691ccdd01710ffc2ce9540dcfaef076d",
+          "bytes": 42748,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/mp2-solids.pdf",
+          "url": "https://arxiv.org/pdf/1611.06797v2",
+          "sha256": "27634fdd12cfaa6416d1c54597b77d9d7680f892a3d73d0e1734abe9cf552f5d",
+          "bytes": 2001657,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-rpa-forces",
+      "kind": "paper",
+      "title": "Analytic Interatomic Forces in the Random Phase Approximation",
+      "authors": [
+        "Ramberger, Benjamin",
+        "Schäfer, Tobias",
+        "Kresse, Georg"
+      ],
+      "year": 2017,
+      "canonical_url": "https://arxiv.org/abs/1611.00689",
+      "doi": "10.1103/PhysRevLett.118.106403",
+      "buckets": [
+        8,
+        13
+      ],
+      "purpose": "Correlated derivatives and position-dependent overlap.",
+      "inspection": "Abstract and introductory force/overlap motivation read; complete derivative derivation remains unread.",
+      "license": "Published article CC BY 4.0; third-party figure exceptions if applicable. No source-code permission inferred.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "version": "Publisher/author PDF from https://harvest.aps.org/v2/journals/articles/10.1103/PhysRevLett.118.106403/fulltext",
+      "acquisition_status": "acquired",
+      "access_note": "Full text acquired through alternate primary/author/institutional endpoint after earlier retrieval error. Earlier: HTTP Error 406: Not Acceptable",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/rpa-forces-landing.html",
+          "url": "https://arxiv.org/abs/1611.00689",
+          "sha256": "1e90cd0da6dcff90f8ccff86524fecd4f23a1593580ba54c43d8786993aff851",
+          "bytes": 42206,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/rpa-forces.pdf",
+          "url": "https://harvest.aps.org/v2/journals/articles/10.1103/PhysRevLett.118.106403/fulltext",
+          "sha256": "d3685ef898fe8d6b39f56ac93f83ce467d942af2d779b38b214e62cf43eb0fd5",
+          "bytes": 281878,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-berkeleygw-paper",
+      "kind": "paper",
+      "title": "BerkeleyGW: A Massively Parallel Computer Package for the Calculation of the Quasiparticle and Optical Properties of Materials and Nanostructures",
+      "authors": [
+        "Deslippe, Jack",
+        "Samsonidze, Georgy",
+        "Strubbe, David A.",
+        "Jain, Manish",
+        "Cohen, Marvin L.",
+        "Louie, Steven G."
+      ],
+      "year": 2012,
+      "canonical_url": "https://arxiv.org/abs/1111.4429",
+      "doi": "10.1016/j.cpc.2011.12.006",
+      "buckets": [
+        13
+      ],
+      "purpose": "Independent GW/BSE implementation mathematics and workflow.",
+      "inspection": "Abstract and selected polarizability convergence/Coulomb section read; full method and implementation audit pending.",
+      "license": "arXiv nonexclusive distribution deposit; does not itself grant general reuse/redistribution rights to readers. Paper retained locally for study; code/model terms separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1111.4429v3",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited full text acquired from arXiv; inert reading copy.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/berkeleygw-paper-landing.html",
+          "url": "https://arxiv.org/abs/1111.4429",
+          "sha256": "f3601ffc084888bcc050282166445430e3a63e89c8c2b35842aeb10566bd4368",
+          "bytes": 43624,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/berkeleygw-paper.pdf",
+          "url": "https://arxiv.org/pdf/1111.4429v3",
+          "sha256": "6bf5d55ac0fabb542a197f0875e09746f64bf85e63a1b5a16142cfd3bf0745cf",
+          "bytes": 896590,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-yambo-paper",
+      "kind": "paper",
+      "title": "Many-body perturbation theory calculations using the yambo code",
+      "authors": [
+        "Sangalli, D.",
+        "Ferretti, A.",
+        "Miranda, H.",
+        "Attaccalite, C.",
+        "Marri, I.",
+        "Cannuccia, E.",
+        "Melo, P.",
+        "Marsili, M.",
+        "Paleari, F.",
+        "Marrazzo, A.",
+        "Prandini, G.",
+        "Bonfà, P.",
+        "Atambo, M. O.",
+        "Affinito, F.",
+        "Palummo, M.",
+        "Molina-Sánchez, A.",
+        "Hogan, C.",
+        "Grüning, M.",
+        "Varsano, D.",
+        "Marini, A."
+      ],
+      "year": 2019,
+      "canonical_url": "https://arxiv.org/abs/1902.03837",
+      "doi": "10.1088/1361-648X/ab15d0",
+      "buckets": [
+        13,
+        14
+      ],
+      "purpose": "Screening, BSE, iterative spectra and propagation implementation.",
+      "inspection": "Abstract and Krylov/Haydock versus eigensolver section read; propagation and electron-phonon bodies not deeply read.",
+      "license": "arXiv nonexclusive distribution deposit; does not itself grant general reuse/redistribution rights to readers. Paper retained locally for study; code/model terms separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1902.03837v2",
+      "acquisition_status": "acquired",
+      "access_note": "Full text acquired via primary/author endpoint after failed initial attempts.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/yambo-paper-landing.html",
+          "url": "https://arxiv.org/abs/1902.03837",
+          "sha256": "0d2ee4e853ddc4ca73e296f7600287ca1a39e2a521d478ccc582500c63cde61c",
+          "bytes": 46786,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/yambo-paper.pdf",
+          "url": "https://arxiv.org/pdf/1902.03837",
+          "sha256": "6d7e0ba668c60e12c53d85d84bf1d54548b817279bf8cf543b2ab48c7753693b",
+          "bytes": 7630470,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-gap-paper",
+      "kind": "paper",
+      "title": "Gaussian Approximation Potentials: the accuracy of quantum mechanics, without the electrons",
+      "authors": [
+        "Bartók, Albert P.",
+        "Payne, Mike C.",
+        "Kondor, Risi",
+        "Csányi, Gábor"
+      ],
+      "year": 2010,
+      "canonical_url": "https://arxiv.org/abs/0910.1019",
+      "doi": "10.1103/PhysRevLett.104.136403",
+      "buckets": [
+        15
+      ],
+      "purpose": "Kernel interatomic energy models, force labels and locality.",
+      "inspection": "Abstract and selected Gaussian-process/phonon passage read; sparse-fitting and derivative derivations not audited.",
+      "license": "arXiv nonexclusive distribution deposit; does not itself grant general reuse/redistribution rights to readers. Paper retained locally for study; code/model terms separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "0910.1019v3",
+      "acquisition_status": "acquired",
+      "access_note": "Full text acquired through alternate primary/author/institutional endpoint after earlier retrieval error. Earlier: HTTP Error 406: Not Acceptable",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/gap-paper-landing.html",
+          "url": "https://arxiv.org/abs/0910.1019",
+          "sha256": "9acb5d196032abb173a44d1cc4e5d01d75a8e6a9e2abd8b1fc0efa96fb194fb8",
+          "bytes": 42400,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/gap-paper.pdf",
+          "url": "https://arxiv.org/pdf/0910.1019",
+          "sha256": "9f8238f822224b28c8069a91977c0c740fd8dc4b3990f54c1962a6acf73429ae",
+          "bytes": 999359,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-soap",
+      "kind": "paper",
+      "title": "On representing chemical environments",
+      "authors": [
+        "Bartók, Albert P.",
+        "Kondor, Risi",
+        "Csányi, Gábor"
+      ],
+      "year": 2013,
+      "canonical_url": "https://arxiv.org/abs/1209.3140",
+      "doi": "10.1103/PhysRevB.87.184115",
+      "buckets": [
+        15
+      ],
+      "purpose": "Invariant neighborhood descriptors, differentiability and representation limitations.",
+      "inspection": "Abstract and opening representation/completeness discussion read; angular algebra and derivative identities not independently derived.",
+      "license": "arXiv nonexclusive distribution deposit; does not itself grant general reuse/redistribution rights to readers. Paper retained locally for study; code/model terms separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1209.3140v3",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited full text acquired from arXiv; inert reading copy.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/soap-landing.html",
+          "url": "https://arxiv.org/abs/1209.3140",
+          "sha256": "aa3fa3eca7267c941157dd5265411dc019d44a2fb1c686704c23ae228ace6349",
+          "bytes": 43895,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/soap.pdf",
+          "url": "https://arxiv.org/pdf/1209.3140v3",
+          "sha256": "747fe9d5b749712ec98c6021af3d891db5ec78e19c2d7a1fdaba224cd88860ab",
+          "bytes": 2774315,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-flare-paper",
+      "kind": "paper",
+      "title": "On-the-Fly Active Learning of Interpretable Bayesian Force Fields for Atomistic Rare Events",
+      "authors": [
+        "Vandermause, Jonathan",
+        "Torrisi, Steven B.",
+        "Batzner, Simon",
+        "Xie, Yu",
+        "Sun, Lixin",
+        "Kolpak, Alexie M.",
+        "Kozinsky, Boris"
+      ],
+      "year": 2020,
+      "canonical_url": "https://arxiv.org/abs/1904.02042",
+      "doi": "10.1038/s41524-020-0283-z",
+      "buckets": [
+        15
+      ],
+      "purpose": "Bayesian force uncertainty and history-dependent reference acquisition.",
+      "inspection": "Abstract and introduction on uncertainty and low-dimensional versus sparse models read; complete uncertainty derivation and calibration study not reproduced.",
+      "license": "Published article states CC BY 4.0; code and model/data terms separate.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "version": "Publisher/author PDF from https://ciqm.harvard.edu/uploads/2/3/3/4/23349210/vandermause2020.pdf",
+      "acquisition_status": "acquired",
+      "access_note": "Full text acquired through alternate primary/author/institutional endpoint after earlier retrieval error. Earlier: IncompleteRead(3145728 bytes read, 2814018 more expected)",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/flare-paper-landing.html",
+          "url": "https://arxiv.org/abs/1904.02042",
+          "sha256": "650508f8dad14ce9c33edf740d6766bc7e407cf5ae6a5b82f4bf1000d8e41a1b",
+          "bytes": 42897,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/flare-paper.pdf",
+          "url": "https://ciqm.harvard.edu/uploads/2/3/3/4/23349210/vandermause2020.pdf",
+          "sha256": "3f1e1e9d26fb4ed8635869e634f0979d98dc8a258b5f04ebb7287556829dbe08",
+          "bytes": 2245244,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-nequip-paper",
+      "kind": "paper",
+      "title": "E(3)-Equivariant Graph Neural Networks for Data-Efficient and Accurate Interatomic Potentials",
+      "authors": [
+        "Batzner, Simon",
+        "Musaelian, Albert",
+        "Sun, Lixin",
+        "Geiger, Mario",
+        "Mailoa, Jonathan P.",
+        "Kornbluth, Mordechai",
+        "Molinari, Nicola",
+        "Smidt, Tess E.",
+        "Kozinsky, Boris"
+      ],
+      "year": 2022,
+      "canonical_url": "https://arxiv.org/abs/2101.03164",
+      "doi": "10.1038/s41467-022-29939-5",
+      "buckets": [
+        15
+      ],
+      "purpose": "Equivariant tensor messages and force prediction from energy.",
+      "inspection": "Abstract and introductory model/workload discussion read; equivariant algebra and training procedures not independently audited.",
+      "license": "arXiv nonexclusive distribution deposit; does not itself grant general reuse/redistribution rights to readers. Paper retained locally for study; code/model terms separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "2101.03164v3",
+      "acquisition_status": "acquired",
+      "access_note": "Full text acquired through alternate primary/author/institutional endpoint after earlier retrieval error. Earlier: HTTP Error 406: Not Acceptable",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/nequip-paper-landing.html",
+          "url": "https://arxiv.org/abs/2101.03164",
+          "sha256": "92791433d49cc307c257637fa0d56c7d8668671890f96bd0dbec43ff3e8a901a",
+          "bytes": 44326,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/nequip-paper.pdf",
+          "url": "https://arxiv.org/pdf/2101.03164",
+          "sha256": "12221983e56499631c0c3c6ac942a72c41e88d555f0d4c9d6f9ffc77da0b2c29",
+          "bytes": 5576778,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-mace-paper",
+      "kind": "paper",
+      "title": "MACE: Higher Order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields",
+      "authors": [
+        "Batatia, Ilyes",
+        "Kovács, Dávid Péter",
+        "Simm, Gregor N. C.",
+        "Ortner, Christoph",
+        "Csányi, Gábor"
+      ],
+      "year": 2022,
+      "canonical_url": "https://arxiv.org/abs/2206.07697",
+      "doi": null,
+      "buckets": [
+        15
+      ],
+      "purpose": "Higher-body-order equivariant messages and learning/scaling comparisons.",
+      "inspection": "Abstract, introduction and opening MPNN model description read; full architecture, body-order derivations and benchmarks not audited.",
+      "license": "arXiv nonexclusive distribution deposit; does not itself grant general reuse/redistribution rights to readers. Paper retained locally for study; code/model terms separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "2206.07697v2",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited full text acquired from arXiv; inert reading copy.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/mace-paper-landing.html",
+          "url": "https://arxiv.org/abs/2206.07697",
+          "sha256": "4a84ab7a8b9382697f4a6804e7cc104103be71bb62c0f7d381dba47df9d7d4ab",
+          "bytes": 42243,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/mace-paper.pdf",
+          "url": "https://arxiv.org/pdf/2206.07697v2",
+          "sha256": "3c4497aa9e90758797f6a846e700843c30496f193d2290cb4d54bc774a83a438",
+          "bytes": 579122,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-wannier90",
+      "kind": "implementation",
+      "title": "wannier-developers/wannier90",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/wannier-developers/wannier90",
+      "doi": null,
+      "buckets": [
+        12
+      ],
+      "purpose": "Localization/disentanglement and interpolation reference; inspect library interfaces.",
+      "inspection": "README, LICENSE, installation/tutorial/test-suite READMEs, archive paths and opening C-interface header inspected. Scientific procedure bodies unread; no build/test/run.",
+      "license": "LGPL-2.1-or-later; LICENSE and README inspected. Bundled third-party files/data and dependencies require their own review.",
+      "license_url": "https://github.com/wannier-developers/wannier90/blob/c4a924a53acb878e727f4df85e0fa5187a841c7c/LICENSE",
+      "version": "c4a924a53acb878e727f4df85e0fa5187a841c7c",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive only; no submodules fetched, dependencies installed, programs built or executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/advanced-methods/wannier90-commit.json",
+          "url": "https://api.github.com/repos/wannier-developers/wannier90/commits/HEAD",
+          "sha256": "f4b9ca3d29a966923a32f90ba36dc5888ed32ca0ca8bc4afbb048edc4994b6de",
+          "bytes": 5929,
+          "format": "json"
+        },
+        {
+          "path": "quarantine/references/advanced-methods/wannier90-c4a924a53acb878e727f4df85e0fa5187a841c7c.tar.gz",
+          "url": "https://codeload.github.com/wannier-developers/wannier90/tar.gz/c4a924a53acb878e727f4df85e0fa5187a841c7c",
+          "sha256": "969137c0bc71ab2a2aa5a2ec1a32aaf40c842ba2e16534c22f98606dacc3e242",
+          "bytes": 227403573,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "advanced-yambo",
+      "kind": "implementation",
+      "title": "yambo-code/yambo",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/yambo-code/yambo",
+      "doi": null,
+      "buckets": [
+        13,
+        14
+      ],
+      "purpose": "Independent plane-wave GW/BSE, response and propagation reference.",
+      "inspection": "README, COPYING, archive module paths and opening GPU configuration fragment inspected. Scientific kernels unread; no build/test/run.",
+      "license": "GPL-2.0-or-later per README and COPYING; third-party library/data terms remain separate.",
+      "license_url": "https://github.com/yambo-code/yambo/blob/19c12410fd9f70aee9bcab61221567433566510d/COPYING",
+      "version": "19c12410fd9f70aee9bcab61221567433566510d",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive only; no submodules fetched, dependencies installed, programs built or executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/advanced-methods/yambo-commit.json",
+          "url": "https://api.github.com/repos/yambo-code/yambo/commits/HEAD",
+          "sha256": "8913ab1137d5b35fa40964f750abae22080b4ceba5c4b6dc73894b5cb49e8f72",
+          "bytes": 10023,
+          "format": "json"
+        },
+        {
+          "path": "quarantine/references/advanced-methods/yambo-19c12410fd9f70aee9bcab61221567433566510d.tar.gz",
+          "url": "https://codeload.github.com/yambo-code/yambo/tar.gz/19c12410fd9f70aee9bcab61221567433566510d",
+          "sha256": "fa881909ac93782b90002c4b298ec5b277dba9aa8c30cf98a3618f77ca019d8f",
+          "bytes": 3002156,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "advanced-pyscf",
+      "kind": "implementation",
+      "title": "pyscf/pyscf",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/pyscf/pyscf",
+      "doi": null,
+      "buckets": [
+        12,
+        13
+      ],
+      "purpose": "Independent Gaussian-basis molecular/periodic correlated solvers and small-system checks.",
+      "inspection": "README, LICENSE, NOTICE, GW user documentation, archive module paths and headers/procedure lists of gw_ac.py, gw_cd.py, gw_exact.py, bse.py inspected. Solver bodies not audited; no build/test/run.",
+      "license": "Apache-2.0 per LICENSE and sampled source headers; NOTICE inspected. External numerical libraries, integral engines and datasets have separate terms.",
+      "license_url": "https://github.com/pyscf/pyscf/blob/08235bf71c4e087039fc4899266e8b3a67de42f3/LICENSE",
+      "version": "08235bf71c4e087039fc4899266e8b3a67de42f3",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive only; no submodules fetched, dependencies installed, programs built or executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/advanced-methods/pyscf-commit.json",
+          "url": "https://api.github.com/repos/pyscf/pyscf/commits/HEAD",
+          "sha256": "4c0dcd8beebbdf7c707f0f896949e5f9b19af4b06b6e14a2b6444314f9bec083",
+          "bytes": 28150,
+          "format": "json"
+        },
+        {
+          "path": "quarantine/references/advanced-methods/pyscf-08235bf71c4e087039fc4899266e8b3a67de42f3.tar.gz",
+          "url": "https://codeload.github.com/pyscf/pyscf/tar.gz/08235bf71c4e087039fc4899266e8b3a67de42f3",
+          "sha256": "4f9541d0edf9fd898c2ab314225eebbb1894b52302053a222cbc32c61dc9096d",
+          "bytes": 12325048,
+          "format": "tar.gz"
+        },
+        {
+          "path": "quarantine/references/advanced-methods/pyscf-gw-doc.html",
+          "url": "https://pyscf.org/user/gw.html",
+          "sha256": "6c85b249ea9e80180ea7604f3827b28f186da7d7a7a3853aeb958229ec5916e8",
+          "bytes": 38579,
+          "format": "html"
+        }
+      ]
+    },
+    {
+      "id": "advanced-quip",
+      "kind": "implementation",
+      "title": "libAtoms/QUIP",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/libAtoms/QUIP",
+      "doi": null,
+      "buckets": [
+        15
+      ],
+      "purpose": "Descriptors, potential evaluation and integration interfaces.",
+      "inspection": "README, submodule manifest and quippy licensing notice inspected. Scientific code bodies unread; submodules not acquired as part of QUIP archive. Separate GAP snapshot is independently pinned, not asserted to match QUIP gitlink.",
+      "license": "Most code GPL-2.0 and some public-domain portions per README and sampled quippy notice. GAP is a separately licensed submodule and is not included by this archive.",
+      "license_url": "https://github.com/libAtoms/QUIP/blob/1e2f84ba94bc715a5d7b0b0c7c2ba1b2d402e730/README.md",
+      "version": "1e2f84ba94bc715a5d7b0b0c7c2ba1b2d402e730",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive only; no submodules fetched, dependencies installed, programs built or executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/advanced-methods/quip-commit.json",
+          "url": "https://api.github.com/repos/libAtoms/QUIP/commits/HEAD",
+          "sha256": "fd2bfa4bbff1a4484e9bbb32d34bb21d5e74697e78f71bd4a5f98132b44cb03d",
+          "bytes": 13993,
+          "format": "json"
+        },
+        {
+          "path": "quarantine/references/advanced-methods/quip-1e2f84ba94bc715a5d7b0b0c7c2ba1b2d402e730.tar.gz",
+          "url": "https://codeload.github.com/libAtoms/QUIP/tar.gz/1e2f84ba94bc715a5d7b0b0c7c2ba1b2d402e730",
+          "sha256": "d8589fbd5002fcb7f6496e8b572e97a4b4e3db5ea35e25bd0bc18365f5537135",
+          "bytes": 38809650,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "advanced-gap",
+      "kind": "implementation",
+      "title": "libAtoms/GAP",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/libAtoms/GAP",
+      "doi": null,
+      "buckets": [
+        15
+      ],
+      "purpose": "Sparse Gaussian process training and prediction implementation.",
+      "inspection": "README, full license and source path inventory inspected. Scientific bodies unread; no build/use/adoption. Academic-use restriction recorded.",
+      "license": "Academic Software Licence (ASL): academic noncommercial restriction. Source-available, not open-source. License and README inspected; held inert for reference, not adopted. Model and dataset terms separate.",
+      "license_url": "https://github.com/libAtoms/GAP/blob/25e734c83da9b2d52829e84a7b10704317fe8a1f/LICENSE.md",
+      "version": "25e734c83da9b2d52829e84a7b10704317fe8a1f",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive only; no submodules fetched, dependencies installed, programs built or executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/advanced-methods/gap-commit.json",
+          "url": "https://api.github.com/repos/libAtoms/GAP/commits/HEAD",
+          "sha256": "26285b1ba0e0e71a69689fd761e6d1727b5bdfdc386c2252cfdd9322ccbe953b",
+          "bytes": 7286,
+          "format": "json"
+        },
+        {
+          "path": "quarantine/references/advanced-methods/gap-25e734c83da9b2d52829e84a7b10704317fe8a1f.tar.gz",
+          "url": "https://codeload.github.com/libAtoms/GAP/tar.gz/25e734c83da9b2d52829e84a7b10704317fe8a1f",
+          "sha256": "c912c022392789bd5b063938bf876152992bffb6f0f13164410591f6e6e910ae",
+          "bytes": 2005052,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "advanced-flare",
+      "kind": "implementation",
+      "title": "mir-group/flare",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/mir-group/flare",
+      "doi": null,
+      "buckets": [
+        15
+      ],
+      "purpose": "Bayesian uncertainty and on-the-fly acquisition implementation.",
+      "inspection": "README, LICENSE, source paths, opening declarations and method maps in learners/otf.py and bffs/sgp/sparse_gp.py inspected. Update/checkpoint bodies not audited; no training/prediction/run.",
+      "license": "MIT per LICENSE. Third-party libraries, training data and models retain separate terms.",
+      "license_url": "https://github.com/mir-group/flare/blob/199273867d48f3a91415fa44da6c0dfc5ead759f/LICENSE",
+      "version": "199273867d48f3a91415fa44da6c0dfc5ead759f",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive only; no submodules fetched, dependencies installed, programs built or executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/advanced-methods/flare-commit.json",
+          "url": "https://api.github.com/repos/mir-group/flare/commits/HEAD",
+          "sha256": "055af7acc69ad9d389a3359aebd71bc62adf7320b2aa35a279c4645841b7c8b9",
+          "bytes": 9288,
+          "format": "json"
+        },
+        {
+          "path": "quarantine/references/advanced-methods/flare-199273867d48f3a91415fa44da6c0dfc5ead759f.tar.gz",
+          "url": "https://codeload.github.com/mir-group/flare/tar.gz/199273867d48f3a91415fa44da6c0dfc5ead759f",
+          "sha256": "e390ac69519daca434123d413c2f530299cc62498c3b6a7d97e010b077c931b7",
+          "bytes": 6799405,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "advanced-nequip",
+      "kind": "implementation",
+      "title": "mir-group/nequip",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/mir-group/nequip",
+      "doi": null,
+      "buckets": [
+        15
+      ],
+      "purpose": "Equivariant interatomic reference implementation.",
+      "inspection": "README, LICENSE and source path inventory inspected. Architecture/compilation bodies unread; no training/prediction/run.",
+      "license": "MIT per LICENSE. Extensions, acceleration libraries, training data and model weights retain separate terms.",
+      "license_url": "https://github.com/mir-group/nequip/blob/27d9d2182da918ab7be0017d8300e53278f5e00e/LICENSE",
+      "version": "27d9d2182da918ab7be0017d8300e53278f5e00e",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive only; no submodules fetched, dependencies installed, programs built or executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/advanced-methods/nequip-commit.json",
+          "url": "https://api.github.com/repos/mir-group/nequip/commits/HEAD",
+          "sha256": "51efb8f580368394b2b707005cc7bd2908cbfa557a452601429fc320635e8c43",
+          "bytes": 4839,
+          "format": "json"
+        },
+        {
+          "path": "quarantine/references/advanced-methods/nequip-27d9d2182da918ab7be0017d8300e53278f5e00e.tar.gz",
+          "url": "https://codeload.github.com/mir-group/nequip/tar.gz/27d9d2182da918ab7be0017d8300e53278f5e00e",
+          "sha256": "4fc06760015f31f7ee7524248b023cf5499e28bf80b1bca17f34dd9b704b5fbf",
+          "bytes": 555179,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "advanced-mace",
+      "kind": "implementation",
+      "title": "ACEsuit/mace",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/ACEsuit/mace",
+      "doi": null,
+      "buckets": [
+        15
+      ],
+      "purpose": "Higher-order equivariant reference implementation; model licenses separate.",
+      "inspection": "README including model-license distinction, LICENSE.md, archive paths and opening models.py declarations inspected. Training/derivative kernels unread; no training/prediction/run.",
+      "license": "MIT-labelled grant in LICENSE.md; code terms do not cover all pretrained models. README lists models under distinct licenses including ASL. No separate foundation-model downloads.",
+      "license_url": "https://github.com/ACEsuit/mace/blob/726ecec6f3f739786664cf35d6622465fc926170/LICENSE.md",
+      "version": "726ecec6f3f739786664cf35d6622465fc926170",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive only; no submodules fetched, dependencies installed, programs built or executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/advanced-methods/mace-commit.json",
+          "url": "https://api.github.com/repos/ACEsuit/mace/commits/HEAD",
+          "sha256": "7d3c24cbe6c8ef0cb554e185563225dd2a677d9c092656d8756af3fba1edd1c4",
+          "bytes": 53965,
+          "format": "json"
+        },
+        {
+          "path": "quarantine/references/advanced-methods/mace-726ecec6f3f739786664cf35d6622465fc926170.tar.gz",
+          "url": "https://codeload.github.com/ACEsuit/mace/tar.gz/726ecec6f3f739786664cf35d6622465fc926170",
+          "sha256": "09c89d1616bd6b049aa2e97073bb34c6ef89083b4554f56668745751b0b5c3a4",
+          "bytes": 124728920,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "advanced-wannier-variational",
+      "kind": "paper",
+      "title": "Variational formulation for Wannier functions with entangled band structure",
+      "authors": [
+        "Damle, Anil",
+        "Levitt, Antoine",
+        "Lin, Lin"
+      ],
+      "year": 2018,
+      "canonical_url": "https://arxiv.org/abs/1801.08572",
+      "doi": null,
+      "buckets": [
+        12
+      ],
+      "purpose": "Alternative variational treatment, SCDM initialization and disentanglement/localization limitations.",
+      "inspection": "Abstract and section 3.4 on SCDM initialization read; optimization and localization proofs not audited.",
+      "license": "arXiv nonexclusive distribution deposit; does not itself grant general reuse/redistribution rights to readers. Paper retained locally for study; code/model terms separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "Author manuscript from https://math.berkeley.edu/~linlin/publications/VariationWannier.pdf",
+      "acquisition_status": "acquired",
+      "access_note": "Full text acquired via primary/author endpoint after failed initial attempts.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/wannier-variational-landing.html",
+          "url": "https://arxiv.org/abs/1801.08572",
+          "sha256": "5fb7e1e824ebed5e099a1020bdea41891c41c882916f8030ebbdcc54327a9e46",
+          "bytes": 43537,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/wannier-variational.pdf",
+          "url": "https://math.berkeley.edu/~linlin/publications/VariationWannier.pdf",
+          "sha256": "d82570fb58735ecea1e07fef9792cc4fa42a57cddfd38c43dad43ca7311849a9",
+          "bytes": 1901900,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-onfly-melting",
+      "kind": "paper",
+      "title": "On-the-fly machine learning force field generation: Application to melting points",
+      "authors": [
+        "Jinnouchi, Ryosuke",
+        "Karsai, Ferenc",
+        "Kresse, Georg"
+      ],
+      "year": 2019,
+      "canonical_url": "https://arxiv.org/abs/1904.12961",
+      "doi": "10.1103/PhysRevB.100.014105",
+      "buckets": [
+        15
+      ],
+      "purpose": "Reference acquisition coupled to dynamics; melting-point and thermodynamic-perturbation workloads.",
+      "inspection": "Abstract and melting-point thermodynamic-perturbation passage read; coexistence protocol, uncertainty and reference calculations not reproduced.",
+      "license": "arXiv nonexclusive distribution deposit; does not itself grant general reuse/redistribution rights to readers. Paper retained locally for study; code/model terms separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1904.12961v3",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited full text acquired from arXiv; inert reading copy.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/onfly-melting-landing.html",
+          "url": "https://arxiv.org/abs/1904.12961",
+          "sha256": "4e865064052e22f3ca6569acf0e21f9e8817bfa768406bb0ed3a3ad7d577526e",
+          "bytes": 45956,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/onfly-melting.pdf",
+          "url": "https://arxiv.org/pdf/1904.12961v3",
+          "sha256": "e6688eb455f3bdd0a9a09b6d50ac5a0f8f50e06eec520a83ecfb7da7dc13fba0",
+          "bytes": 736370,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-gw-continuation",
+      "kind": "paper",
+      "title": "Robust analytic continuation approach to many-body GW calculations",
+      "authors": [
+        "Duchemin, Ivan",
+        "Blase, Xavier"
+      ],
+      "year": 2019,
+      "canonical_url": "https://arxiv.org/abs/1912.06459",
+      "doi": null,
+      "buckets": [
+        13
+      ],
+      "purpose": "Analytic continuation of W versus self-energy, contour deformation and difficult pole structure.",
+      "inspection": "Abstract and introduction contrasting contour deformation and continuation of W versus self-energy read; fitting mathematics and error cases not reproduced.",
+      "license": "arXiv nonexclusive distribution deposit; does not itself grant general reuse/redistribution rights to readers. Paper retained locally for study; code/model terms separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1912.06459v1",
+      "acquisition_status": "acquired",
+      "access_note": "Full text acquired via primary/author endpoint after failed initial attempts.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/gw-continuation-landing.html",
+          "url": "https://arxiv.org/abs/1912.06459",
+          "sha256": "3e01fb55e28a78cda34621e9ca7d24e5e6e93364870e0ff1f55d649931784a68",
+          "bytes": 40160,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/advanced-methods/gw-continuation.pdf",
+          "url": "https://arxiv.org/pdf/1912.06459",
+          "sha256": "d77a06d6bb6ac704006ea7847ee2c5e34842c22d1ca0df5ed3102833f6a8c781",
+          "bytes": 1687402,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-gw100",
+      "kind": "paper",
+      "title": "GW100: Benchmarking G0W0 for Molecular Systems",
+      "authors": [
+        "Michiel J. van Setten",
+        "Fabio Caruso",
+        "Sahar Sharifzadeh",
+        "Xinguo Ren",
+        "Matthias Scheffler",
+        "Fang Liu",
+        "Johannes Lischner",
+        "Lin Lin",
+        "Jack R. Deslippe",
+        "Steven G. Louie",
+        "Chao Yang",
+        "Florian Weigend",
+        "Jeffrey B. Neaton",
+        "Ferdinand Evers",
+        "Patrick Rinke"
+      ],
+      "year": 2015,
+      "canonical_url": "https://doi.org/10.1021/acs.jctc.5b00453",
+      "doi": "10.1021/acs.jctc.5b00453",
+      "buckets": [
+        13
+      ],
+      "purpose": "Separate same-method implementation comparison from physical-method error; matched basis/core/frequency choices.",
+      "inspection": "Metadata, abstract and quasiparticle multiple-solution/method-comparison passage read; tables and per-molecule convergence not audited.",
+      "license": "Institutional cover and article identify CC BY; repository collection notice also retained. No assumption about independently hosted dataset/code terms.",
+      "license_url": "https://acris.aalto.fi/ws/portalfiles/portal/62502350/Setten_GW100.acs.jctc.5b00453.pdf",
+      "version": "Published article",
+      "acquisition_status": "acquired",
+      "access_note": "Publisher or institutional full text acquired.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/gw100.pdf",
+          "url": "https://acris.aalto.fi/ws/portalfiles/portal/62502350/Setten_GW100.acs.jctc.5b00453.pdf",
+          "sha256": "cf07d8c8514c10e6ab6db14939df595c2146ffe3399aaaab8431c5342b051791",
+          "bytes": 4837103,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-bse00",
+      "kind": "paper",
+      "title": "Electron-hole excitations and optical spectra from first principles",
+      "authors": [
+        "Michael Rohlfing",
+        "Steven G. Louie"
+      ],
+      "year": 2000,
+      "canonical_url": "https://doi.org/10.1103/PhysRevB.62.4927",
+      "doi": "10.1103/PhysRevB.62.4927",
+      "buckets": [
+        13
+      ],
+      "purpose": "Electron-hole kernel, static screening and optical spectra; Tamm-Dancoff and other approximations.",
+      "inspection": "Opening abstract and selected kernel/Tamm-Dancoff approximation derivation passage read; full kernel and optical-matrix derivation pending.",
+      "license": "Unknown; no redistribution permission inferred from accessibility.",
+      "license_url": null,
+      "version": "Published article",
+      "acquisition_status": "acquired",
+      "access_note": "Publisher or institutional full text acquired.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/advanced-methods/bse00.pdf",
+          "url": "https://harvest.aps.org/v2/journals/articles/10.1103/PhysRevB.62.4927/fulltext",
+          "sha256": "b65d5b57169294c7618321b05d5af6d497e76f4ee12ed534e9095d8f7449c09c",
+          "bytes": 234938,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "advanced-hirshfeld77",
+      "kind": "paper",
+      "title": "Bonded-atom fragments for describing molecular charge densities",
+      "authors": [
+        "F. L. Hirshfeld"
+      ],
+      "year": 1977,
+      "canonical_url": "https://doi.org/10.1007/BF00549096",
+      "doi": "10.1007/BF00549096",
+      "buckets": [
+        12
+      ],
+      "purpose": "Distinguish real-space density partition from orbital populations and iterative stockholder variants.",
+      "inspection": "Publisher abstract and institutional metadata only; full text not acquired or read.",
+      "license": "Publisher copyright; no open redistribution license verified.",
+      "license_url": null,
+      "version": "Published article",
+      "acquisition_status": "metadata-only",
+      "access_note": "Publisher PDF endpoint returned non-PDF subscription content; publisher landing page and author institutional record identify restricted access. No legitimate open full text found in bounded search.",
+      "assets": []
+    },
+    {
+      "id": "advanced-berkeleygw",
+      "kind": "implementation",
+      "title": "BerkeleyGW",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://berkeleygw.org/download/",
+      "doi": null,
+      "buckets": [
+        13
+      ],
+      "purpose": "Independent GW/BSE/RPA reference, portable GPU implementation and distributed algorithms.",
+      "inspection": "Official release notes, GPU manual, archive license.txt and top-level/BSE file membership inspected. Scientific kernels unread; no build/test/run.",
+      "license": "Modified BSD 3-clause with additional enhancements grant; exceptions for individual files must be inspected.",
+      "license_url": "https://manual.berkeleygw.org/4.0/license/",
+      "version": "4.0",
+      "acquisition_status": "acquired",
+      "access_note": "Official pinned release archive acquired; no build or execution.",
+      "assets": [
+        {
+          "path": "quarantine/references/advanced-methods/BerkeleyGW-4.0.tar.gz",
+          "url": "https://app.box.com/shared/static/22edl07muvhfnd900tnctsjjftbtcqc4.gz",
+          "sha256": "1a85b03b83b339056f65124bfa96832ca61152236d9bb1cb372e3040fc686a49",
+          "bytes": 80715740,
+          "format": "tar.gz"
+        },
+        {
+          "path": "quarantine/references/advanced-methods/berkeleygw-gpu-doc.html",
+          "url": "https://manual.berkeleygw.org/4.0/gpu-compilation/",
+          "sha256": "46fa6f8466b8d2aa1969abc7ee64a653f09029307418fd3f215dc0c7bc9fe89a",
+          "bytes": 55793,
+          "format": "html"
+        },
+        {
+          "path": "quarantine/references/advanced-methods/berkeleygw-license.html",
+          "url": "https://manual.berkeleygw.org/4.0/license/",
+          "sha256": "53da78da4b444bde515d8d3b46af6e6158f8ffff47e02fb128342c54b245e3f2",
+          "bytes": 50760,
+          "format": "html"
+        }
+      ]
+    },
+    {
+      "id": "advanced-gw100-data",
+      "kind": "dataset",
+      "title": "setten/GW100",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/setten/GW100",
+      "doi": null,
+      "buckets": [
+        13
+      ],
+      "purpose": "Candidate molecular geometries and method-labelled GW comparison data; distinguish root, basis, code version and approximation.",
+      "inspection": "README and archive top-level membership inspected; numerical values, structures, provenance of contributed datasets and scripts not audited. No scripts executed or fixtures adopted.",
+      "license": "Unknown: no top-level license identified in inspected repository; paper license does not establish dataset/code terms.",
+      "license_url": null,
+      "version": "bafa6ab489b67cab2c691334d3a0530a851eb2aa",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive only; no submodules fetched, dependencies installed, programs built or executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/advanced-methods/gw100-data-commit.json",
+          "url": "https://api.github.com/repos/setten/GW100/commits/HEAD",
+          "sha256": "9ac06aa54c4901ad91850bb0b836dc35baa2d358cfdadf270ab2de04b4d4ea01",
+          "bytes": 37921,
+          "format": "json"
+        },
+        {
+          "path": "quarantine/references/advanced-methods/gw100-data-bafa6ab489b67cab2c691334d3a0530a851eb2aa.tar.gz",
+          "url": "https://codeload.github.com/setten/GW100/tar.gz/bafa6ab489b67cab2c691334d3a0530a851eb2aa",
+          "sha256": "6f4147fd79fe84b3e6e26a2ea730b47c5d817368b474681424b81b08da7e9f54",
+          "bytes": 227234,
+          "format": "tar.gz"
+        }
+      ]
+    }
+  ]
+}

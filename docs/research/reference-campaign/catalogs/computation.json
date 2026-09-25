@@ -1,0 +1,672 @@
+{
+  "area": "computation",
+  "retrieved_on": "2026-09-25",
+  "records": [
+    {
+      "id": "compute-cuda-oxide",
+      "kind": "implementation",
+      "title": "cuda-oxide",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/NVlabs/cuda-oxide",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "Evaluate Rust NVIDIA kernel compilation, numerical types, synchronization and interoperability on concrete evidence.",
+      "inspection": "Root license and README/manifest inspected; archive directory structure verified. No compilation or scientific execution; not a full implementation review. Also read pinned toolchain, supported-features appendix and host/device dependency declarations; toolchain nightly-2026-08-28. Feature support is upstream documentation, not local verification.",
+      "license": "Apache-2.0; root license inspected in pinned archive. Dependencies and bundled material require separate assessment.",
+      "license_url": "https://github.com/NVlabs/cuda-oxide/tree/ec4aa4797956534578a1af010f86252a0b6d8626",
+      "version": "ec4aa4797956534578a1af010f86252a0b6d8626",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive acquired; submodules and external dependencies are not included. No build or execution.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/cuda-oxide-ec4aa4797956.tar.gz",
+          "url": "https://codeload.github.com/NVlabs/cuda-oxide/tar.gz/ec4aa4797956534578a1af010f86252a0b6d8626",
+          "sha256": "ff021da76ae0e58c44419dc982dae10f73b5b9160502ea3a286a5bb542d07591",
+          "bytes": 6791810,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "compute-cubecl",
+      "kind": "implementation",
+      "title": "cubecl",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/tracel-ai/cubecl",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "Compare a portable kernel language/runtime with NVIDIA-specific development; AMD is a second-wave objective.",
+      "inspection": "Root license and README/manifest inspected; archive directory structure verified. No compilation or scientific execution; not a full implementation review.",
+      "license": "MIT OR Apache-2.0; root license inspected in pinned archive. Dependencies and bundled material require separate assessment.",
+      "license_url": "https://github.com/tracel-ai/cubecl/tree/04676cd906552cb9a2b38e869d4f3c4064d73dec",
+      "version": "04676cd906552cb9a2b38e869d4f3c4064d73dec",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive acquired; submodules and external dependencies are not included. No build or execution.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/cubecl-04676cd90655.tar.gz",
+          "url": "https://codeload.github.com/tracel-ai/cubecl/tar.gz/04676cd906552cb9a2b38e869d4f3c4064d73dec",
+          "sha256": "3e8979226bba42b4cb3e37930f4ffa7fbff772338d9d9220cc0d8c54a8a4e611",
+          "bytes": 2388577,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "compute-cudarc",
+      "kind": "implementation",
+      "title": "cudarc",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/coreylowman/cudarc",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "Inspect Rust access to NVIDIA driver, BLAS, FFT and solver APIs, storage and asynchronous lifetimes.",
+      "inspection": "Root license and README/manifest inspected; archive directory structure verified. No compilation or scientific execution; not a full implementation review. Also inspected src/cusolver/safe.rs handle, stream and deterministic-mode methods and feature gates; wrapper coverage needs per-operation inspection.",
+      "license": "MIT OR Apache-2.0; root license inspected in pinned archive. Dependencies and bundled material require separate assessment.",
+      "license_url": "https://github.com/coreylowman/cudarc/tree/ec1cac71dab29498240704a9e4a264fbbec19495",
+      "version": "ec1cac71dab29498240704a9e4a264fbbec19495",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive acquired; submodules and external dependencies are not included. No build or execution.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/cudarc-ec1cac71dab2.tar.gz",
+          "url": "https://codeload.github.com/coreylowman/cudarc/tar.gz/ec1cac71dab29498240704a9e4a264fbbec19495",
+          "sha256": "7180d0298919169099f3688ca2bf853102d996c98f6bcf1dd43c22c4a884a849",
+          "bytes": 651106,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "compute-faer",
+      "kind": "implementation",
+      "title": "faer",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/sarah-quinones/faer-rs",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "Rust dense/sparse linear algebra and eigensolver/factorization comparison candidate.",
+      "inspection": "Root license and README/manifest inspected; archive directory structure verified. No compilation or scientific execution; not a full implementation review. Also inspected faer/src/lib.rs eigensolver API documentation.",
+      "license": "MIT; root license inspected in pinned archive. Dependencies and bundled material require separate assessment.",
+      "license_url": "https://github.com/sarah-quinones/faer-rs/tree/ddbd2ae5280825fe97f86735618fed2f6f4eb0b3",
+      "version": "ddbd2ae5280825fe97f86735618fed2f6f4eb0b3",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive acquired; submodules and external dependencies are not included. No build or execution.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/faer-ddbd2ae52808.tar.gz",
+          "url": "https://codeload.github.com/sarah-quinones/faer-rs/tar.gz/ddbd2ae5280825fe97f86735618fed2f6f4eb0b3",
+          "sha256": "612eb55635f2ebd143de0179952dacd57d71f4c85f617e02cd5e353aa53f2bf5",
+          "bytes": 1960978,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "compute-rustfft",
+      "kind": "implementation",
+      "title": "rustfft",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/ejmahler/RustFFT",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "CPU Rust FFT reference, normalization, planning, complex precision and layouts.",
+      "inspection": "Root license and README/manifest inspected; archive directory structure verified. No compilation or scientific execution; not a full implementation review. Also inspected src/lib.rs normalization and scratch/planner documentation.",
+      "license": "MIT OR Apache-2.0; root license inspected in pinned archive. Dependencies and bundled material require separate assessment.",
+      "license_url": "https://github.com/ejmahler/RustFFT/tree/3f88e314e9aa081438da78356faf1ece4513490b",
+      "version": "3f88e314e9aa081438da78356faf1ece4513490b",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive acquired; submodules and external dependencies are not included. No build or execution.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/rustfft-3f88e314e9aa.tar.gz",
+          "url": "https://codeload.github.com/ejmahler/RustFFT/tar.gz/3f88e314e9aa081438da78356faf1ece4513490b",
+          "sha256": "0ee8c410b7645b1e861a18c6665bd40e8e0236b236ac403b4435d47895f4ceaa",
+          "bytes": 410143,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "compute-ndarray",
+      "kind": "implementation",
+      "title": "ndarray",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/rust-ndarray/ndarray",
+      "doi": null,
+      "buckets": [
+        1,
+        2
+      ],
+      "purpose": "Inspect multidimensional array views, strides and BLAS interoperability.",
+      "inspection": "Root license and README/manifest inspected; archive directory structure verified. No compilation or scientific execution; not a full implementation review.",
+      "license": "MIT OR Apache-2.0; root license inspected in pinned archive. Dependencies and bundled material require separate assessment.",
+      "license_url": "https://github.com/rust-ndarray/ndarray/tree/bd3ade99c1f6d1fbd0f31866153e2d155e7b75ab",
+      "version": "bd3ade99c1f6d1fbd0f31866153e2d155e7b75ab",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive acquired; submodules and external dependencies are not included. No build or execution.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/ndarray-bd3ade99c1f6.tar.gz",
+          "url": "https://codeload.github.com/rust-ndarray/ndarray/tar.gz/bd3ade99c1f6d1fbd0f31866153e2d155e7b75ab",
+          "sha256": "784447ccc0745b819674e22f80503c112be8fb4a46ca394d3b67ea69743e0ce3",
+          "bytes": 348187,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "compute-ndarray-linalg",
+      "kind": "implementation",
+      "title": "ndarray-linalg",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/rust-ndarray/ndarray-linalg",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "LAPACK adapter reference for decompositions, layouts and solver errors.",
+      "inspection": "Root license and README/manifest inspected; archive directory structure verified. No compilation or scientific execution; not a full implementation review.",
+      "license": "MIT OR Apache-2.0; root license inspected in pinned archive. Dependencies and bundled material require separate assessment.",
+      "license_url": "https://github.com/rust-ndarray/ndarray-linalg/tree/19232cc33f4dbfad3d0251b4fe573ce190c64171",
+      "version": "19232cc33f4dbfad3d0251b4fe573ce190c64171",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive acquired; submodules and external dependencies are not included. No build or execution.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/ndarray-linalg-19232cc33f4d.tar.gz",
+          "url": "https://codeload.github.com/rust-ndarray/ndarray-linalg/tar.gz/19232cc33f4dbfad3d0251b4fe573ce190c64171",
+          "sha256": "2439c89ac12fc537deb8e8e16ce6869b8c00962c7b73787107981242b2fc9725",
+          "bytes": 80851,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "compute-lapack",
+      "kind": "implementation",
+      "title": "lapack",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/Reference-LAPACK/lapack",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "Independent standard numerical reference implementation, driver algorithms, failure/status and test-matrix generation.",
+      "inspection": "Root license and README/manifest inspected; archive directory structure verified. No compilation or scientific execution; not a full implementation review.",
+      "license": "BSD-3-Clause with additional disclaimer in LICENSE; root license inspected in pinned archive. Dependencies and bundled material require separate assessment.",
+      "license_url": "https://github.com/Reference-LAPACK/lapack/tree/9e518f121f596f57e6507360dfa8ffaf0d2d9eb1",
+      "version": "9e518f121f596f57e6507360dfa8ffaf0d2d9eb1",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive acquired; submodules and external dependencies are not included. No build or execution.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/lapack-9e518f121f59.tar.gz",
+          "url": "https://codeload.github.com/Reference-LAPACK/lapack/tar.gz/9e518f121f596f57e6507360dfa8ffaf0d2d9eb1",
+          "sha256": "406c46c911889f35e5e015f1ee48fd8afc859e50696c9683ba2440ea167a8935",
+          "bytes": 8338154,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "compute-heffte",
+      "kind": "implementation",
+      "title": "heffte",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/icl-utk-edu/heffte",
+      "doi": null,
+      "buckets": [
+        1,
+        2
+      ],
+      "purpose": "Distributed multidimensional FFT decomposition and CPU/GPU communication/reference implementation.",
+      "inspection": "Root license and README/manifest inspected; archive directory structure verified. No compilation or scientific execution; not a full implementation review.",
+      "license": "BSD-3-Clause; root license inspected in pinned archive. Dependencies and bundled material require separate assessment.",
+      "license_url": "https://github.com/icl-utk-edu/heffte/tree/4d8d4597b479d1e4709a2b1b4cd7d8922600045f",
+      "version": "4d8d4597b479d1e4709a2b1b4cd7d8922600045f",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive acquired; submodules and external dependencies are not included. No build or execution.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/heffte-4d8d4597b479.tar.gz",
+          "url": "https://codeload.github.com/icl-utk-edu/heffte/tar.gz/4d8d4597b479d1e4709a2b1b4cd7d8922600045f",
+          "sha256": "84b8aa43abf5d4c5d0dfa34b1b24b53a00c65a4fd970c0b381e5c7f4c90657c9",
+          "bytes": 297227,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "compute-rsmpi",
+      "kind": "implementation",
+      "title": "rsmpi",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/rsmpi/rsmpi",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "Rust MPI adapter reference for collective buffers, requests, communicator lifetimes and native interface gaps.",
+      "inspection": "Root license and README/manifest inspected; archive directory structure verified. No compilation or scientific execution; not a full implementation review. README identifies MPI RMA and parallel I/O as unimplemented.",
+      "license": "MIT OR Apache-2.0; root license inspected in pinned archive. Dependencies and bundled material require separate assessment.",
+      "license_url": "https://github.com/rsmpi/rsmpi/tree/0c71d34992929239f9ac90343e55ed4a84a69610",
+      "version": "0c71d34992929239f9ac90343e55ed4a84a69610",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive acquired; submodules and external dependencies are not included. No build or execution.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/rsmpi-0c71d3499292.tar.gz",
+          "url": "https://codeload.github.com/rsmpi/rsmpi/tar.gz/0c71d34992929239f9ac90343e55ed4a84a69610",
+          "sha256": "0baeb4ca3278077c087c3dc3df207466a887c8ff7cf07c32ab12217830f5eb2b",
+          "bytes": 92050,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "compute-py4vasp",
+      "kind": "implementation",
+      "title": "py4vasp",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/vasp-dev/py4vasp",
+      "doi": null,
+      "buckets": [],
+      "purpose": "Public downstream consumer reference for output schemas and user-visible quantities; not an independent physics oracle.",
+      "inspection": "Root license and README/manifest inspected; archive directory structure verified. No compilation or scientific execution; not a full implementation review. Also inspected src/py4vasp/_raw/schema.py version/selection schema interface and package manifests. Public OSS consumer; not an independent physical oracle.",
+      "license": "Apache-2.0; root license inspected in pinned archive. Dependencies and bundled material require separate assessment.",
+      "license_url": "https://github.com/vasp-dev/py4vasp/tree/35a29126baca57592e87ddd1afa0bc934073713d",
+      "version": "35a29126baca57592e87ddd1afa0bc934073713d",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive acquired; submodules and external dependencies are not included. No build or execution.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/py4vasp-35a29126baca.tar.gz",
+          "url": "https://codeload.github.com/vasp-dev/py4vasp/tar.gz/35a29126baca57592e87ddd1afa0bc934073713d",
+          "sha256": "2a0ac1dc8fd558ac5e5461e637391ac89e6c00a2ca9234f430b709c745742ed3",
+          "bytes": 916045,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "compute-fftw3",
+      "kind": "paper",
+      "title": "The Design and Implementation of FFTW3",
+      "authors": [
+        "Matteo Frigo",
+        "Steven G. Johnson"
+      ],
+      "year": 2005,
+      "canonical_url": "https://fftw.org/fftw-paper-ieee.pdf",
+      "doi": "10.1109/JPROC.2004.840301",
+      "buckets": [
+        1
+      ],
+      "purpose": "Planning and algorithm selection, memory hierarchy and transform conventions.",
+      "inspection": "Read introduction, DFT/algorithm overview and planner motivation; not full planner/codelet derivations.",
+      "license": "Publicly accessible; redistribution rights not established. Kept local.",
+      "license_url": null,
+      "version": null,
+      "acquisition_status": "acquired",
+      "access_note": "Local research copy; not redistributed. No reference code executed.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/computation/fftw3.pdf",
+          "url": "https://fftw.org/fftw-paper-ieee.pdf",
+          "sha256": "7e07c33e5955dcb415ac9ebd0075d9844494066094b69306cacb2efcdc5ac35e",
+          "bytes": 341958,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "compute-elpa2-paper",
+      "kind": "paper",
+      "title": "GPU-Acceleration of the ELPA2 Distributed Eigensolver for Dense Symmetric and Hermitian Eigenproblems",
+      "authors": [
+        "Victor Wen-zhe Yu",
+        "Jonathan Moussa",
+        "Pavel K\u016fs",
+        "Andreas Marek",
+        "Peter Messmer",
+        "Mina Yoon",
+        "Hermann Lederer",
+        "Volker Blum"
+      ],
+      "year": 2021,
+      "canonical_url": "https://arxiv.org/pdf/2002.10991v4",
+      "doi": "10.1016/j.cpc.2020.107808",
+      "buckets": [
+        1
+      ],
+      "purpose": "Distributed Hermitian eigensolution, two-stage reduction and GPU back-transformation.",
+      "inspection": "Read Section 2.1 generalized-to-standard transformation and two-stage tridiagonalization/back-transformation; remaining kernel derivations and performance claims not reproduced.",
+      "license": "Publicly accessible; redistribution rights not established. Kept local.",
+      "license_url": null,
+      "version": "arXiv:2002.10991v4",
+      "acquisition_status": "acquired",
+      "access_note": "Local research copy; not redistributed. No reference code executed.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/computation/elpa2-paper.pdf",
+          "url": "https://arxiv.org/pdf/2002.10991v4",
+          "sha256": "cb01aa7309622436dba49e6073e9e3aebf5e96019f2a08d54c276dd9f248d3bf",
+          "bytes": 1858711,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "compute-heffte-paper",
+      "kind": "paper",
+      "title": "heFFTe: Highly Efficient FFT for Exascale",
+      "authors": [
+        "Alan Ayala",
+        "Stanimire Tomov",
+        "Azzam Haidar",
+        "Jack Dongarra"
+      ],
+      "year": 2020,
+      "canonical_url": "https://www.netlib.org/utk/people/JackDongarra/PAPERS/heffte.pdf",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "Distributed FFT decomposition, reshaping, communication and GPU execution.",
+      "inspection": "Read Sections 2.1 and 2.2 on local transforms, reshaping and MPI communication; performance not reproduced.",
+      "license": "Publicly accessible; redistribution rights not established. Kept local.",
+      "license_url": null,
+      "version": null,
+      "acquisition_status": "acquired",
+      "access_note": "Local research copy; not redistributed. No reference code executed.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/computation/heffte-paper.pdf",
+          "url": "https://www.netlib.org/utk/people/JackDongarra/PAPERS/heffte.pdf",
+          "sha256": "6d6c46ab59e9237944136b048f2cc9cc455f46a02d2714aa04525cc63c8d9cc8",
+          "bytes": 2691668,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "compute-reproblas-paper",
+      "kind": "paper",
+      "title": "Efficient Reproducible Floating Point Summation and BLAS",
+      "authors": [
+        "James Demmel",
+        "Willow Ahrens",
+        "Hong Diep Nguyen"
+      ],
+      "year": 2016,
+      "canonical_url": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/Archive/EECS-2016-121.pdf",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "Order-independent reduction algorithms, error analysis and computational cost.",
+      "inspection": "Read introductory error discussion and Section 2 design goals, selective reproducibility and exceptional-value challenges; detailed proofs remain unread.",
+      "license": "PDF permits personal/classroom copies with stated conditions; other reuse reserved. Acquired local research copy only.",
+      "license_url": null,
+      "version": null,
+      "acquisition_status": "acquired",
+      "access_note": "Local research copy; not redistributed. No reference code executed.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/computation/reproblas-paper.pdf",
+          "url": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/Archive/EECS-2016-121.pdf",
+          "sha256": "a9d6161b3292d889c8bceb2467ffcccfff562c4133df33d734338a6d023edec2",
+          "bytes": 733015,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "compute-lapack-generalized",
+      "kind": "documentation",
+      "title": "LAPACK Users Guide: Generalized Symmetric Definite Eigenproblems",
+      "authors": [],
+      "year": 1999,
+      "canonical_url": "https://www.netlib.org/lapack/lug/node34.html",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "Generalized Hermitian eigenproblem forms and driver choices.",
+      "inspection": "Read generalized Hermitian-definite problem forms, positive-definite metric requirement and driver variants.",
+      "license": "Publicly accessible; redistribution rights not established. Kept local.",
+      "license_url": null,
+      "version": "retrieved 2026-09-25",
+      "acquisition_status": "acquired",
+      "access_note": "Local research copy; not redistributed. No reference code executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/lapack-generalized.html",
+          "url": "https://www.netlib.org/lapack/lug/node34.html",
+          "sha256": "a7f86e4af75c116c8c35b39bcb3fe8076ca44696f8e571c0d54dedab80aed5a9",
+          "bytes": 6860,
+          "format": "html"
+        }
+      ]
+    },
+    {
+      "id": "compute-cusolver",
+      "kind": "documentation",
+      "title": "NVIDIA cuSOLVER documentation",
+      "authors": [],
+      "year": 2026,
+      "canonical_url": "https://docs.nvidia.com/cuda/cusolver/index.html",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "Dense and distributed solver APIs, numerical modes, workspace and failure reporting.",
+      "inspection": "Read introduction, deprecation notices, deterministic and numerical modes, workspace considerations; API bodies not comprehensively audited.",
+      "license": "Publicly accessible; redistribution rights not established. Kept local.",
+      "license_url": null,
+      "version": "CUDA documentation 13.4 snapshot retrieved 2026-09-25",
+      "acquisition_status": "acquired",
+      "access_note": "Local research copy; not redistributed. No reference code executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/cusolver.html",
+          "url": "https://docs.nvidia.com/cuda/cusolver/index.html",
+          "sha256": "743d9ed2de953845e9372bba1c7c969d7a5baf6eb1d831b0d30906f4d73ae148",
+          "bytes": 2769128,
+          "format": "html"
+        }
+      ]
+    },
+    {
+      "id": "compute-cufft",
+      "kind": "documentation",
+      "title": "NVIDIA cuFFT documentation",
+      "authors": [],
+      "year": 2026,
+      "canonical_url": "https://docs.nvidia.com/cuda/cufft/index.html",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "FFT precision, plan/layout constraints, normalization and execution.",
+      "inspection": "Inspected transform normalization documentation; full manual acquired for later precision/layout/plan study.",
+      "license": "Publicly accessible; redistribution rights not established. Kept local.",
+      "license_url": null,
+      "version": "CUDA documentation 13.4 snapshot retrieved 2026-09-25",
+      "acquisition_status": "acquired",
+      "access_note": "Local research copy; not redistributed. No reference code executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/cufft.html",
+          "url": "https://docs.nvidia.com/cuda/cufft/index.html",
+          "sha256": "fda8938749c548378bd206999b61ecf4a617b223c3d3358d3a90ead61a803174",
+          "bytes": 536547,
+          "format": "html"
+        }
+      ]
+    },
+    {
+      "id": "compute-cublas",
+      "kind": "documentation",
+      "title": "NVIDIA cuBLAS documentation",
+      "authors": [],
+      "year": 2026,
+      "canonical_url": "https://docs.nvidia.com/cuda/cublas/index.html",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "Matrix arithmetic, precision controls, stream/workspace ownership and reproducibility.",
+      "inspection": "Read reproducibility and thread/context discussion, including stream/workspace conditions; full manual acquired for later per-operation precision and ownership study.",
+      "license": "Publicly accessible; redistribution rights not established. Kept local.",
+      "license_url": null,
+      "version": "CUDA documentation 13.4 snapshot retrieved 2026-09-25",
+      "acquisition_status": "acquired",
+      "access_note": "Local research copy; not redistributed. No reference code executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/cublas.html",
+          "url": "https://docs.nvidia.com/cuda/cublas/index.html",
+          "sha256": "187094ecbb755ae58cd798dbb147f16a864c08c5133eb558f292a502b0cb3ffe",
+          "bytes": 2491162,
+          "format": "html"
+        }
+      ]
+    },
+    {
+      "id": "compute-floating-point",
+      "kind": "documentation",
+      "title": "Floating Point and IEEE 754 Compliance for NVIDIA GPUs",
+      "authors": [
+        "Nathan Whitehead",
+        "Alex Fit-Florea"
+      ],
+      "year": 2026,
+      "canonical_url": "https://docs.nvidia.com/cuda/floating-point/index.html",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "Rounding, FMA and reduction order; document contains historical hardware claims requiring separate verification.",
+      "inspection": "Read FMA and reduction-order discussion; noticed historical CPU hardware statement within current documentation. Hardware claims need separate current verification.",
+      "license": "Publicly accessible; redistribution rights not established. Kept local.",
+      "license_url": null,
+      "version": "CUDA documentation 13.4 snapshot retrieved 2026-09-25",
+      "acquisition_status": "acquired",
+      "access_note": "Local research copy; not redistributed. No reference code executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/floating-point.html",
+          "url": "https://docs.nvidia.com/cuda/floating-point/index.html",
+          "sha256": "258c7ffd9874e2e21504efa5fa41eef358c0c20eb8ed6e697846bdd7a043c0a2",
+          "bytes": 62560,
+          "format": "html"
+        }
+      ]
+    },
+    {
+      "id": "compute-vasp-files",
+      "kind": "documentation",
+      "title": "VASP public documentation: file category",
+      "authors": [],
+      "year": 2026,
+      "canonical_url": "https://vasp.at/wiki/Category%3AFiles",
+      "doi": null,
+      "buckets": [],
+      "purpose": "Public compatibility vocabulary and file families.",
+      "inspection": "Read public input/output/HDF5 file-category index. Initial Input_and_Output URL redirects to a tutorial navigation page and was replaced with the actual file index. Individual formats and continuation semantics remain to study.",
+      "license": "Page footer states GNU Free Documentation License 1.2 unless otherwise noted; local research copy only.",
+      "license_url": "https://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "version": "retrieved 2026-09-25",
+      "acquisition_status": "acquired",
+      "access_note": "Local research copy; not redistributed. No reference code executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/vasp-file-category.html",
+          "url": "https://vasp.at/wiki/Category%3AFiles",
+          "sha256": "47c444fb91476e7eacbfe8c736bc910993001dfc1ab0704c61a6b6b23240f475",
+          "bytes": 33591,
+          "format": "html"
+        }
+      ]
+    },
+    {
+      "id": "compute-elpa",
+      "kind": "implementation",
+      "title": "ELPA",
+      "authors": [],
+      "year": 2026,
+      "canonical_url": "https://elpa.mpcdf.mpg.de/software/tarball-archive/Releases/2026.02.002/elpa-2026.02.002.tar.gz",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "Distributed dense eigensolver reference and CPU/NVIDIA execution candidate.",
+      "inspection": "Release archive validated; root LICENSE and README inspected; paper algorithm overview separately read. No implementation audit or build.",
+      "license": "LGPL-3.0; root LICENSE and README inspected. Dependencies and bundled code need separate review.",
+      "license_url": "https://gitlab.mpcdf.mpg.de/elpa/elpa/-/blob/master/LICENSE",
+      "version": "2026.02.002",
+      "acquisition_status": "acquired",
+      "access_note": "Local research copy; not redistributed. No reference code executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/elpa.tar.gz",
+          "url": "https://elpa.mpcdf.mpg.de/software/tarball-archive/Releases/2026.02.002/elpa-2026.02.002.tar.gz",
+          "sha256": "02e3c59fec53cd8eb66a4cc15fa4fbf190cf9654227223fb8ad55713e9427932",
+          "bytes": 2196509,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "compute-rlst",
+      "kind": "implementation",
+      "title": "Rust Linear Solver Toolbox",
+      "authors": [],
+      "year": 2026,
+      "canonical_url": "https://codeberg.org/rlst/rlst",
+      "doi": null,
+      "buckets": [
+        1
+      ],
+      "purpose": "Distributed Rust numerics, MPI and native BLAS/LAPACK/FFT integration comparison.",
+      "inspection": "Current upstream identified via archived GitHub relocation; commit resolved using git ls-remote. Root licenses, README and manifest inspected. No build; native dependencies are separate.",
+      "license": "MIT OR Apache-2.0; root license files and README inspected. README separately flags optional FFTW GPL terms.",
+      "license_url": "https://codeberg.org/rlst/rlst/src/commit/9ae2a1fd1119ccf964431757e8f0803f5cde2343/README.md",
+      "version": "9ae2a1fd1119ccf964431757e8f0803f5cde2343",
+      "acquisition_status": "acquired",
+      "access_note": "Pinned source archive; no execution or build. GitHub predecessor is archived.",
+      "assets": [
+        {
+          "path": "quarantine/references/computation/rlst-9ae2a1fd1119.tar.gz",
+          "url": "https://codeberg.org/rlst/rlst/archive/9ae2a1fd1119ccf964431757e8f0803f5cde2343.tar.gz",
+          "sha256": "40cd7b48a5a33590424d668c00ba7a6848c3d3939d74a972cb14da47ad6ea3ae",
+          "bytes": 318914,
+          "format": "tar.gz"
+        }
+      ]
+    }
+  ]
+}

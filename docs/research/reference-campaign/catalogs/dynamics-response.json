@@ -1,0 +1,1037 @@
+{
+  "area": "dynamics-response",
+  "retrieved_on": "2026-09-25",
+  "records": [
+    {
+      "id": "dynamics-velocity-rescaling",
+      "kind": "paper",
+      "title": "Canonical sampling through velocity-rescaling",
+      "authors": [
+        "Bussi, Giovanni",
+        "Donadio, Davide",
+        "Parrinello, Michele"
+      ],
+      "year": 2008,
+      "canonical_url": "https://arxiv.org/abs/0803.4060",
+      "doi": "10.1063/1.2408420",
+      "buckets": [
+        9
+      ],
+      "purpose": "Canonical thermostat measure, degrees of freedom and stochastic rescaling.",
+      "inspection": "PDF pp. 2–3: kinetic-energy distribution, rescaling construction and start of Fokker–Planck derivation; appendix integrator and numerical results unread.",
+      "license": "arXiv non-exclusive distribution license grants arXiv permission; does not grant general downstream reuse. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "0803.4060v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/velocity-rescaling.html",
+          "url": "https://arxiv.org/abs/0803.4060",
+          "sha256": "c4c5e47950f3f90f16256b8293fe4de21bd903c8341d60514369d4402546aad0",
+          "bytes": 42232,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/velocity-rescaling.pdf",
+          "url": "https://arxiv.org/pdf/0803.4060v1",
+          "sha256": "da37ab12851296436847e2a32f889b6d13e04f85582aec5dac2bf1a516c04a97",
+          "bytes": 310563,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-langevin-sampling",
+      "kind": "paper",
+      "title": "Robust and efficient configurational molecular sampling via Langevin Dynamics",
+      "authors": [
+        "Leimkuhler, Benedict",
+        "Matthews, Charles"
+      ],
+      "year": 2013,
+      "canonical_url": "https://arxiv.org/abs/1304.3269",
+      "doi": "10.1063/1.4802990",
+      "buckets": [
+        9
+      ],
+      "purpose": "Discretization bias in configurational sampling; compare integrators using distributions rather than trajectory stability alone.",
+      "inspection": "PDF pp. 2–3 and 5–6: bias, barrier distortion and Langevin invariant measure; harmonic proofs and full benchmark details remain unread.",
+      "license": "CC BY 3.0 indicated by arXiv; attribution/change-notice terms inspected. Applies to deposited paper, not automatically software/data.",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/",
+      "version": "1304.3269v2",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/langevin-sampling.html",
+          "url": "https://arxiv.org/abs/1304.3269",
+          "sha256": "356be86fc6e50db0d2746085d6815fad745a0cbc9ffc30604db3e9d4ca9d9601",
+          "bytes": 44739,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/langevin-sampling.pdf",
+          "url": "https://arxiv.org/pdf/1304.3269v2",
+          "sha256": "b8659eb613791ed7a01b9e7b77d3f007f6da570d7d982f3df2357dccdb451d39",
+          "bytes": 3422978,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-cell-rescaling",
+      "kind": "paper",
+      "title": "Pressure control using stochastic cell rescaling",
+      "authors": [
+        "Bernetti, Mattia",
+        "Bussi, Giovanni"
+      ],
+      "year": 2020,
+      "canonical_url": "https://arxiv.org/abs/2006.09250",
+      "doi": "10.1063/5.0020514",
+      "buckets": [
+        9
+      ],
+      "purpose": "Pressure measure, volume fluctuations and consistent coordinate/momentum rescaling.",
+      "inspection": "PDF pp. 2–3: stochastic volume equation, scaled versus unscaled momenta, pressure terms; remainder including full integrator and anisotropic extension unread.",
+      "license": "arXiv non-exclusive distribution license grants arXiv permission; does not grant general downstream reuse. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "2006.09250v4",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/cell-rescaling.html",
+          "url": "https://arxiv.org/abs/2006.09250",
+          "sha256": "b6a41e9ad2dfbc3fc79bf2b16e1045d65b75a8b2b3fae7900de6296f877be9e6",
+          "bytes": 43883,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/cell-rescaling.pdf",
+          "url": "https://arxiv.org/pdf/2006.09250v4",
+          "sha256": "010d36c887f14023602200500171747f059eb4fdfa9c76ba189b99c0cc3ce406",
+          "bytes": 8124247,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-well-tempered",
+      "kind": "paper",
+      "title": "Well-Tempered Metadynamics: A Smoothly Converging and Tunable Free-Energy Method",
+      "authors": [
+        "Barducci, Alessandro",
+        "Bussi, Giovanni",
+        "Parrinello, Michele"
+      ],
+      "year": 2008,
+      "canonical_url": "https://arxiv.org/abs/0803.3861",
+      "doi": "10.1103/PhysRevLett.100.020603",
+      "buckets": [
+        9
+      ],
+      "purpose": "History-dependent bias and limiting distributions in enhanced sampling.",
+      "inspection": "PDF pp. 1–2 through adaptive deposition and free-energy estimator/limits; detailed convergence proof and remaining benchmark pages unread.",
+      "license": "arXiv non-exclusive distribution license grants arXiv permission; does not grant general downstream reuse. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "0803.3861v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/well-tempered.html",
+          "url": "https://arxiv.org/abs/0803.3861",
+          "sha256": "8a412916f5d4c932e4ff8bbaf4521e5a43ea335f812345fa60fcf2b3f0621223",
+          "bytes": 42240,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/well-tempered.pdf",
+          "url": "https://arxiv.org/pdf/0803.3861v1",
+          "sha256": "6f05444802d71c318be94da71cd661a56d02092b8f006e11eb03ab759115a175",
+          "bytes": 224222,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-ipi-paper",
+      "kind": "paper",
+      "title": "i-PI 3.0: a flexible and efficient framework for advanced atomistic simulations",
+      "authors": [
+        "Litman, Yair",
+        "Kapil, Venkat",
+        "Feldman, Yotam M. Y.",
+        "Tisi, Davide",
+        "Begušić, Tomislav",
+        "Fidanyan, Karen",
+        "Fraux, Guillaume",
+        "Higer, Jacob",
+        "Kellner, Matthias",
+        "Li, Tao E.",
+        "Pós, Eszter S.",
+        "Stocco, Elia",
+        "Trenins, George",
+        "Hirshberg, Barak",
+        "Rossi, Mariana",
+        "Ceriotti, Michele"
+      ],
+      "year": 2024,
+      "canonical_url": "https://arxiv.org/abs/2405.15224",
+      "doi": "10.1063/5.0215869",
+      "buckets": [
+        9
+      ],
+      "purpose": "Independent nuclear evolution and force-provider coupling, including continuity assumptions.",
+      "inspection": "PDF pp. 2–3: program overview, socket loop, method composition and warning that consecutive client requests need not be neighboring trajectory states. Performance and advanced method derivations unread.",
+      "license": "arXiv non-exclusive distribution license grants arXiv permission; does not grant general downstream reuse. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "2405.15224v2",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/ipi-paper.html",
+          "url": "https://arxiv.org/abs/2405.15224",
+          "sha256": "5df8280290e7027a5bcf6e5e1f5380a5f23c32fa222060f86c0dfd575fe2a97c",
+          "bytes": 45906,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/ipi-paper.pdf",
+          "url": "https://arxiv.org/pdf/2405.15224v2",
+          "sha256": "02ab48c2df61e7bb199bf68e09683c51babd0e75b489289ed91f5dc933a754af",
+          "bytes": 4607511,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-plumed-paper",
+      "kind": "paper",
+      "title": "PLUMED 2: New feathers for an old bird",
+      "authors": [
+        "Tribello, Gareth A.",
+        "Bonomi, Massimiliano",
+        "Branduardi, Davide",
+        "Camilloni, Carlo",
+        "Bussi, Giovanni"
+      ],
+      "year": 2013,
+      "canonical_url": "https://arxiv.org/abs/1310.0980",
+      "doi": "10.1016/j.cpc.2013.09.018",
+      "buckets": [
+        9
+      ],
+      "purpose": "Enhanced sampling as a separately composable library with explicit bias state.",
+      "inspection": "PDF pp. 2–3: program summary and introduction; later architecture and examples unread. Current MetaD restart source sampled separately.",
+      "license": "arXiv non-exclusive distribution license grants arXiv permission; does not grant general downstream reuse. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1310.0980v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/plumed-paper.html",
+          "url": "https://arxiv.org/abs/1310.0980",
+          "sha256": "bdc031de31bfe69028891639e4ce15db2908ae7ea88a7a7131c230acf90841d3",
+          "bytes": 43504,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/plumed-paper.pdf",
+          "url": "https://arxiv.org/pdf/1310.0980v1",
+          "sha256": "7559ecd70861930546e15725fa809eaefc3d37f87f378adb747914b6895cadb8",
+          "bytes": 674245,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-dfpt",
+      "kind": "paper",
+      "title": "Phonons and related properties of extended systems from density-functional perturbation theory",
+      "authors": [
+        "Baroni, S.",
+        "de Gironcoli, S.",
+        "Corso, A. Dal",
+        "Giannozzi, P."
+      ],
+      "year": 2000,
+      "canonical_url": "https://arxiv.org/abs/cond-mat/0012092",
+      "doi": "10.1103/RevModPhys.73.515",
+      "buckets": [
+        10,
+        11
+      ],
+      "purpose": "Coupled first-order orbitals, density and potential; projected Sternheimer systems and derivatives.",
+      "inspection": "PDF pp. 3 and 5–6: forces/Hessian, linearized equations, occupied-space cancellation and projected response. Metallic, strain and full long-wave sections require deep return.",
+      "license": "arXiv assumed pre-2004 distribution permission; no general downstream reuse inferred. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/assumed-1991-2003/",
+      "version": "cond-mat/0012092v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/dfpt.html",
+          "url": "https://arxiv.org/abs/cond-mat/0012092",
+          "sha256": "6cd8dd6e7becf31c1152ab2dff4e431c5c41a9c2319a1acb8856288c74523146",
+          "bytes": 42212,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/dfpt.pdf",
+          "url": "https://arxiv.org/pdf/cond-mat/0012092v1",
+          "sha256": "d03ca1f3374c8bdfb863902a9674bc026cf700968e845517e6193374ae53f4d3",
+          "bytes": 1059686,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-finite-field",
+      "kind": "paper",
+      "title": "A First-Principles Approach to Insulators in Finite Electric Fields",
+      "authors": [
+        "Souza, Ivo",
+        "Iniguez, Jorge",
+        "Vanderbilt, David"
+      ],
+      "year": 2002,
+      "canonical_url": "https://arxiv.org/abs/cond-mat/0205633",
+      "doi": "10.1103/PhysRevLett.89.117602",
+      "buckets": [
+        10
+      ],
+      "purpose": "Periodic finite-field formulation, polarization branches and mesh-dependent stability.",
+      "inspection": "PDF p. 2: occupied-manifold description, finite-ring interpretation, critical-field scaling and minimization/gauge issues. Remaining derivation and numerical tensors unread.",
+      "license": "arXiv assumed pre-2004 distribution permission; no general downstream reuse inferred. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/assumed-1991-2003/",
+      "version": "cond-mat/0205633v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/finite-field.html",
+          "url": "https://arxiv.org/abs/cond-mat/0205633",
+          "sha256": "a25c8c8b700ea61f0bd707be53a3d4720b5adbe1d963be55e81500299fdc05bd",
+          "bytes": 41905,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/finite-field.pdf",
+          "url": "https://arxiv.org/pdf/cond-mat/0205633v1",
+          "sha256": "49af9be5ac8e869fae8cf2c8c211b924cb809f1ac39df4a1f80fa1c7eba88632",
+          "bytes": 169164,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-gipaw",
+      "kind": "paper",
+      "title": "All-electron magnetic response with pseudopotentials: NMR chemical shifts",
+      "authors": [
+        "Pickard, Chris J.",
+        "Mauri, Francesco"
+      ],
+      "year": 2001,
+      "canonical_url": "https://arxiv.org/abs/cond-mat/0101257",
+      "doi": "10.1103/PhysRevB.63.245101",
+      "buckets": [
+        10
+      ],
+      "purpose": "Gauge-consistent all-electron magnetic response with pseudopotentials.",
+      "inspection": "PDF pp. 2, 4–5: motivation, shielding/current definition, PAW operator mapping and gauge-origin/partial-wave issue. Full current reconstruction and implementation sections unread.",
+      "license": "arXiv assumed pre-2004 distribution permission; no general downstream reuse inferred. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/assumed-1991-2003/",
+      "version": "cond-mat/0101257v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/gipaw.html",
+          "url": "https://arxiv.org/abs/cond-mat/0101257",
+          "sha256": "52444fddb8b888c41fbd74c587ead03ea6a65920d6cf3dc2bae797f3b888f74e",
+          "bytes": 41857,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/gipaw.pdf",
+          "url": "https://arxiv.org/pdf/cond-mat/0101257v1",
+          "sha256": "4c60cab4991afba471e68c2e4094d95bbedd483a88e2a73a0e52a79769c1c3c2",
+          "bytes": 249637,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-xanes",
+      "kind": "paper",
+      "title": "X-ray Absorption Near-Edge Structure calculations with pseudopotentials. Application to K-edge in diamond and alpha-quartz",
+      "authors": [
+        "Taillefumier, Mathieu",
+        "Cabaret, Delphine",
+        "Flank, Anne-Marie",
+        "Mauri, Francesco"
+      ],
+      "year": 2002,
+      "canonical_url": "https://arxiv.org/abs/cond-mat/0207733",
+      "doi": "10.1103/PhysRevB.66.195107",
+      "buckets": [
+        10
+      ],
+      "purpose": "Core absorption, PAW transition reconstruction and recursive spectral methods.",
+      "inspection": "PDF pp. 2–3: impurity/core-hole model, all-electron transition operator, PAW reduction and introduction of Green function recursion. Full termination/broadening and data comparisons unread.",
+      "license": "arXiv assumed pre-2004 distribution permission; no general downstream reuse inferred. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/assumed-1991-2003/",
+      "version": "cond-mat/0207733v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/xanes.html",
+          "url": "https://arxiv.org/abs/cond-mat/0207733",
+          "sha256": "01b6547cd3e5b7485fd934f9053d5d3851eae46277f579dee6daecdb9034ca8a",
+          "bytes": 42978,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/xanes.pdf",
+          "url": "https://arxiv.org/pdf/cond-mat/0207733v1",
+          "sha256": "469d4b33c425af826292f4dbe1f645996da2c38027e2fad128d60967d8644220",
+          "bytes": 292647,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-phonopy-paper",
+      "kind": "paper",
+      "title": "First principles phonon calculations in materials science",
+      "authors": [
+        "Togo, Atsushi",
+        "Tanaka, Isao"
+      ],
+      "year": 2015,
+      "canonical_url": "https://arxiv.org/abs/1506.08498",
+      "doi": null,
+      "buckets": [
+        11
+      ],
+      "purpose": "Harmonic force constants, mass/phase conventions, mode normalization and thermodynamics.",
+      "inspection": "PDF pp. 2–3 through force constants/dynamical matrix, phonon observables and beginning of quasiharmonic treatment. Instability discussion and later applications unread.",
+      "license": "arXiv non-exclusive distribution license grants arXiv permission; does not grant general downstream reuse. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1506.08498v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/phonopy-paper.html",
+          "url": "https://arxiv.org/abs/1506.08498",
+          "sha256": "39b91233e945f06d5e1ccf712d70f5e82c75fcfe774d2c4c330f8d313accee69",
+          "bytes": 39370,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/phonopy-paper.pdf",
+          "url": "https://arxiv.org/pdf/1506.08498v1",
+          "sha256": "9a844031f768892ee3e0b3df1da26780891887c5807e0a62f0f4d3c0051a1724",
+          "bytes": 567710,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-phonon-lifetime",
+      "kind": "paper",
+      "title": "Distribution of phonon lifetime in Brillouin zone",
+      "authors": [
+        "Togo, Atsushi",
+        "Chaput, Laurent",
+        "Tanaka, Isao"
+      ],
+      "year": 2015,
+      "canonical_url": "https://arxiv.org/abs/1501.00691",
+      "doi": "10.1103/PhysRevB.91.094306",
+      "buckets": [
+        11
+      ],
+      "purpose": "Cubic force constants and phonon scattering leading to lattice thermal transport.",
+      "inspection": "PDF pp. 2–3 through Hamiltonian, mode expansion and self-energy definition. Full RTA versus direct BTE solution and appendices unread.",
+      "license": "arXiv non-exclusive distribution license grants arXiv permission; does not grant general downstream reuse. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1501.00691v3",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/phonon-lifetime.html",
+          "url": "https://arxiv.org/abs/1501.00691",
+          "sha256": "fc223b8cb0f05425760f9d08e2b47ab7dc59a0ec771bb59ec5a4adeb9c9a6aca",
+          "bytes": 43206,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/phonon-lifetime.pdf",
+          "url": "https://arxiv.org/pdf/1501.00691v3",
+          "sha256": "d159e2906cba72d935b08d67b272dd610f83607f0eef8c10b82689580c7599aa",
+          "bytes": 3949340,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-eph-review",
+      "kind": "paper",
+      "title": "Electron-phonon interactions from first principles",
+      "authors": [
+        "Giustino, Feliciano"
+      ],
+      "year": 2016,
+      "canonical_url": "https://arxiv.org/abs/1603.06965",
+      "doi": "10.1103/RevModPhys.89.015003",
+      "buckets": [
+        11
+      ],
+      "purpose": "Electron–phonon conceptual map and transport approximations; must be read with 2019 erratum.",
+      "inspection": "Contents/section search and PDF p. 50: semiclassical charge transport, linearized collision operator and energy relaxation-time approximation. Most of 68-page review unread; acquired erratum corrects equation on this page.",
+      "license": "arXiv non-exclusive distribution license grants arXiv permission; does not grant general downstream reuse. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1603.06965v2",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/eph-review.html",
+          "url": "https://arxiv.org/abs/1603.06965",
+          "sha256": "fe7a28e15c72e7915ade81bc18214a2d0e05076e0d22a17fdefe2e8db702c257",
+          "bytes": 44707,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/eph-review.pdf",
+          "url": "https://arxiv.org/pdf/1603.06965v2",
+          "sha256": "5d980627ad272b2a92d1f760f0e6a0883b1b3fcc941436903a361024ce330251",
+          "bytes": 7477428,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-polar-vertex",
+      "kind": "paper",
+      "title": "Fr\\\"ohlich electron-phonon vertex from first principles",
+      "authors": [
+        "Verdi, Carla",
+        "Giustino, Feliciano"
+      ],
+      "year": 2015,
+      "canonical_url": "https://arxiv.org/abs/1510.06373",
+      "doi": "10.1103/PhysRevLett.115.176401",
+      "buckets": [
+        11
+      ],
+      "purpose": "Separate singular long-range polar vertex from localized interpolation.",
+      "inspection": "PDF pp. 1–2 through long-/short-range split, anisotropic dielectric/Born-charge motivation and breakdown of direct localized interpolation. Full numerical implementation and final applications unread.",
+      "license": "arXiv non-exclusive distribution license grants arXiv permission; does not grant general downstream reuse. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1510.06373v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/polar-vertex.html",
+          "url": "https://arxiv.org/abs/1510.06373",
+          "sha256": "c6a66b54bebddae0fb1876df630ea9482c9d4c4277f5f8ccb27b7d93ef4dd1ef",
+          "bytes": 42072,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/polar-vertex.pdf",
+          "url": "https://arxiv.org/pdf/1510.06373v1",
+          "sha256": "9f982f7f00af99a6cb8f270dbc600ec048d4ac28c2095ee7b5a174b8e037ef8b",
+          "bytes": 728506,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-perturbo-paper",
+      "kind": "paper",
+      "title": "Perturbo: a software package for ab initio electron-phonon interactions, charge transport and ultrafast dynamics",
+      "authors": [
+        "Zhou, Jin-Jian",
+        "Park, Jinsoo",
+        "Lu, I-Te",
+        "Maliyov, Ivan",
+        "Tong, Xiao",
+        "Bernardi, Marco"
+      ],
+      "year": 2020,
+      "canonical_url": "https://arxiv.org/abs/2002.02045",
+      "doi": "10.1016/j.cpc.2021.107970",
+      "buckets": [
+        11,
+        14
+      ],
+      "purpose": "Independent electron–phonon scattering and occupation-dynamics formulation.",
+      "inspection": "PDF pp. 2–3 through semiclassical BTE, emission/absorption factors, fixed phonon bath in initial release and start of transport derivation. Current features assessed separately from public documentation.",
+      "license": "arXiv non-exclusive distribution license grants arXiv permission; does not grant general downstream reuse. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "2002.02045v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/perturbo-paper.html",
+          "url": "https://arxiv.org/abs/2002.02045",
+          "sha256": "0ec4ce7a53631ecf69b4c1a196eb7320dd614e734334c762f693aa3be8f31b67",
+          "bytes": 44723,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/perturbo-paper.pdf",
+          "url": "https://arxiv.org/pdf/2002.02045v1",
+          "sha256": "d87d73298ac3507499aefe08ae70f83c6873c30d243871b7027f8e586ddb7d86",
+          "bytes": 4541732,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-perturbo-gpu",
+      "kind": "paper",
+      "title": "Efficient GPU Parallelization of Electronic Transport and Nonequilibrium Dynamics from Electron-Phonon Interactions in the Perturbo Code",
+      "authors": [
+        "Peng, Shiyu",
+        "Pinkston, Donnie",
+        "Yao, Jia",
+        "Kliavinek, Sergei",
+        "Maliyov, Ivan",
+        "Bernardi, Marco"
+      ],
+      "year": 2025,
+      "canonical_url": "https://arxiv.org/abs/2511.03683",
+      "doi": "10.1038/s41524-026-02135-5",
+      "buckets": [
+        11,
+        14
+      ],
+      "purpose": "NVIDIA collision-integral layout, gather reductions and approximation-sensitive sparse channels.",
+      "inspection": "PDF pp. 5–6 and 8–9 through channel selection, CPU bottlenecks and destination-grouped reduction layout; figure caption read, rendered figure not inspected. Full performance tables and hardware validation not reproduced.",
+      "license": "arXiv non-exclusive distribution license grants arXiv permission; does not grant general downstream reuse. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "2511.03683v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Published 2026; acquired asset is 2025 arXiv v1 and may differ from journal version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/perturbo-gpu.html",
+          "url": "https://arxiv.org/abs/2511.03683",
+          "sha256": "29a18e4135b3d5240d3270ad93c054b44e831fe9a869d361982321809b0d181d",
+          "bytes": 44373,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/perturbo-gpu.pdf",
+          "url": "https://arxiv.org/pdf/2511.03683v1",
+          "sha256": "ece702892acf642d20ac99ac76a2b1cb31510964b5a1733c96b09c8324d00d83",
+          "bytes": 1682032,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-octopus-paper",
+      "kind": "paper",
+      "title": "Octopus, a computational framework for exploring light-driven phenomena and quantum dynamics in extended and finite systems",
+      "authors": [
+        "Tancogne-Dejean, Nicolas",
+        "Oliveira, Micael J. T.",
+        "Andrade, Xavier",
+        "Appel, Heiko",
+        "Borca, Carlos H.",
+        "Breton, Guillaume Le",
+        "Buchholz, Florian",
+        "Castro, Alberto",
+        "Corni, Stefano",
+        "Correa, Alfredo A.",
+        "De Giovannini, Umberto",
+        "Delgado, Alain",
+        "Eich, Florian G.",
+        "Flick, Johannes",
+        "Gil, Gabriel",
+        "Gomez, Adrián",
+        "Helbig, Nicole",
+        "Hübener, Hannes",
+        "Jestädt, René",
+        "Jornet-Somoza, Joaquim",
+        "Larsen, Ask H.",
+        "Lebedeva, Irina V.",
+        "Lüders, Martin",
+        "Marques, Miguel A. L.",
+        "Ohlmann, Sebastian T.",
+        "Pipolo, Silvio",
+        "Rampp, Markus",
+        "Rozzi, Carlo A.",
+        "Strubbe, David A.",
+        "Sato, Shunsuke A.",
+        "Schäfer, Christian",
+        "Theophilou, Iris",
+        "Welden, Alicia",
+        "Rubio, Angel"
+      ],
+      "year": 2019,
+      "canonical_url": "https://arxiv.org/abs/1912.07921",
+      "doi": "10.1063/1.5142502",
+      "buckets": [
+        10,
+        14
+      ],
+      "purpose": "Independent real-space response/time evolution, nonlinear propagation and device residency.",
+      "inspection": "PDF pp. 50–51 and 63–64: memory/adiabatic assumption, propagator families, packed state layout and reported GPU runs. Full response physics and most of 81-page paper unread.",
+      "license": "arXiv non-exclusive distribution license grants arXiv permission; does not grant general downstream reuse. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1912.07921v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/octopus-paper.html",
+          "url": "https://arxiv.org/abs/1912.07921",
+          "sha256": "f3d56f3dbe0a6154dac9c1ce86a5338751dad85b18805d43688d467593dc7baf",
+          "bytes": 50358,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/octopus-paper.pdf",
+          "url": "https://arxiv.org/pdf/1912.07921v1",
+          "sha256": "d911ec026510c6ba7ba5ade57f304e25bad1de4a4d79eff7bdd976ec5c70ec6f",
+          "bytes": 4096925,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-neb",
+      "kind": "paper",
+      "title": "A climbing image nudged elastic band method for finding saddle points and minimum energy paths",
+      "authors": [
+        "Graeme Henkelman",
+        "Blas P. Uberuaga",
+        "Hannes Jónsson"
+      ],
+      "year": 2000,
+      "canonical_url": "https://doi.org/10.1063/1.1329672",
+      "doi": "10.1063/1.1329672",
+      "buckets": [
+        9
+      ],
+      "purpose": "Projected path optimization and climbing-image saddle search.",
+      "inspection": "Published PDF pp. 2–3 through regular NEB projection and comparison with climbing image; complete convergence and rate assumptions need deep return.",
+      "license": "Publisher copyright; author-hosted research copy. Redistribution permission not inferred.",
+      "license_url": null,
+      "version": "author-hosted published article",
+      "acquisition_status": "acquired",
+      "access_note": "Full text acquired from author/group website.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/neb.pdf",
+          "url": "https://henkelmanlab.org/pubs/henkelman00_9901.pdf",
+          "sha256": "494e5f525e27f9e1909fcf085511792d51e79f9833b2df106479dc3a4d582ec6",
+          "bytes": 60823,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-propagators",
+      "kind": "paper",
+      "title": "Propagators for the time-dependent Kohn–Sham equations",
+      "authors": [
+        "Alberto Castro",
+        "Miguel A. L. Marques",
+        "Angel Rubio"
+      ],
+      "year": 2004,
+      "canonical_url": "https://doi.org/10.1063/1.1774980",
+      "doi": "10.1063/1.1774980",
+      "buckets": [
+        14
+      ],
+      "purpose": "Foundational separation of exponential application from time-dependent self-consistent propagation.",
+      "inspection": "Publisher/author metadata and indexed abstract only. Local full-text acquisition failed TLS verification; no complete body read.",
+      "license": "Unknown. Author-hosted PDF acquisition failed; publisher copyright details not inspected.",
+      "license_url": null,
+      "version": null,
+      "acquisition_status": "blocked",
+      "access_note": "HTTPSConnectionPool(host='nano-bio.ehu.eus', port=443): Max retries exceeded with url: /files/articles/Castro_JCP_2004_385.pdf (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1028)')))",
+      "assets": []
+    },
+    {
+      "id": "dynamics-propagators-2018",
+      "kind": "paper",
+      "title": "Propagators for the time-dependent Kohn-Sham equations: multistep, Runge-Kutta, exponential Runge-Kutta, and commutator free Magnus methods",
+      "authors": [
+        "Pueyo, Adrián Gómez",
+        "Marques, Miguel A. L.",
+        "Rubio, Angel",
+        "Castro, Alberto"
+      ],
+      "year": 2018,
+      "canonical_url": "https://arxiv.org/abs/1803.02113",
+      "doi": "10.1021/acs.jctc.8b00197",
+      "buckets": [
+        14
+      ],
+      "purpose": "Compare multistep, Runge–Kutta and Magnus methods for nonlinear TDKS.",
+      "inspection": "PDF pp. 2–3: density dependence, physical memory versus adiabatic approximation, numerical multistep history and method families. Actual comparative benchmark sections unread.",
+      "license": "arXiv non-exclusive distribution license grants arXiv permission; does not grant general downstream reuse. Terms page inspected. Paper only; code/data separate.",
+      "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "version": "1803.02113v1",
+      "acquisition_status": "acquired",
+      "access_note": "Author-deposited arXiv full text; pinned version. Bibliographic year is deposited version year where obtained from arXiv; DOI may refer to later journal publication.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/propagators-2018.html",
+          "url": "https://arxiv.org/abs/1803.02113",
+          "sha256": "8b792c3cab046b6486a6131171285eb46e633be74d98d7a92b686ad7e546e385",
+          "bytes": 41426,
+          "format": "html"
+        },
+        {
+          "path": "papers/exvasperated/dynamics-response/propagators-2018.pdf",
+          "url": "https://arxiv.org/pdf/1803.02113v1",
+          "sha256": "ac900c4de27abca1bf53da8ef59586a738e93a3059350d9e93c3047f5d0d9969",
+          "bytes": 291731,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-eph-erratum",
+      "kind": "paper",
+      "title": "Erratum: Electron-phonon interactions from first principles",
+      "authors": [
+        "Feliciano Giustino"
+      ],
+      "year": 2019,
+      "canonical_url": "https://doi.org/10.1103/RevModPhys.91.019901",
+      "doi": "10.1103/RevModPhys.91.019901",
+      "buckets": [
+        11
+      ],
+      "purpose": "Corrections to electron–phonon normalization and linearized transport equations.",
+      "inspection": "Entire one-page erratum read: vertex order, repeated normalization factor, current-density volume and missing band/occupation factors in linearized BTE.",
+      "license": "Copyright 2019 American Physical Society stated in acquired PDF; no permissive redistribution grant inspected.",
+      "license_url": null,
+      "version": "retrieved 2026-09-25",
+      "acquisition_status": "acquired",
+      "access_note": "Official publisher/project source.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/eph-erratum.pdf",
+          "url": "https://harvest.aps.org/v2/journals/articles/10.1103/RevModPhys.91.019901/fulltext",
+          "sha256": "910c215ae380e90e86831fb17cd5d1aa04dc538ec09b389a253c3452ab7dde35",
+          "bytes": 96296,
+          "format": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-perturbo-installation",
+      "kind": "documentation",
+      "title": "Perturbo installation and GPU configuration",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://perturbo-code.github.io/mydoc_installation.html",
+      "doi": null,
+      "buckets": [
+        11,
+        14
+      ],
+      "purpose": "Identify source-access conditions and documented NVIDIA compiler/configuration constraints.",
+      "inspection": "Full installation page read, especially individual access request, QE version dependencies, OpenACC support, compiler-version caveat and calculation-mode limitations.",
+      "license": "Website footer copyright Caltech, all rights reserved; code license unverified because source access is gated.",
+      "license_url": null,
+      "version": "retrieved 2026-09-25",
+      "acquisition_status": "acquired",
+      "access_note": "Official publisher/project source.",
+      "assets": [
+        {
+          "path": "papers/exvasperated/dynamics-response/perturbo-installation.html",
+          "url": "https://perturbo-code.github.io/mydoc_installation.html",
+          "sha256": "88d8f72a1524890ddd88f3baf6f3a5fb1644fcb5264d208662e1995df2e7b64c",
+          "bytes": 40407,
+          "format": "html"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-ipi",
+      "kind": "implementation",
+      "title": "i-PI/i-pi",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/i-PI/i-pi",
+      "doi": null,
+      "buckets": [
+        9
+      ],
+      "purpose": "Nuclear evolution/force-provider interface and continuation reference.",
+      "inspection": "README, licenses/LICENSE.md and license_MIT.txt; ipi/utils/prng.py 40–100 and ipi/inputs/simulation.py 210–230. Thermostat/barostat/constraint files located but bodies not deeply read.",
+      "license": "Choice of GPL or MIT per licenses/LICENSE.md; MIT text inspected. Bundled examples/data require separate assessment.",
+      "license_url": "https://github.com/i-PI/i-pi/blob/1a93493d23c819fc0078ce1d9a85c83c37c846ee/licenses/LICENSE.md",
+      "version": "1a93493d23c819fc0078ce1d9a85c83c37c846ee",
+      "acquisition_status": "acquired",
+      "access_note": "Inert source snapshot pinned to commit; dependencies/submodules not acquired or executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/dynamics-response/ipi-1a93493d23c8.tar.gz",
+          "url": "https://codeload.github.com/i-PI/i-pi/tar.gz/1a93493d23c819fc0078ce1d9a85c83c37c846ee",
+          "sha256": "b6aef2f2735e60497cfb7aaec82fa3082d2eccd5d02233335ffe9eb058f87f29",
+          "bytes": 15309579,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-plumed",
+      "kind": "implementation",
+      "title": "plumed/plumed2",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/plumed/plumed2",
+      "doi": null,
+      "buckets": [
+        9
+      ],
+      "purpose": "Bias histories, collective variables and external integration reference.",
+      "inspection": "README, COPYING.LESSER, src/bias/MetaD.cpp license header and restart/acceleration section 1325–1375; interface source located but not fully read.",
+      "license": "LGPL-3.0-or-later indicated by sampled source header; COPYING.LESSER version 3 inspected. Bundled material not comprehensively audited.",
+      "license_url": "https://github.com/plumed/plumed2/blob/f3d17f6dd8927a802c4c8580e7007c1ea7d99fb6/COPYING.LESSER",
+      "version": "f3d17f6dd8927a802c4c8580e7007c1ea7d99fb6",
+      "acquisition_status": "acquired",
+      "access_note": "Inert source snapshot pinned to commit; dependencies/submodules not acquired or executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/dynamics-response/plumed-f3d17f6dd892.tar.gz",
+          "url": "https://codeload.github.com/plumed/plumed2/tar.gz/f3d17f6dd8927a802c4c8580e7007c1ea7d99fb6",
+          "sha256": "f3e88749af524188c57df0c525886c797d2fe239962064e83623731bf8f14f6e",
+          "bytes": 128860319,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-phonopy",
+      "kind": "implementation",
+      "title": "phonopy/phonopy",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/phonopy/phonopy",
+      "doi": null,
+      "buckets": [
+        11
+      ],
+      "purpose": "Independent harmonic dynamical matrix and polar-limit reference.",
+      "inspection": "README/LICENSE; phonopy/harmonic/dynamical_matrix.py 270–314 and 375–405, class/method map. Tests/force-constant routines located but not validated. C/Rust selector seen; Rust dependency not acquired.",
+      "license": "BSD-3-Clause in root LICENSE; no assumption that external datasets share those terms.",
+      "license_url": "https://github.com/phonopy/phonopy/blob/4f614db85c254f20cca1aecb18c87d0a0bf7fcf7/LICENSE",
+      "version": "4f614db85c254f20cca1aecb18c87d0a0bf7fcf7",
+      "acquisition_status": "acquired",
+      "access_note": "Inert source snapshot pinned to commit; dependencies/submodules not acquired or executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/dynamics-response/phonopy-4f614db85c25.tar.gz",
+          "url": "https://codeload.github.com/phonopy/phonopy/tar.gz/4f614db85c254f20cca1aecb18c87d0a0bf7fcf7",
+          "sha256": "3937b3021e691f87aae283f3e08af3c0111516981d237d530240dc175bfdfb18",
+          "bytes": 8745209,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-phono3py",
+      "kind": "implementation",
+      "title": "phonopy/phono3py",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://github.com/phonopy/phono3py",
+      "doi": null,
+      "buckets": [
+        11
+      ],
+      "purpose": "Anharmonic self-energy and lattice transport reference.",
+      "inspection": "README/LICENSE; phono3py/phonon3/imag_self_energy.py 1–100 and 209–239, method/temperature/cutoff map. Rust wrapper imports phonors; backend implementation not acquired or executed.",
+      "license": "BSD-3-Clause in root LICENSE and sampled source header; external data separate.",
+      "license_url": "https://github.com/phonopy/phono3py/blob/fece802ca1662b95211449ca6b40d0afd91697dd/LICENSE",
+      "version": "fece802ca1662b95211449ca6b40d0afd91697dd",
+      "acquisition_status": "acquired",
+      "access_note": "Inert source snapshot pinned to commit; dependencies/submodules not acquired or executed.",
+      "assets": [
+        {
+          "path": "quarantine/references/dynamics-response/phono3py-fece802ca166.tar.gz",
+          "url": "https://codeload.github.com/phonopy/phono3py/tar.gz/fece802ca1662b95211449ca6b40d0afd91697dd",
+          "sha256": "2de89f62e2e47f3b65fe4653c8644bc2c8768890054ee00fc569059a244556a0",
+          "bytes": 12609246,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-octopus",
+      "kind": "implementation",
+      "title": "Octopus",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://gitlab.com/octopus-code/octopus",
+      "doi": null,
+      "buckets": [
+        10,
+        14
+      ],
+      "purpose": "Independent real-space TDKS propagation and response; CPU/GPU execution reference.",
+      "inspection": "README and introductory COPYING.md/README licensing statements; src/td/propagator_etrs.F90 74–135 and 330–385; propagator/restart tree map. Most source bodies and GPU kernels unread.",
+      "license": "Distribution GPL-3.0; README describes individual GPL-2.0-or-later or MPL-2.0 files; bundled libraries have exceptions in COPYING.md. Per-file adoption review remains required.",
+      "license_url": "https://gitlab.com/octopus-code/octopus/-/blob/f5a65398e0054ef4f11a2688053c4ae8bf33a6aa/COPYING.md",
+      "version": "f5a65398e0054ef4f11a2688053c4ae8bf33a6aa",
+      "acquisition_status": "acquired",
+      "access_note": "Official GitLab main commit; GitHub namespace is an empty older repository. Inert archive; no dependencies or submodules acquired.",
+      "assets": [
+        {
+          "path": "quarantine/references/dynamics-response/octopus-f5a65398e005.tar.gz",
+          "url": "https://gitlab.com/api/v4/projects/octopus-code%2Foctopus/repository/archive.tar.gz?sha=f5a65398e0054ef4f11a2688053c4ae8bf33a6aa",
+          "sha256": "f4a3b359d2a2c72107eed643f0c9573539a6f44fe060fecd6a3eb6b5bb3b4cfb",
+          "bytes": 75716106,
+          "format": "tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-perturbo",
+      "kind": "implementation",
+      "title": "Perturbo",
+      "authors": [],
+      "year": null,
+      "canonical_url": "https://perturbo-code.github.io/mydoc_installation.html",
+      "doi": null,
+      "buckets": [
+        11,
+        14
+      ],
+      "purpose": "Reference transport and nonequilibrium collision implementation, including NVIDIA OpenACC path.",
+      "inspection": "Official installation page fully read; GitHub repository URL returns 404 without access; no source inspected.",
+      "license": "Unknown; source license not inspected because access requires individual registration.",
+      "license_url": null,
+      "version": "3.0 public documentation; source unpinned",
+      "acquisition_status": "blocked",
+      "access_note": "Official instructions require individual form/email submission for source access. No form submitted and no message sent. Public installation page archived as dynamics-perturbo-installation.",
+      "assets": []
+    }
+  ]
+}
