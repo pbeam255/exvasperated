@@ -47,6 +47,7 @@ These names describe intended responsibilities, not final Rust APIs.
 | Family history | Mixer, propagator, thermostat, optimizer, bias, acquisition or branch history; owner is the algorithm that interprets it |
 | `ExecutionContext` | Rank group, CPU workers, device contexts, library handles, placement and memory pools |
 | Family result | Quantities actually evaluated at a named scientific boundary and the method outcome; immutable to consumers |
+| Recorded family state | Immutable decoded values/history from a selected archive entry; the method constructs a continuation session from it where supported |
 
 A model does not own mutable global geometry merely because many routines need
 positions. A constructed problem pairs a model with a specific geometry and
@@ -76,6 +77,13 @@ A method driver is ordinary scientific code with access to an execution context,
 its owned state, bounded output callbacks and stop requests. The application
 selects a driver variant, then calls it. Drivers can invoke child methods and
 retain child sessions where their histories are needed.
+
+A method defines its recorded state alongside its working state. A snapshot
+operation exposes named immutable serialization views at a supported stage;
+restoration decodes those values, and continuation preparation reconstructs
+execution resources and any explicitly permitted derived quantities. The archive
+stores these records without driving the numerical algorithm through event replay.
+The [history design](calculation-history.md) defines the application operations.
 
 Examples of domain APIs to design in their respective expeditions:
 

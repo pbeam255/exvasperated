@@ -8,8 +8,10 @@ executable verification and physical validation establish different things.
 
 Use small executable protocol models where they can expose an error. Quint is a
 candidate for the lifecycle/checkpoint/collective protocols; select tooling when
-implementing the model. The current draft specifies the intended properties in
-plain notation and transition tables. No model checker has been run.
+implementing the model. Most protocols currently have plain notation and
+transition tables. The [history refinement](calculation-history.md#7-bounded-protocol-exploration)
+adds a small exhaustive Python transition-system exploration for publication and
+recovery. MPI/lifecycle models remain unimplemented; Quint has not been run.
 
 | Property | Precise intended statement | Necessary scope/assumptions |
 | --- | --- | --- |
@@ -20,7 +22,8 @@ plain notation and transition tables. No model checker has been run.
 | Recorded-state restoration | Selecting a retained log point recovers its recorded state and retained history | Include parent/shared-payload dependencies; future trajectory equality is a separate, unestablished claim |
 | Branch preservation | Continuing from an earlier point leaves the previously recorded future unchanged | Branch identity and parent links persist; explicit pruning must preserve dependencies of retained points |
 | Publication | No final generation is visible as committed before all its required files succeed | Actual filesystem publication/durability assumptions are qualified |
-| Preservation | Failure while creating a new generation leaves an older committed generation unchanged | Retention happens after successful publication; storage may itself fail |
+| Preservation | Failure while creating a new generation leaves an older committed generation unchanged | No automatic deletion in the proposed baseline; storage may itself fail |
+| Save acknowledgement | A successful save acknowledgement follows durable publication of its entry and dependencies | Visibility alone is insufficient; uncertain outcomes are recovered by entry identity |
 | Outcome fidelity | Process completion never changes the reported method outcome | Output/cleanup failure is represented separately |
 | Result ownership | A writer/observer cannot see a field mutated while it reads it | Applies to host borrows and asynchronous device work |
 
@@ -57,8 +60,9 @@ prove that an SCF branch is physically desired, or attach certificates to result
 | Rank disappears in a collective | Job failure; no promise of checkpointing the current state | Launcher timeout/abort tests and prior-checkpoint recovery |
 
 This is a bounded paper review of the architecture. These scenarios are not
-claimed as executed tests. Add the concrete failing implementation tests with the
-corresponding implementation increment; avoid a late catch-up testing campaign.
+claimed as executed implementation tests. A later bounded history protocol model
+checks publication/recovery under its stated abstractions. Add concrete tests with
+the corresponding implementation increment; avoid a late catch-up testing campaign.
 
 ## 3. Scientific acceptance
 
@@ -169,6 +173,8 @@ Selected source/paper/documentation reading is recorded in the
 proposal was checked against the failure scenarios above and revised where a
 coherent boundary, output ownership or cleanup path needed to be explicit.
 Local Markdown links/anchors, supplementary acquisition hashes and Git whitespace
-are checked before delivery. These are document/acquisition checks. No engine,
-backend, numerical workload, consumer workflow or executable formal model has
-been run in this design pass.
+were checked for the initial draft. A subsequent history refinement ran the
+original finite protocol explorer: 60 reachable states, 73 transitions and 66
+crash-recovery cases, with its stated checks passing. See its explicit assumptions
+and exclusions before interpreting that result. No engine, backend, numerical
+workload, consumer workflow or physical filesystem crash experiment has been run.

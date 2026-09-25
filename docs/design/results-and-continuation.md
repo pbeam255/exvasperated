@@ -3,6 +3,8 @@
 Part of [design draft 0.1](README.md). Persistence must preserve the meaning of
 what was calculated and the state required by the chosen continuation procedure.
 Container readability is only one requirement.
+The [calculation-history refinement](calculation-history.md) specifies the logical
+entry/branch model and separates visible publication from save acknowledgement.
 
 ## 1. Result semantics
 
@@ -58,7 +60,8 @@ Use a versioned native format with **HDF5 array containers** and a small readabl
 index for each published generation/segment. This is a proposal pending binding,
 parallel-IO and filesystem experiments. Compatibility files use their own adapters.
 The generation/segment layout below is a candidate payload organization for the
-logical history; parent links and entry indexing still need specification.
+logical history. The refinement proposes parent links and complete field indexes;
+their precise byte schemas and physical layout still need specification.
 Native persistence never serializes Rust object layout, pointers or enum memory.
 Checkpoint payloads preserve the working scalar encoding by default, with only
 lossless compression. Reduced-precision export is a distinct explicit operation;
@@ -189,9 +192,11 @@ recoverable state. An unexpected failure can lose work since that generation.
    closes it, and persists directory entries inside the temporary generation
    (including any nested directories). It then renames the temporary generation
    to its final name and persists the parent directory where supported.
-   Publication is the final name plus a
-   complete readable index and matching payloads.
-6. Only after publication may a branch-head hint be updated. Existing entries and
+   Visible publication is the final name plus a complete readable index and
+   matching payloads. Acknowledge a durable save only after the directory
+   persistence succeeds. Failure after rename begins may leave an uncertain
+   outcome; recovery checks the same entry identity before any retry.
+6. Only after durable publication may a branch-head hint be updated. Existing entries and
    branches remain intact. Any later explicit pruning policy must retain all
    dependencies of retained restore points and state which points it removes.
 
@@ -273,4 +278,6 @@ specified and tested for that interface.
 
 These cases have been reasoned through on paper. Filesystem crash tests and
 method-specific split-run experiments remain required before implementation is
-accepted.
+accepted. The separate calculation-history refinement also includes a bounded
+executable publication/recovery model; its scope does not cover these scientific
+or filesystem experiments.

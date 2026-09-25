@@ -35,6 +35,7 @@ remain a separate possible product.
 | [Calculation model and composition](calculation-model.md) | Domain objects, construction, ownership, state changes, driver composition and the 15 scientific families |
 | [Execution and lifecycle](execution.md) | Application states, CPU/NVIDIA placement, MPI, asynchronous memory, stopping, errors and cleanup |
 | [Results and continuation](results-and-continuation.md) | Output meanings, native storage, checkpoint publication, resume/import/migration and failure cases |
+| [Append-only calculation history](calculation-history.md) | Recorded entries, shared immutable payloads, restoration/branching APIs, save acknowledgement and bounded protocol exploration |
 | [Interfaces and compatibility](interfaces-and-compatibility.md) | CLI/library boundaries, configuration, VASP profiles, downstream tools, extensions and packaging |
 | [Verification and design completion](verification.md) | Adversarial cases, protocol models, scientific acceptance, implementation sequence and open decisions |
 
@@ -132,6 +133,9 @@ generations, a synchronous method API with internal asynchronous execution, and
 MPI calls on the initializing thread as the first distributed execution model.
 Those choices have concrete consequences and tests in the companion documents.
 They remain subject to bounded implementation experiments.
+The calculation-history refinement treats generations as payload storage for an
+append-only logical history. Recorded-state restoration is the accepted semantic
+commitment; exact entry schemas and recording cadence remain proposed work.
 
 No FFT/eigensolver library or CUDA compiler has been selected. cuda-oxide, cudarc,
 CubeCL and native library paths remain candidates with different roles. CPU and

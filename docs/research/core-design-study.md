@@ -183,4 +183,16 @@ protocols. It does not prove numerical correctness, select a CUDA compiler,
 establish every format, finish the every-file source study, or settle every
 scientific history policy. The numerical families remain outlines. Core protocol
 failure cases are worked through in the design; executable model checking,
-fault injection, target measurements and consumer runs have not occurred.
+fault injection, target measurements and consumer runs had not occurred in that
+initial pass.
+
+### Subsequent history-design refinement
+
+After the user accepted restoration of recorded state without a deterministic
+replay requirement, revisited the cited Linux `fsync` and `rename` documentation
+and HDF5 SWMR restrictions. In particular, the documented NFS rename ambiguity
+requires distinguishing visible publication, directory durability and what the
+caller knows about save completion. The
+[history refinement](../design/calculation-history.md) records this consequence
+and an original bounded Python protocol exploration. That later model does not
+validate a filesystem, method payload or scientific continuation claim.

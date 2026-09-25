@@ -12,11 +12,22 @@ Proposed commands, subject to interface review:
 exvasperated inspect --input calculation.toml
 exvasperated prepare --input calculation.toml --run-dir run
 exvasperated run --input calculation.toml --run-dir run
-exvasperated resume --checkpoint run/checkpoints/generation-000012
+exvasperated history list --archive run
+exvasperated history inspect --archive run --at ENTRY
+exvasperated resume --archive run --at ENTRY --branch trial-2
 exvasperated run --compat vasp-6.5.1 --directory calculation
 exvasperated capabilities
 exvasperated version
 ```
+
+History commands use stable entry identifiers; a step number or timestamp alone
+does not select an unambiguous point. `resume` starts a new branch from that
+point after method-specific preparation. `history inspect` reads recorded data
+without starting a scientific driver. Native initialization from selected prior
+quantities is a distinct input operation. See the
+[history operations](calculation-history.md#3-operations-available-to-callers).
+The illustrative `--branch` value is a human label; a new stable branch identifier
+is allocated for the session, with conflicting labels rejected.
 
 Native input is a versioned declarative document, proposed as TOML. It expresses
 a selected calculation and its explicit composition, not an inferred experimental
@@ -219,8 +230,10 @@ dead. A stale ownership record requires an explicit recovery operation that
 preserves prior outputs; ordinary startup does not steal it automatically.
 
 Native fresh runs use a new directory or refuse conflicting scientific outputs.
-Resume creates a new segment/generation. Compatibility mode applies its declared
-overwrite/append behavior only after selected restart inputs have been read or
+Resume appends a branch and new segments/generations under exclusive archive
+writer ownership. Concurrent readers use immutable entries; simultaneous branch
+writers in one archive need a separately qualified protocol. Compatibility mode
+applies its declared overwrite/append behavior only after selected restart inputs have been read or
 preserved; opening an output must not truncate a file still needed as input.
 Temporary names are per-run and noncolliding. Cleanup removes only files owned
 by that run and never erases prior committed checkpoints merely because startup
