@@ -98,7 +98,12 @@ This is a responsibility diagram. Method calls are ordinary typed calls and
 structured iteration. Local execution can use streams, events and bounded work
 queues without turning scientific composition into a universal graph language.
 
-## Proposed Rust organization
+## Proposed organization, illustrated in Rust
+
+Stack selection is open following the user's 2026-09-25 clarification; see the
+[stack discussion](../research/stack-and-symbolic-computation.md). These names
+illustrate responsibilities using Rust and do not select the implementation
+language or require a particular foreign interface.
 
 Start with a small workspace; module boundaries matter more than crate count.
 The following are dependency boundaries, not a requirement to create all crates
@@ -120,11 +125,15 @@ so scientific code does not need a dependency on a particular file container.
 Small observer/control interfaces can live beside driver APIs to avoid dependency
 cycles. The CLI remains a thin layer over `exv-app`.
 
-Safe Rust is the default. Foreign libraries and device launch code live behind
-narrow operation-specific adapters. A Rust signature alone does not establish
+If Rust is selected, safe Rust is the default. Foreign libraries and device launch
+code live behind narrow operation-specific adapters. A Rust signature alone does not establish
 foreign numerical behavior or asynchronous memory safety. Hot loops dispatch on
 concrete implementations; runtime backend selection occurs around substantial
 operations, not each scalar arithmetic operation.
+
+Prefer transferring owning handles between operations while their data stays in
+place. An asynchronous operation retains ownership through actual completion.
+Shared access needs a concrete use; there is no proposed lease-management service.
 
 ## What is deliberately left open
 

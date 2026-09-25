@@ -226,10 +226,24 @@ extrapolate, choose a root or change a physical model to make a calculation fini
 Verification, comparisons with independent implementations and physical validation
 answer different questions. Tests advance with each implementation increment.
 
-Safe Rust and minimal FFI are the inherited defaults; architecture remains to be
-designed. Evaluate outside libraries and larger components case by case, including
-scientific suitability, measured behavior and license compatibility. Dependency
-code and FFI remain part of what we must trust and assess.
+On 2026-09-25 the user explicitly reopened stack selection. Rust remains a
+plausible choice, not a settled decision. Compare C, C++, Rust and OxCaml for the
+whole program, with additional candidates justified on their merits. Go, JVM
+languages and Zig are excluded by current user direction. Examine modern Fortran
+and APL for calculation routines, and symbolic derivation, simplification and
+specialization before numeric execution. Performance and scientific correctness
+both constrain selection. Existing Rust-specific design sketches are conditional.
+Evaluate outside libraries and larger components case by case, including scientific
+suitability, measured behavior and license compatibility. Dependency code, code
+generators and foreign interfaces remain part of what we must trust and assess.
+
+The user prefers keeping scientific data in place and handing off ownership.
+Their briefly used word "lease" was explicitly withdrawn: it does not authorize
+a lease-management subsystem. Prefer moving owning handles through operations;
+retain allocations through actual asynchronous completion. Introduce sharing,
+borrowing or coordination only for a concrete requirement. Language boundaries
+should not cause copies or repacking by default; necessary representation or
+placement changes must be explicit and measured.
 
 Generally keep an effort to two passes before discussing a larger unresolved
 redesign. Independent adversarial reviews are periodic, not mandatory ceremonies

@@ -177,16 +177,25 @@ units as well as array ordering and file shape.
 
 ## 5. Embedding and extension boundaries
 
-Provide a Rust library API first. It creates a context, constructs/prepares a
-calculation, executes a selected method, and returns a structured outcome and
+Provide a native library API in the selected implementation language. The initial
+Rust sketch remains conditional on the open stack decision. It creates a context,
+constructs/prepares a calculation, executes a selected method, and returns a structured outcome and
 owned/borrowed results with explicit lifetimes. The CLI adds process exit policy.
-Rust APIs can evolve during alpha; persistence schemas evolve explicitly.
+Native APIs can evolve during alpha; persistence schemas evolve explicitly.
 
-A future C ABI uses opaque handles, fixed-width primitive encodings and explicit
+A C ABI where needed uses opaque handles, fixed-width primitive encodings and explicit
 buffer shape/stride/ownership. Every allocation has a matching release operation;
-errors are returned through documented codes and caller-owned messages. No Rust
-layout, panic or foreign exception crosses the ABI. Python bindings build on that
-boundary or the Rust API, with array lifetimes enforced by the binding.
+errors are returned through documented codes and caller-owned messages. No private
+language layout, panic or foreign exception crosses the ABI. Python bindings, if
+provided, build on that boundary or the native API with array lifetimes enforced
+by the binding.
+
+Operation interfaces should accept and return owning handles to existing
+allocations when that matches the computation. Foreign adapters preserve the
+allocator/deallocation identity and completion lifetime; transferring control
+does not require the foreign routine to acquire a right to free the storage.
+Shared read-only inputs and scoped borrows remain available where concretely
+needed. A language boundary is not an instruction to copy, repack or migrate data.
 
 Extensions attach at scientifically meaningful operations:
 
