@@ -1,3 +1,7 @@
+{"created_at":"2026-09-25T02:40:58Z","created_by":"Patrick Beam","depends_on_id":"exv-02h","issue_id":"exv-02h.1","type":"parent-child"}
+{"created_at":"2026-09-25T02:40:58Z","created_by":"Patrick Beam","depends_on_id":"exv-02h","issue_id":"exv-02h.2","type":"parent-child"}
+{"created_at":"2026-09-25T02:40:59Z","created_by":"Patrick Beam","depends_on_id":"exv-02h","issue_id":"exv-02h.3","type":"parent-child"}
+{"created_at":"2026-09-25T02:40:59Z","created_by":"Patrick Beam","depends_on_id":"exv-02h","issue_id":"exv-02h.4","type":"parent-child"}
 {"created_at":"2026-09-24T07:25:02Z","created_by":"Patrick Beam","depends_on_id":"exv-vsr","issue_id":"exv-6l0","type":"discovered-from"}
 {"created_at":"2026-09-24T07:35:12Z","created_by":"Patrick Beam","depends_on_id":"exv-6l0","issue_id":"exv-6l0.1","type":"parent-child"}
 {"created_at":"2026-09-24T08:43:23Z","created_by":"Patrick Beam","depends_on_id":"exv-6l0","issue_id":"exv-6l0.10","type":"parent-child"}
@@ -44,3 +48,4 @@
 {"created_at":"2026-09-24T08:17:58Z","created_by":"Patrick Beam","depends_on_id":"exv-epl","issue_id":"exv-epl.7","type":"parent-child"}
 {"created_at":"2026-09-24T08:24:31Z","created_by":"Patrick Beam","depends_on_id":"exv-epl","issue_id":"exv-epl.8","type":"parent-child"}
 {"created_at":"2026-09-24T08:27:50Z","created_by":"Patrick Beam","depends_on_id":"exv-epl","issue_id":"exv-epl.9","type":"parent-child"}
+{"created_at":"2026-09-25T02:37:26Z","created_by":"Patrick Beam","depends_on_id":"exv-9dj","issue_id":"exv-x34","type":"discovered-from"}
