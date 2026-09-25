@@ -5,6 +5,11 @@ runtime, numerical library or code generator is selected by this note. Evidence
 is documentation reading, with the acquired Libxc README inspected at its pinned
 revision. No compiler or numerical experiment was run for this comparison.
 
+The subsequent [C++ rigor stack investigation](cpp-rigor-stack.md) maps candidate
+verification and performance tools, with their limits and proposed qualification
+cases. It preserves open stack selection and the user's resource-conscious design
+stance.
+
 ## Separate the choices, then test their composition
 
 The application language, scientific routine language, kernel execution backend,

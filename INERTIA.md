@@ -245,6 +245,22 @@ borrowing or coordination only for a concrete requirement. Language boundaries
 should not cause copies or repacking by default; necessary representation or
 placement changes must be explicit and measured.
 
+On 2026-09-25 the user further emphasized algebraic data types and structures,
+memory layout as a first-class concern alongside logic flow, and restricting and
+bounding resources and operations wherever justified. Their demoscene analogy
+expresses a discipline of understanding the machine and avoiding waste even on
+powerful hardware. "Not one byte/cycle wasted" is a spirit, not a literal local
+optimization mandate. Ring buffers with cursors are an example, not a prescribed
+architecture or a reason to over-index on that structure. No system determinism
+promise is introduced. Controlled simulation is a testing technique and does not
+change the scientific or persistence commitments above.
+
+The user requested identifying a broad C++ rigor stack, including property tests,
+state-space exploration, bounded verification, mutation testing and controlled
+simulation in addition to compiler diagnostics and analysis. The
+[candidate tooling map](docs/research/cpp-rigor-stack.md) records tools, limits and
+proposed qualification cases. It does not select C++ or establish executed checks.
+
 Generally keep an effort to two passes before discussing a larger unresolved
 redesign. Independent adversarial reviews are periodic, not mandatory ceremonies
 for every change. No local mutation campaigns; cloud mutation testing requires
