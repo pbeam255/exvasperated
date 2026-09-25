@@ -18,6 +18,8 @@ campaign, system design, specification and planning, then implementation,
 validation and release.
 
 - [Project direction and working preferences](INERTIA.md)
+- [Overarching design draft and application core](docs/design/README.md)
+- [Focused reading behind the core design](docs/research/core-design-study.md)
 - [Source partition and proposed study order](docs/research/vasp-source-partition.md)
 - [First-pass source studies and independent reviews](docs/research/first-pass/README.md)
 - [Core program and scientific routine outline for the reference expedition](docs/research/core-program-outline.md)

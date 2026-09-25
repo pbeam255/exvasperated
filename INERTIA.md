@@ -83,6 +83,15 @@ specific subsystem being undertaken. Acquiring references or mentioning a
 subsystem in the broad survey does not discharge this work. Re-grounding remains
 iterative: related studies and experiments may expose reasons to return.
 
+The user subsequently requested actually reading and studying the acquired
+resources, then drafting an overarching Exvasperated design with a thoroughly
+considered application core and less detailed computational routine families.
+The [focused core reading](docs/research/core-design-study.md) and
+[design draft](docs/design/README.md) deliver that pass. The architecture and
+operating protocols are proposals for review; no engine implementation or backend
+selection follows automatically. The focused scientific expeditions remain
+required before detailed subsystem design and implementation.
+
 On 2026-09-24 the user established the following project sequence after the
 orientation. The source-study order organizes the first stage of this sequence.
 

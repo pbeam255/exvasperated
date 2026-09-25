@@ -1,0 +1,252 @@
+# Interfaces, compatibility and delivery
+
+Part of [design draft 0.1](README.md). Minimal disruption means preserving the
+scientific and operational behaviors used by real researchers and tools. The
+compatibility interface and native interface share the same scientific engine.
+
+## 1. Entry points
+
+Proposed commands, subject to interface review:
+
+```text
+exvasperated inspect --input calculation.toml
+exvasperated prepare --input calculation.toml --run-dir run
+exvasperated run --input calculation.toml --run-dir run
+exvasperated resume --checkpoint run/checkpoints/generation-000012
+exvasperated run --compat vasp-6.5.1 --directory calculation
+exvasperated capabilities
+exvasperated version
+```
+
+Native input is a versioned declarative document, proposed as TOML. It expresses
+a selected calculation and its explicit composition, not an inferred experimental
+intent. Complex workflows can compose library calls or separate runs. Introduce
+additional native composition syntax only for concrete scientific procedures;
+there is no initial general workflow DSL.
+
+The CLI returns a concise human explanation plus stable machine-readable outcome
+fields. Diagnostic prose is original. Native stdout/stderr responsibilities are
+specified so pipelines need not scrape mixed progress and data. MPI launch stays
+compatible with the site's scheduler/launcher; the executable does not become a
+cluster scheduler.
+
+Compatibility launchers can provide familiar executable basenames in a separate
+installation directory, with a configured compatibility profile. They select the
+corresponding represented mode through the same engine. Installation does not
+overwrite an existing VASP binary. Basename support is announced only after that
+mode's semantics are implemented and tested.
+
+Native process outcomes use a proposed small stable mapping: `0` for completion
+of the requested operation, `2` for invalid/unavailable input, `3` for a method
+limit or failure to meet its requested stopping condition, `4` for a controlled
+stop, `5` for execution failure, `6` for required output failure, and `7` for an
+internal error. Signal termination retains the platform/launcher behavior. The
+structured summary carries the actual method outcome, delivery status and cause;
+an exit integer cannot carry all three. Compatibility profiles can map legacy
+process behavior separately, with the native summary preserving those facts.
+
+## 2. Configuration semantics
+
+Native configuration separates:
+
+- The physical model and atomic-data selection.
+- Representation/discretization choices.
+- The requested method, its numerical controls and explicit child methods.
+- Initialization versus resume/import.
+- Execution resources and supported placement choices.
+- Requested scientific output and operational stopping/checkpoint policy.
+
+The parser preserves source locations. It rejects duplicate native keys and
+unknown native options, rather than silently accepting a typo. Profile-specific
+compatibility parsing follows its own observed/documented syntax and precedence;
+those rules do not leak into the native grammar. No inherited global mutable
+parameter map is exposed to scientific routines.
+
+Resolution computes context-dependent defaults in a defined order and presents
+the effective configuration, including the origin of values that users commonly
+need to understand. Static defaults are versioned. A change in default scientific
+method is a documented behavior change, not a backend upgrade side effect.
+
+Environment variables affect only documented operational choices such as data
+search paths and execution setup, unless a compatibility profile explicitly
+requires otherwise. Resolve relative paths from the declared input/directory
+context. Native execution takes structured arguments; input files are not shell
+programs. Explicit foreign executable interfaces use documented argv/working-
+directory behavior.
+
+Changing an input while a run is in progress does not mutate the resolved native
+calculation. Supported stop/control channels are separate. A scientific interface
+that intentionally reads evolving external input has its own synchronization and
+method semantics.
+
+## 3. VASP compatibility profiles
+
+A profile identifies target version/build-mode behavior and demonstrated feature
+combinations. The first research anchor is 6.5.1; newer public documentation is
+not automatically evidence for that version. Release notes state the tested
+consumers and workflows. A profile is an adapter implementation with tests, not
+an additional runtime certification service.
+
+The adapter translates source-located input into domain construction operations.
+It resolves public defaults, input-file precedence and initialization behavior,
+then uses the same scientific drivers as native mode. Where a native method
+cannot express a requested behavior, the profile reports the unsupported request.
+It does not silently substitute an unrelated approximation.
+
+A compatibility mode may implement a documented fallback, such as a particular
+restart initialization fallback, when that is part of the selected profile. It
+must expose the resulting effective choice and diagnostic. Native resume remains
+strict. This is an explicit dialect distinction, not a universal repair policy.
+The current public [ISTART](https://vasp.at/wiki/ISTART) and
+[ICHARG](https://vasp.at/wiki/ICHARG) pages illustrate why file discovery can change
+a calculation's initialization and basis policy.
+
+### Compatibility surface
+
+| Surface | Design obligation | Needed demonstration |
+| --- | --- | --- |
+| Launch and directory | Profile/mode selection, MPI use, working-directory and image contexts | Existing job script with executable substitution |
+| Input syntax and meaning | Public tokens, defaults, repetitions, units, order and inactive options | Independent minimal inputs plus paired oracle probes |
+| Atomic data | User-supplied data interpreted through the chosen formulation | Matched science and transferability checks, not only parser success |
+| Structure/trajectories | Atom order, cell/coordinate conventions, constraints and velocity/history data | Consumer round trips and split-run scientific comparisons |
+| Electronic files | Basis/spin/normalization, augmentation and restart policy | Import/export with matched representation and explicit limitations |
+| Text/XML/HDF5 results | Quantities, ordering, schema and partial/failure behavior | Actual downstream operations using pinned consumer versions |
+| Completion/stopping | Process outcome, diagnostics, stop requests and available outputs | Scheduler and interrupted-run scenarios |
+| Plugins/external coupling | Callback meanings, units, order, state and distribution | End-to-end interface and scientific composition tests |
+
+A recognized but inactive option needs profile-specific handling. A recognized
+active option whose meaning is unsupported must fail before scientific execution.
+Unknown options should produce a precise diagnostic; a permissive behavior is
+allowed only if the named profile deliberately defines it. Merely consuming a
+parameter does not establish implementation of its scientific effect.
+
+### Public interfaces and independent implementation
+
+Implement code and explanatory text independently. Use public documentation and
+public OSS consumers to establish interface tokens and behavior; cite their
+versions in the research. Proprietary VASP source/comments/diagnostic prose and
+private fixtures are excluded from tracked code, tests, docs and releases.
+
+Compatibility writers use publicly established field names and format syntax.
+They produce original explanatory diagnostics. If a consumer depends on a
+proprietary undocumented string that cannot be supported under this boundary,
+record the precise compatibility gap and seek a public interface route; do not
+quietly claim that workflow works. Numeric legacy binary formats require their
+own format/variant research and independently implemented tests.
+
+User-supplied atomic data and private oracle files remain runtime inputs. They
+are not shipped with the engine or copied into public regression fixtures. The
+OSS distribution needs independently usable atomic-data choices, assessed per
+method. An element name alone cannot select an equivalent replacement dataset.
+
+## 4. Consumer-driven interoperability
+
+The focused reading found ASE's adapter using several output files, atom ordering
+and convergence information; py4vasp uses quantity selections and schema-version
+requirements. These facts motivate complete consumer tests rather than isolated
+file validation. [ASE adapter](https://ase.gitlab.io/ase/_modules/ase/calculators/vasp/vasp.html),
+[py4vasp adapter](https://github.com/vasp-dev/py4vasp/tree/35a29126baca57592e87ddd1afa0bc934073713d/src/py4vasp/_raw).
+
+Initial compatibility test subjects should include an existing ASE VASP
+calculation and restart, py4vasp result inspection, a shell/MPI job, a relaxation
+followed by postprocessing, and a trajectory interruption/continuation. Add
+phonon, localized-orbital and correlated workflows as their science is delivered.
+Separate scientific disagreement from interface/ordering/unit errors.
+
+The actual producer remains Exvasperated. Compatibility format-version fields
+can identify the emulated schema expected by a consumer; also expose the real
+producer/version and profile without polluting fixed grammars. Define the exact
+placement in the format expedition. Never use a VASP version number to imply
+that the proprietary executable performed the calculation.
+
+Compatibility results are generated from the same evaluated domain results as
+native output. Writers do not recompute a different energy or invent missing
+observables to satisfy a consumer. Cross-format comparisons check meaning and
+units as well as array ordering and file shape.
+
+## 5. Embedding and extension boundaries
+
+Provide a Rust library API first. It creates a context, constructs/prepares a
+calculation, executes a selected method, and returns a structured outcome and
+owned/borrowed results with explicit lifetimes. The CLI adds process exit policy.
+Rust APIs can evolve during alpha; persistence schemas evolve explicitly.
+
+A future C ABI uses opaque handles, fixed-width primitive encodings and explicit
+buffer shape/stride/ownership. Every allocation has a matching release operation;
+errors are returned through documented codes and caller-owned messages. No Rust
+layout, panic or foreign exception crosses the ABI. Python bindings build on that
+boundary or the Rust API, with array lifetimes enforced by the binding.
+
+Extensions attach at scientifically meaningful operations:
+
+| Interface | What must be specified |
+| --- | --- |
+| Energy/force/stress provider | Geometry, units, requested quantities, total versus contribution, state and derivative meaning |
+| Potential/operator contribution | Its representation, energy relation, response/derivative support and update point |
+| Occupation/embedding update | Subspace, iteration stage, replacement/addition rule and synchronization |
+| Bias or learned model | Algorithm state, acquisition/continuation semantics, requested observables |
+| External dynamics driver | Request/session identity, force-provider initialization and continuity assumptions |
+
+There is no universal mutable “additions” object. The method applies a returned
+contribution according to its defined composition. Missing derivatives are
+reported, not filled with zero. Extension order is explicit; discovery order of
+installed packages never decides physical composition.
+
+Baseline host callbacks receive read-only borrowed inputs valid for the call and
+return owned results. They cannot retain raw borrowed pointers. Asynchronous or
+device-resident extensions need a separate completion-aware interface. Foreign
+callbacks execute either on a designated rank with explicit distribution, or on
+all participating ranks under a specified collective protocol. Rank-local and
+global contributions are distinct. Exceptions and partial outputs do not commit
+half of a composed update.
+
+External providers are trusted code, not automatically sandboxed by Rust. Their
+state must participate in checkpoint/rollback if that calculation promises those
+operations. An embedded host owns its fatal-runtime policy; it must agree to the
+MPI failure behavior before distributed execution. A subcommunicator is not a
+promise that abort cannot affect the rest of the host job.
+
+## 6. Packaging and operational usability
+
+### Run-directory ownership
+
+Before opening outputs, the designated writer acquires exclusive run-directory
+ownership through a filesystem primitive qualified on the supported target
+(for example, exclusive creation of an ownership file). Peers receive its outcome
+before proceeding. Record enough process/job identity to diagnose collisions,
+without treating a timestamp or PID from another node as proof that an owner is
+dead. A stale ownership record requires an explicit recovery operation that
+preserves prior outputs; ordinary startup does not steal it automatically.
+
+Native fresh runs use a new directory or refuse conflicting scientific outputs.
+Resume creates a new segment/generation. Compatibility mode applies its declared
+overwrite/append behavior only after selected restart inputs have been read or
+preserved; opening an output must not truncate a file still needed as input.
+Temporary names are per-run and noncolliding. Cleanup removes only files owned
+by that run and never erases prior committed checkpoints merely because startup
+or a later calculation failed.
+
+### Builds and distribution
+
+Provide reproducible CPU and NVIDIA build configurations with recorded compiler,
+native-library and CUDA requirements. CPU execution should not require a working
+CUDA installation. The NVIDIA package includes the selected backend's necessary
+compiler/runtime pieces under their terms; the mere presence of the NVIDIA mode
+must not change native CPU numerical defaults.
+
+Installable binaries, development/library packages and source releases share a
+versioned feature description. `capabilities` lists compiled methods/backends and
+observable support; preparing a concrete job additionally checks the actual
+combination and resources. A feature list is not a substitute for workload tests.
+
+Alpha qualification includes serial CPU, threaded CPU, MPI CPU, single NVIDIA
+and distributed NVIDIA configurations selected for supported workloads. Exact
+minimum hardware, MPI implementation, filesystem and toolkit versions follow
+measurements. AMD's later backend should fit the same ownership and operation
+boundaries, but no portability framework is chosen in advance to promise that.
+
+Apache-2.0 covers original project contributions. Every adopted library, dataset
+and model keeps its own terms. Source-available references do not become shipping
+dependencies through acquisition. Public release fixtures are independently
+constructed or separately redistributable. Private oracle comparisons remain
+separate from the distributable regression suite.

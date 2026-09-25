@@ -1,0 +1,174 @@
+{
+  "purpose": "Focused application-core design study; supplements the unchanged broad campaign catalog. Inspection is bounded and listed in core-design-study.md.",
+  "records": [
+    {
+      "id": "mpi-collectives",
+      "url": "https://www.mpi-forum.org/docs/mpi-4.1/mpi41-report/node172.htm",
+      "retrieved_on": "2026-09-25",
+      "inspection": "MPI 4.1 section 7.14; ordering, overlapping communicators and progress examples.",
+      "status": "acquired",
+      "license": "Public documentation/source retains upstream terms; local reading snapshot only.",
+      "asset": {
+        "path": "quarantine/references/core-design/docs/mpi-collectives.html",
+        "bytes": 14808,
+        "sha256": "e2d34d8122d0534175e7da88871de7f54778af672cf2d4a687be8d9d4248d50a"
+      }
+    },
+    {
+      "id": "mpi-errors",
+      "url": "https://www.mpi-forum.org/docs/mpi-4.1/mpi41-report/node252.htm",
+      "retrieved_on": "2026-09-25",
+      "inspection": "MPI 4.1 section 10.3; error-handler limits and propagation.",
+      "status": "acquired",
+      "license": "Public documentation/source retains upstream terms; local reading snapshot only.",
+      "asset": {
+        "path": "quarantine/references/core-design/docs/mpi-errors.html",
+        "bytes": 13517,
+        "sha256": "2b32a4a5a2e4bb8c777d0c36a041fd218edfc002a1736701ca955301afd9a6e3"
+      }
+    },
+    {
+      "id": "mpi-threads",
+      "url": "https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report/node269.htm",
+      "retrieved_on": "2026-09-25",
+      "inspection": "MPI 5.0 section 12.2.1; initialization ownership and actual thread support.",
+      "status": "acquired",
+      "license": "Public documentation/source retains upstream terms; local reading snapshot only.",
+      "asset": {
+        "path": "quarantine/references/core-design/docs/mpi-threads.html",
+        "bytes": 29680,
+        "sha256": "a5e332d8baea492d6272418808c907072e580bb43a94ceda9aca8ac3fe7d0cf9"
+      }
+    },
+    {
+      "id": "hdf5-swmr",
+      "url": "https://portal.hdfgroup.org/documentation/hdf5/latest/_s_w_m_r_t_n.html",
+      "retrieved_on": "2026-09-25",
+      "inspection": "SWMR writer/reader programming model and restrictions.",
+      "status": "acquired",
+      "license": "Public documentation/source retains upstream terms; local reading snapshot only.",
+      "asset": {
+        "path": "quarantine/references/core-design/docs/hdf5-swmr.html",
+        "bytes": 26868,
+        "sha256": "83de0ce85901ec3c4d973977507bc897e034fc2f5bac6b68c8f6f00b657fc351"
+      }
+    },
+    {
+      "id": "hdf5-files",
+      "url": "https://portal.hdfgroup.org/documentation/hdf5/latest/group___h5_f.html",
+      "retrieved_on": "2026-09-25",
+      "inspection": "File flush/close semantics; selected entries only.",
+      "status": "acquired",
+      "license": "Public documentation/source retains upstream terms; local reading snapshot only.",
+      "asset": {
+        "path": "quarantine/references/core-design/docs/hdf5-files.html",
+        "bytes": 161481,
+        "sha256": "e7c77ec65cb9a67816f1bbfe29c49a2316836a628cc18c3771f88b22629a8718"
+      }
+    },
+    {
+      "id": "ase-vasp-doc",
+      "url": "https://ase.gitlab.io/ase/ase/calculators/vasp.html",
+      "retrieved_on": "2026-09-25",
+      "inspection": "Command, restart and calculator-state documentation.",
+      "status": "acquired",
+      "license": "Public documentation/source retains upstream terms; local reading snapshot only.",
+      "asset": {
+        "path": "quarantine/references/core-design/docs/ase-vasp-doc.html",
+        "bytes": 134974,
+        "sha256": "34145ccbfbb24243306a041055bd42277cd601fa97b721da18e0e60e6c6e5fcb"
+      }
+    },
+    {
+      "id": "ase-vasp-source",
+      "url": "https://ase.gitlab.io/ase/_modules/ase/calculators/vasp/vasp.html",
+      "retrieved_on": "2026-09-25",
+      "inspection": "Rendered source: command selection, read, read_results and XML failure handling.",
+      "status": "acquired",
+      "license": "Public documentation/source retains upstream terms; local reading snapshot only.",
+      "asset": {
+        "path": "quarantine/references/core-design/docs/ase-vasp-source.html",
+        "bytes": 217962,
+        "sha256": "909f51a6bbb8bb654300704e6e8d7caefe6dec9c2f8122e25f78e8243ff0c720"
+      }
+    },
+    {
+      "id": "vasp-istart",
+      "url": "https://vasp.at/wiki/ISTART",
+      "retrieved_on": "2026-09-25",
+      "inspection": "Documented restart/basis policies.",
+      "status": "acquired",
+      "license": "Public documentation/source retains upstream terms; local reading snapshot only.",
+      "asset": {
+        "path": "quarantine/references/core-design/docs/vasp-istart.html",
+        "bytes": 37254,
+        "sha256": "610f6e40722282e374a62b6021d541385eb753d0ee5f45ac8180c8b6d408c8ef"
+      }
+    },
+    {
+      "id": "vasp-icharg",
+      "url": "https://vasp.at/wiki/ICHARG",
+      "retrieved_on": "2026-09-25",
+      "inspection": "Documented charge initialization and fixed-density choices.",
+      "status": "acquired",
+      "license": "Public documentation/source retains upstream terms; local reading snapshot only.",
+      "asset": {
+        "path": "quarantine/references/core-design/docs/vasp-icharg.html",
+        "bytes": 41684,
+        "sha256": "9678377abcbd10bb140dcf9726141f357e4509efba214668ea2e1136f2d3bf76"
+      }
+    },
+    {
+      "id": "vasp-wavecar",
+      "url": "https://vasp.at/wiki/WAVECAR",
+      "retrieved_on": "2026-09-25",
+      "inspection": "Documented restart payload/usage.",
+      "status": "acquired",
+      "license": "Public documentation/source retains upstream terms; local reading snapshot only.",
+      "asset": {
+        "path": "quarantine/references/core-design/docs/vasp-wavecar.html",
+        "bytes": 28336,
+        "sha256": "f770e5903e4d5dcae46ac9eb9c81dee0400f9cf4f9f0a2d82873838a4b73933b"
+      }
+    },
+    {
+      "id": "vasp-chgcar",
+      "url": "https://vasp.at/wiki/CHGCAR",
+      "retrieved_on": "2026-09-25",
+      "inspection": "Charge normalization and PAW on-site contents.",
+      "status": "acquired",
+      "license": "Public documentation/source retains upstream terms; local reading snapshot only.",
+      "asset": {
+        "path": "quarantine/references/core-design/docs/vasp-chgcar.html",
+        "bytes": 42408,
+        "sha256": "427d5ef659c4619ba51d617a9f927423a45ab623b2c0be206a766293b1d34d30"
+      }
+    },
+    {
+      "id": "rename",
+      "url": "https://man7.org/linux/man-pages/man2/rename.2.html",
+      "retrieved_on": "2026-09-25",
+      "inspection": "Linux same-filesystem rename behavior and limits.",
+      "status": "acquired",
+      "license": "Public documentation/source retains upstream terms; local reading snapshot only.",
+      "asset": {
+        "path": "quarantine/references/core-design/docs/rename.html",
+        "bytes": 23571,
+        "sha256": "8772946a809a0db54f4854f200908f10bee758ea452e8df5efd955bc3b8e6e57"
+      }
+    },
+    {
+      "id": "fsync",
+      "url": "https://man7.org/linux/man-pages/man2/fsync.2.html",
+      "retrieved_on": "2026-09-25",
+      "inspection": "File and directory synchronization distinction.",
+      "status": "acquired",
+      "license": "Public documentation/source retains upstream terms; local reading snapshot only.",
+      "asset": {
+        "path": "quarantine/references/core-design/docs/fsync.html",
+        "bytes": 15152,
+        "sha256": "f0a986d21500222ecb69580fc7a910f346c6b1ff1005ca515501fb05bb5d91f5"
+      }
+    }
+  ]
+}
