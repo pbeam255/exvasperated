@@ -33,6 +33,21 @@ turn checking for a document, type name or configuration setting into a substitu
 for the behavior. No new registry or administrative machinery accompanies teeth
 tests. The proposals below do not become demonstrated teeth tests by being listed.
 
+## Implementation cycle
+
+Work from a plan, section by section: demonstrate substantive tests red with real
+errors; implement; make those tests green through adherence; perform adversarial
+tribunal code review; resolve findings and rerun affected checks before the next
+tranche. Review challenges code, assumptions and tests without producing an
+authority layer. No hot patches: study, analyze and plan the fix first.
+
+Connect necessary checks to executable workflow triggers rather than reminders.
+No such automation is established by this paragraph. JVM-based verification tools
+are permitted only under the user's narrow exception: extremely lightweight
+containers with programmatic teardown, including failure/interruption cleanup.
+This applies if selecting Apalache or another JVM-based checker; it does not
+permit JVM application components.
+
 ## 1. Core properties worth specifying precisely
 
 Use small executable protocol models where they can expose an error. Quint is a

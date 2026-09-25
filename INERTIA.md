@@ -251,6 +251,43 @@ red cannot be demonstrated, the statement is at best a good intention. Preserve
 useful reasoning in ordinary notes without treating prose as enforcement. This
 is a working technique, not a new registry, reporting layer or approval ritual.
 
+### Engineering tenets established 2026-09-25
+
+The user requires the following throughout this project:
+
+1. Systems interact at interfaces only; never inspect another system's private
+   state, implementation or storage as an integration mechanism. This permits
+   in-process interfaces and resident-data ownership handoff.
+2. Let the database perform work it handles better. Investigate its constraints,
+   transactions and query operations before rebuilding them in application code.
+   This principle does not itself select a database or settle numerical-array
+   storage; those remain design questions.
+3. No object-oriented programming, at all. Organize our implementation around
+   algebraic data types, explicit data structures and operations.
+4. No JVM or JVM things. A narrowly allowed exception is a needed verification
+   program we lack time to reimplement, such as Apalache. Use an extremely
+   lightweight container and programmatic teardown on completion, failure and
+   interruption. This creates no JVM application/runtime dependency.
+5. Depending on a human or model remembering something is inadequate engineering.
+   Use structure and automation, tested against meaningful violations.
+6. Never hot patch: study the system, analyze the problem, plan the fix, implement
+   it through the testing/review cycle.
+7. Automate triggers instead of setting reminders for the same work. The user's
+   "test init" is an example of executable workflow intent, not a claim that a
+   command by that name exists here.
+8. Always work from a plan. Treat "easiest", "quickest done" and similar reasoning
+   as signals to reconsider the approach. Revise plans as understanding changes.
+9. For every implementation section/tranche: tests red with actual errors;
+   code; tests green; adversarial tribunal code review; resolve findings and
+   rerun affected checks; repeat for the next planned section. Reject tautological
+   tests. Review targets the actual work and adds no certification bureaucracy.
+
+This supersedes the earlier preference for merely periodic adversarial reviews.
+These written instructions do not establish automated enforcement; that requires
+demonstrated teeth. Ordinary technical notes remain revisable aids to reasoning.
+
+### Stack and implementation preferences
+
 Preserve declared physics and explicit failures. Do not silently smooth, clip,
 extrapolate, choose a root or change a physical model to make a calculation finish.
 Verification, comparisons with independent implementations and physical validation
@@ -292,8 +329,8 @@ simulation in addition to compiler diagnostics and analysis. The
 proposed qualification cases. It does not select C++ or establish executed checks.
 
 Generally keep an effort to two passes before discussing a larger unresolved
-redesign. Independent adversarial reviews are periodic, not mandatory ceremonies
-for every change. No local mutation campaigns; cloud mutation testing requires
+redesign. Each implementation tranche follows the red/code/green/adversarial-review
+cycle above. No local mutation campaigns; cloud mutation testing requires
 explicit user intent. Keep downloaded programs inert until deliberately selecting
 a bounded execution. VASP execution itself has already been authorized.
 

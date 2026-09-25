@@ -126,6 +126,11 @@ requires Linux and Clang. [RapidCheck's stateful interface](https://github.com/e
 provides model/implementation command sequences and shrinking that preserves
 preconditions. Sampling these sequences is distinct from exhaustive exploration.
 
+The subsequent no-OOP instruction affects this candidate: RapidCheck's documented
+command API uses subclasses. Do not adopt that harness pattern unchanged. Assess
+a data/operation-based sequence harness consistent with our design, or another
+tool; the earlier capability identification is not a choice to use inheritance.
+
 Generate difficult scientific domains deliberately: degeneracy, ill-conditioning,
 extreme scales, awkward strides and branch boundaries. Shrinking must preserve
 the condition making the example meaningful. Metamorphic properties need their

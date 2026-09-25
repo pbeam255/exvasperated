@@ -24,6 +24,12 @@ modern Fortran can also be considered for a whole scientific application. Chapel
 is a secondary possibility if its task/distribution runtime is acceptable, not
 a way to reintroduce an unwanted concurrency architecture.
 
+Subsequent user tenets exclude object-oriented programming in our implementation
+regardless of language. JVM-based verification tools have a narrow exception,
+such as Apalache when reimplementation is impractical: extremely lightweight
+containers must be programmatically torn down, including failure/interruption
+cleanup. This exception does not reopen JVM application languages.
+
 ## Core candidates: provisional engineering judgments
 
 | Candidate | Reason to examine it | Questions that could change the judgment |
