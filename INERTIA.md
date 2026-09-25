@@ -38,6 +38,27 @@ Keep later reviews bounded, follow interactions across partitions, and distingui
 unread, partially examined and deeply analyzed material. The partition is revisable
 and does not prescribe our replacement's component boundaries.
 
+### Scientific routines and composition
+
+On 2026-09-25 the user clarified the boundary: prioritize deep scientific and
+numerical correctness of calculation routines, including resilience to subtle
+errors and faithful behavior when composed. Choosing and composing calculations
+is part of the researcher's skill in using the program. Preserve their control
+over methods, parameters and sequences of calculations.
+
+Experiment parsing, interpretation of experimental intent and suggestions are
+separate potential capabilities. Ordinary input parsing and compatibility remain
+part of the execution interface and must faithfully express explicit choices.
+
+Encode established scientific relationships in representations, constructors,
+ownership and permitted operations. Avoid an additional accounting apparatus for
+policing meaning. Treat hysteresis, physical path dependence, numerical history
+and their interactions as substantive scientific questions. Justify assumptions
+about equivalent states, reconstruction and discarded history before encoding
+them. An expected outcome or a cleaner abstraction does not establish scientific
+validity. Test routines and their specified interactions with independent checks
+that can expose subtle errors.
+
 ### Order of operations
 
 The current requested delivery is a first pass through all 20 source-study areas
@@ -70,9 +91,10 @@ orientation. The source-study order organizes the first stage of this sequence.
    design from the parity requirements, improvement ideas and research findings.
    Resolve component responsibilities, representations, numerical choices,
    interfaces, failure behavior and execution across CPU, NVIDIA GPU and AMD GPU.
-5. **Specify and plan.** Make the design precise through equations, contracts
-   and suitable quasi-formal specifications. Derive a concrete implementation
-   sequence with scientific acceptance criteria and paired implementation/tests.
+5. **Specify and plan.** Make the design precise through equations, domain
+   representations, permitted operations and suitable quasi-formal specifications.
+   Derive a concrete implementation sequence with scientific acceptance criteria
+   and paired implementation/tests.
 6. **Execute.** Implement, test and validate against those specifications and
    criteria, then release. Correctness work advances with each capability.
 
