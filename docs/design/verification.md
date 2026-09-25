@@ -64,6 +64,8 @@ recovery. MPI/lifecycle models remain unimplemented; Quint has not been run.
 | --- | --- | --- |
 | Resource lifetime | An allocation cannot be reclaimed while any submitted operation can access it | Include foreign accesses, failure paths and event-recording failures |
 | Matching representations | An operation rejects arrays belonging to the wrong basis, grid or other required representation | Encode the association in types/lifetimes where possible; check identity at runtime elsewhere |
+| Layout consistency | Logical entries survive supported packing and redistribution; layout-specific computation agrees with an independent reference | Exact checks for movement; method-specific error criteria for arithmetic; independent mapping checks prevent cancelling pack/unpack defects |
+| Correct stage and geometry | A consumer uses the result requested for its geometry and method stage, regardless of completion order | Exercise stale results, trial/accepted updates, integrator substeps and equal-time branches |
 | Collective ordering | Participating ranks initiate matching operations in the same order on a communicator | Include subgroups/overlap and earlier local failure; exclude an invented recovery guarantee after rank loss |
 | Matching checkpoint stages | All saved fields describe the same supported pause point | Driver coordinates the snapshot, including external state where required |
 | Recorded-state restoration | Selecting a retained log point recovers its recorded state and retained history | Include parent/shared-payload dependencies; future trajectory equality is a separate, unestablished claim |

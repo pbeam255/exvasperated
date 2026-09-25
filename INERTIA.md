@@ -310,6 +310,14 @@ numerics ourselves; library reputation does not decide the comparison.
 
 ### Stack and implementation preferences
 
+The user clarified the core draft on 2026-09-25: layout needs a testing strategy
+that exploits its logical-index mapping, including independent checks. Open
+storage choices must not block callers built against a well-defined interface;
+interim implementations can satisfy that interface for their supported use.
+A short contract stating inputs, results, effects and completion/failure is welcome.
+Distinguish physical time, solver progress, integrator stages and execution order,
+and explain what positions and electronic values each calculation actually updates.
+
 Preserve declared physics and explicit failures. Do not silently smooth, clip,
 extrapolate, choose a root or change a physical model to make a calculation finish.
 Verification, comparisons with independent implementations and physical validation

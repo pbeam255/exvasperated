@@ -40,6 +40,7 @@ possible capabilities.
 | [Core structure and memory](core-structure.md) | Component interfaces, data types, buffer ownership, layouts, resource limits and storage operations |
 | [Specifications and implementations](specifications-and-implementations.md) | Operation specifications, competing implementations, independent test references and teeth tests |
 | [Calculation model and composition](calculation-model.md) | Calculation data, setup, updates, driver calls and the 15 groups of routines |
+| [Positions, iterations and time](calculation-time.md) | What moves, nested electronic/ionic loops, integrator stages and execution ordering |
 | [Execution and lifecycle](execution.md) | Application states, CPU/NVIDIA placement, MPI, asynchronous memory, stopping, errors and cleanup |
 | [Results and continuation](results-and-continuation.md) | What results mean, saving checkpoints, resume/import/migration and failure cases |
 | [Append-only calculation history](calculation-history.md) | Saved entries, shared array blocks, restoring and branching, save confirmation and a small protocol model |

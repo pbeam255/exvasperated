@@ -76,6 +76,10 @@ with the geometry/derivative expedition before implementation.
 
 ## 3. How drivers call routines
 
+The [positions and time walkthrough](calculation-time.md) shows what these loops
+advance. Solver iterations, geometry-search trials and physical time steps have
+different meanings, even when they call the same force routine.
+
 A method driver is ordinary code: loops and calls to routines. It receives an
 execution context, working data, output callbacks with bounded buffering, and
 stop requests. The application selects a driver and calls it. A driver may keep

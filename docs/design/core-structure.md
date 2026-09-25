@@ -75,6 +75,17 @@ still require focused study of each method.
 
 ## 3. Ownership and asynchronous execution
 
+There are several different kinds of progress here. An SCF iteration updates an
+estimate at fixed nuclear positions. A molecular-dynamics step advances the
+modeled physical time. A GPU completion event marks completion of specified device
+work. A buffer becomes reusable only after every operation that can access it has
+finished. None of these is a substitute for the others.
+
+The [positions and time walkthrough](calculation-time.md) explains the nested
+calculations. In particular, a buffer can be safe to read yet contain forces for
+the wrong geometry or integrator stage. Memory ownership handles access and
+release; the method's data and operations must also preserve those associations.
+
 An SCF loop keeps its orbitals, density and mixing history between calls. A
 molecular-dynamics loop keeps positions, momenta and integrator history. Their
 operations control updates to those values. Each buffer has an owner responsible
@@ -152,6 +163,36 @@ CPU and GPU implementations may use different layouts for the same operation.
 Make conversions and transfers explicit and measure their cost, including those
 at language boundaries.
 
+### Test the same calculation through different layouts
+
+Treat a layout as a mapping from logical indices to storage locations. That gives
+us properties to test independently of a particular fast kernel:
+
+- Every required logical entry has storage; offsets stay within its allocation.
+  Distinct writable entries do not collide unless the operation explicitly
+  permits it. Distributed ownership covers the array without gaps or conflicting
+  owners; halos and replicas have separately stated read/update rules.
+- Generate supported dimensions, strides, padding, tiles and partitions. Include
+  unequal dimensions, partial tiles, empty partitions and size-overflow cases;
+  unsupported cases must be rejected before memory is accessed.
+- Fill logical entries with distinct index-derived values. Check their expected
+  physical locations using an independent small mapping, then test packing,
+  unpacking and redistribution. These movement-only operations must preserve
+  exact values; no numerical tolerance hides a permutation or lost entry.
+- Run a routine with the same logical inputs in several supported layouts and
+  compare the decoded results with an independent reference. In short:
+  `unpack_L(compute_L(pack_L(x))) ≈ reference(x)`. Use the operation's error
+  criteria when arithmetic or reduction order changes; pure rearrangement is exact.
+- Guard regions and targeted memory tools check unwanted writes, padding access
+  and overlap. A packing round trip alone is insufficient: a packer and unpacker
+  with the same wrong permutation can agree with each other.
+
+Demonstrate teeth with a wrong stride, swapped axis, missing partition or stale
+halo in a small controlled case. Each must fail for the intended defect. Check
+the actual kernel and adapter too, not just the layout descriptor. These are
+proposed tests; no layout implementation has been tested yet. Passing them checks
+storage consistency, while the independent numerical tests check the calculation.
+
 ## 5. Storage responsibilities without premature deployment choices
 
 Before rebuilding transactions, constraints, indexes, queries, codecs or array
@@ -177,6 +218,21 @@ writers and array container open. Arrays need not become database rows, and a
 separate catalog service is not required. Running calculations keep their working
 arrays in memory; storage receives the records the calculation modules expose.
 
+An open storage choice need not block the callers. Build against these operations
+and use an interim implementation. An in-memory store can exercise append, read
+and branch behavior in development. A file-backed implementation can support
+early persistent runs once it meets the required save behavior on its stated
+target. Neither choice commits us to the eventual database or deployment.
+
+Use the same interface tests for each implementation. For example: append a
+record, read its exact values, branch from it, and confirm the original remains
+unchanged. Inject a failed append and check that earlier records survive. A
+backend claiming durable saves additionally needs restart/crash tests on its
+actual storage. An in-memory implementation cannot stand in for that promise.
+Reject a requested guarantee the backend cannot provide; do not quietly weaken
+the interface to accommodate it. The core can advance while that backend work
+proceeds separately.
+
 Evaluate storage options against these needs. Use the selected database through
 the storage interface. If metadata and arrays live in separate stores, specify
 how they are published and recovered together. A metadata transaction does not
@@ -191,10 +247,27 @@ researchers store data.
 
 ## 6. Reuse and substitution
 
-An interface defines an operation, its data and its behavior. Before replacing a
-numerical implementation, compare supported inputs, precision, errors, failures,
-layout, workspace and asynchronous lifetimes as well as speed. Before replacing
-storage, compare the save and restore behavior callers rely on.
+Give each operation a short contract:
+
+1. **Accepts:** inputs, supported cases, units, shapes and layout.
+2. **Returns:** what the result means and what relation it must satisfy, including
+   its numerical error criteria where relevant.
+3. **Changes:** which data it may overwrite, consume or retain, and resource bounds
+   the caller relies on.
+4. **Completes or fails:** when outputs may be used and storage reused, what each
+   failure means, and what remains usable afterward.
+
+Put those statements next to the interface and test them through public calls.
+This is an ordinary function contract, with types enforcing what they can.
+No contract registry or separate runtime accounting layer is needed. The detailed
+equations and numerical tests still live with the operation's specification.
+
+Implementations satisfying the same contract for the requested case can be
+substituted without callers knowing their internals. Run the common tests against
+each adapter, including error and completion behavior. Compare speed and memory
+afterward. A narrower implementation rejects unsupported cases at selection or
+construction; an adapter cannot silently invent different behavior. Ordinary
+substitution should not require redesigning the caller.
 
 Keep interfaces specific to their job. Start with a direct implementation and
 factor out shared code when actual alternatives show what is shared. No universal
