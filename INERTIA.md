@@ -61,10 +61,16 @@ that can expose subtle errors.
 
 ### Order of operations
 
-The current requested delivery is a first pass through all 20 source-study areas
-only. Each report receives one independent subagent review at depth one; fix
-warranted findings and move on without another review round. Stop after this
-reviewed first pass. The broader research campaign and design are subsequent work.
+The reviewed first pass through all 20 source-study areas was completed on
+2026-09-24, with one independent subagent review at depth one per report and
+warranted corrections incorporated. It left the broader every-file analysis open.
+
+On 2026-09-25 the user requested an outline of the core program and scientific
+routine buckets to guide the next literature and reference expedition. The
+[working outline](docs/research/core-program-outline.md) defines that research
+scope from the studies and the composition boundary above. It is a provisional
+division of responsibilities; detailed architecture, the broad expedition and
+implementation remain subsequent work.
 
 On 2026-09-24 the user established the following project sequence after the
 orientation. The source-study order organizes the first stage of this sequence.

@@ -19,6 +19,7 @@ validation and release.
 - [Project direction and working preferences](INERTIA.md)
 - [Source partition and proposed study order](docs/research/vasp-source-partition.md)
 - [First-pass source studies and independent reviews](docs/research/first-pass/README.md)
+- [Core program and scientific routine outline for the reference expedition](docs/research/core-program-outline.md)
 - [Initial parity reconnaissance](docs/research/vasp-parity-orientation.md)
 
 VASP source may be read and executed for research. Our implementation and
