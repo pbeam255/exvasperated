@@ -69,5 +69,6 @@
 {"created_at":"2026-09-24T08:24:31Z","created_by":"Patrick Beam","depends_on_id":"exv-epl","issue_id":"exv-epl.8","type":"parent-child"}
 {"created_at":"2026-09-24T08:27:50Z","created_by":"Patrick Beam","depends_on_id":"exv-epl","issue_id":"exv-epl.9","type":"parent-child"}
 {"created_at":"2026-09-25T03:17:39Z","created_by":"Patrick Beam","depends_on_id":"exv-61f","issue_id":"exv-mqh","type":"discovered-from"}
+{"created_at":"2026-09-25T03:53:49Z","created_by":"Patrick Beam","depends_on_id":"exv-p2l","issue_id":"exv-umr","type":"discovered-from"}
 {"created_at":"2026-09-25T03:17:39Z","created_by":"Patrick Beam","depends_on_id":"exv-61f","issue_id":"exv-w0s","type":"discovered-from"}
 {"created_at":"2026-09-25T02:37:26Z","created_by":"Patrick Beam","depends_on_id":"exv-9dj","issue_id":"exv-x34","type":"discovered-from"}
