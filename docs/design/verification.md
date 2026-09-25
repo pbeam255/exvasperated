@@ -37,9 +37,13 @@ tests. The proposals below do not become demonstrated teeth tests by being liste
 
 Work from a plan, section by section: demonstrate substantive tests red with real
 errors; implement; make those tests green through adherence; perform adversarial
-tribunal code review; resolve findings and rerun affected checks before the next
-tranche. Review challenges code, assumptions and tests without producing an
-authority layer. No hot patches: study, analyze and plan the fix first.
+tribunal code review; fix findings; one subagent validation; fix stragglers;
+STOP and report. A second round of review, checking or equivalent work requires
+explicit operator approval, even if substantial work remains. Do not revalidate
+after fixing stragglers or restart the cycle under a new name or reviewer.
+Automation must respect this stopping point. Review challenges code, assumptions
+and tests without producing an authority layer. No hot patches: study, analyze
+and plan the fix first.
 
 Connect necessary checks to executable workflow triggers rather than reminders.
 No such automation is established by this paragraph. JVM-based verification tools

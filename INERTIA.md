@@ -278,9 +278,17 @@ The user requires the following throughout this project:
 8. Always work from a plan. Treat "easiest", "quickest done" and similar reasoning
    as signals to reconsider the approach. Revise plans as understanding changes.
 9. For every implementation section/tranche: tests red with actual errors;
-   code; tests green; adversarial tribunal code review; resolve findings and
-   rerun affected checks; repeat for the next planned section. Reject tautological
+   code; tests green; adversarial tribunal code review; resolve findings within
+   the bounded cycle in tenet 10. Reject tautological
    tests. Review targets the actual work and adds no certification bureaucracy.
+10. NEVER undertake a second round of review, checking or equivalent work without
+    explicit operator approval. The user gives this allowed sequence: code review
+    -> fix all -> subagent validates -> fix stragglers -> NOW STOP. One validation
+    after the first fixes is included; another check after fixing stragglers is
+    not. Stop and report what remains, even if substantial; talk to the operator
+    before continuing. Do not evade the cap with another agent, a renamed pass or
+    a nominal new tranche. Automation must respect the same stopping point. The
+    purpose is to prevent unbounded checking and certification hallucination.
 
 This supersedes the earlier preference for merely periodic adversarial reviews.
 These written instructions do not establish automated enforcement; that requires

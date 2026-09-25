@@ -45,9 +45,16 @@ registry, certificate or approval process.
    is displacing the intended design and correctness requirements.
 9. For each implementation section/tranche: substantive tests red with real
    errors; implement; tests green; adversarial tribunal code review; address
-   findings and rerun affected checks; then proceed to the next planned tranche.
+   findings within the bounded cycle in tenet 10.
    Tautological tests do not count. Reviews challenge actual code and tests;
    do not turn them into certificates or approval theater.
+10. NEVER undertake a second round of review, checking or equivalent work without
+    explicit operator approval. The user's allowed sequence is: code review ->
+    fix all -> one subagent validation -> fix stragglers -> STOP. Report remaining
+    work and discuss it with the operator before continuing the cycle. Do not
+    launch another validation after fixing stragglers, or bypass the stop by
+    renaming the pass, changing reviewers or calling it a new tranche. This cap
+    applies to automated orchestration as well as manual/model-driven work.
 
 These instructions describe the required practice. Do not claim a requirement
 is mechanically enforced until its teeth have been demonstrated.
