@@ -11,10 +11,11 @@ detailed reports. Those reports inform the parity and improvement synthesis
 that scopes the major research and reference campaign. System design,
 specification, planning and implementation follow that research.
 
-The user requires **CPU, NVIDIA GPU and AMD GPU execution in v1-alpha**. All
-three are constraints on the early studies. Each study should identify the
-assumptions it makes about data placement, precision, numerical libraries,
-parallel operations and target-specific behavior where those affect its subject.
+Target sequencing updated 2026-09-25: the user requires **CPU and NVIDIA GPU
+execution in v1-alpha**, with **AMD GPU execution as a second-wave objective**.
+Each study should identify the assumptions it makes about data placement,
+precision, numerical libraries, parallel operations and target-specific behavior,
+prioritizing CPU/NVIDIA and recording implications for later AMD support.
 
 ## What is partitioned
 
@@ -107,9 +108,9 @@ The proposed order is:
    build variants, lifecycle, state identity, units, input interpretation,
    stopping and continuation. At this stage identify the entry contracts for
    parallel execution, numerical libraries and plugins, accounting for the
-   required CPU, NVIDIA GPU and AMD GPU alpha targets. Identify reference build
-   branches, missing implementations and external dependencies separately for
-   each target. Produce a map of a job from invocation through final output,
+   required CPU and NVIDIA GPU alpha targets and the later AMD objective. Identify
+   reference build branches, missing implementations and external dependencies
+   separately for each target. Produce a map of a job from invocation through final output,
    with unsupported and failure paths.
 2. **Understand representations and atomic data.** Study `geometry`,
    `representation` and `paw`. Follow `parallel` and `numerics` in the context of
@@ -118,7 +119,7 @@ The proposed order is:
    bundled library provenance and variants before deciding what deserves
    independent reuse; every bundled file still receives analysis. Investigate
    data layouts, host/device ownership and numerical-library availability for
-   all three targets before those choices become architectural commitments.
+   CPU/NVIDIA, recording implications of those choices for later AMD support.
 3. **Close the electronic energy calculation.** Study `electrostatics`, `xc`
    and `electronic_solution`, then `nonlocal_interactions` and revisit their
    effects on the solve. Connect the operator, density, energy terms,
@@ -141,9 +142,10 @@ The proposed order is:
    established. Complete the full `plugins`, `parallel` and `numerics` reviews
    alongside their remaining consumers. Revisit whole jobs, restarts, external
    consumers and feature combinations. Define alpha workloads and scientific
-   acceptance on CPU, NVIDIA GPU and AMD GPU, including evidence of execution
-   on each target. These areas are surveyed in the opening
-   pass and followed throughout; their constraints cannot be deferred until here.
+   acceptance on CPU and NVIDIA GPU, including evidence of execution on each
+   target, with AMD validation in the second wave. These areas are surveyed in the
+   opening pass and followed throughout; their constraints cannot be deferred
+   until here.
 
 This is a study order, not an implementation roadmap. Dependencies are cyclic;
 we will revisit an earlier contract when a later consumer exposes a missing
@@ -229,6 +231,7 @@ research work under `exv-6l0`; this document is the rationale for its organizati
 The first proposed deep study is the executable lifecycle and build-selection
 contract, beginning with the build description, object list, conditional
 configuration, main driver and parallel startup, consulting shared state and
-input entry points as needed. CPU, NVIDIA GPU and AMD GPU paths and dependencies
-are part of this opening study. Hardware generations, toolchains and backend
-implementation choices require subsequent design and evidence.
+input entry points as needed. CPU and NVIDIA GPU paths and dependencies have
+first-wave priority; AMD remains a later execution objective and source-study
+subject. Hardware generations, toolchains and backend implementation choices
+require subsequent design and evidence.

@@ -8,8 +8,9 @@ The project is in research and design. There is no electronic-structure engine
 or usable compatibility implementation yet. Full capability parity is the goal;
 the available VASP 6.5.1 source is the initial inspection reference.
 
-The **v1-alpha end state must run on CPU, NVIDIA GPUs and AMD GPUs**. These
-execution targets shape the design and validation work from the beginning.
+The **v1-alpha end state must run on CPU and NVIDIA GPUs**. **AMD GPU execution
+is a second-wave objective.** Backend candidates, including cuda-oxide, will be
+evaluated on their capabilities and evidence from relevant workloads.
 
 The project sequence is deep VASP studies and detailed reports, synthesis of
 parity and improvement opportunities, an extensive research and reference

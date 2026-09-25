@@ -31,6 +31,12 @@ checks were checked. No scientific calculation or hardware validation was
 performed for this first pass. Work stops here before parity synthesis, the
 broad reference campaign and replacement design.
 
+Target sequencing update, 2026-09-25: the reports retain the original research
+context requiring CPU, NVIDIA and AMD in alpha. The current requirement is
+**CPU and NVIDIA in v1-alpha, with AMD in a second wave**, as recorded in
+[project direction](../../../INERTIA.md#execution-targets-and-backend-evaluation).
+Their source findings and open AMD questions remain part of the research record.
+
 ## Reports
 
 - [Execution, build selection and lifecycle](execution.md)

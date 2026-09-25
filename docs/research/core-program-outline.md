@@ -12,9 +12,10 @@ Experiment interpretation and suggestions are a separate possible capability.
 This outline defines research responsibilities. The buckets can become several
 modules or share implementations after the research establishes suitable
 boundaries. Workflow interfaces and state representation remain open; scientific
-routines may evolve state and retain history. CPU, NVIDIA GPU and AMD GPU
-execution are required in v1-alpha; hardware and library questions run through
-the whole map.
+routines may evolve state and retain history. Following the target revision on
+2026-09-25, CPU and NVIDIA GPU execution are required in v1-alpha, with AMD GPU
+execution as a second-wave objective. Hardware and library questions run through
+the whole map with that priority.
 
 The source evidence concerns selected paths in VASP 6.5.1. All 20 study areas
 inform this outline, including their unread bodies and unresolved questions.
@@ -32,7 +33,7 @@ flowchart TD
     C <--> E[Calculation state and histories]
     D <--> E
     C --> F[Results, continuation and completion]
-    G[CPU, NVIDIA, AMD; threads and MPI] --- D
+    G[CPU and NVIDIA first; AMD second wave; threads and MPI] --- D
     G --- E
     H[External libraries and plugins] <--> D
 ```
@@ -51,7 +52,7 @@ routine family.
 | **Input and compatibility** | Invocation, ordinary configuration parsing, defaults and explicit overrides, structures, scientific data selection, existing file and downstream-tool interfaces. | Which versioned meanings and observable behaviors do researchers and tools depend on? Which inputs select a method, change an approximation, or merely control execution? |
 | **Construction, storage and lifetime** | Construct scientific objects; hold physical state, derived objects and histories; allocate, share and release storage; perform scientifically defined representation changes. | What state does each operation actually require? Which objects may share storage? When is reconstruction equivalent, and what must continuation preserve? |
 | **Calculation drivers** | Dispatch requested methods, connect their inputs and outputs, nest or sequence their calls, honor the chosen procedures and expose their outcomes. | What are the established compositions and their actual state changes? Which loops and update rules are scientific algorithms that need their own derivation? |
-| **Execution and build support** | CPU/GPU placement, MPI and threads, distributed layouts, communication, synchronization, numerical-library bindings, supported builds and installation. | Which decompositions and kernels work on all three targets? What are their precision, memory, communication and scaling consequences? |
+| **Execution and build support** | CPU/GPU placement, MPI and threads, distributed layouts, communication, synchronization, numerical-library bindings, supported builds and installation. | Which decompositions and kernels suit CPU/NVIDIA alpha execution? What are their precision, memory, communication and scaling consequences, and the implications for later AMD support? |
 | **Results, continuation and completion** | Output formats, calculated quantities and diagnostics, trajectories, restart serialization and adaptation, requested stops, numerical failures and process cleanup. | What exactly is saved or reported? What distinguishes continuing a trajectory or search from starting a new one with a useful guess? How do consumers observe partial or failed calculations? |
 | **External interfaces** | Foreign-library calls, plugins, external calculators and exchange with other scientific programs; shapes, units, ownership, callback ordering and distributed behavior. | What is contributed or replaced at each interface? Which operations alter the physical model or evolution? What can external code retain or mutate? |
 
@@ -167,9 +168,17 @@ implement its routines:
    comparisons, independent verification and physical validation answer different
    questions.
 5. **Execution and interface findings.** Primary library/toolchain documentation,
-   algorithm studies and bounded measurements relevant to CPU, NVIDIA and AMD;
-   public versioned formats and actual downstream consumers. Include numerical
+   algorithm studies and bounded measurements for CPU/NVIDIA alpha execution,
+   with AMD as a second wave; public versioned formats and actual downstream
+   consumers. Include numerical
    behavior, memory, scaling, interruption and continuation where relevant.
+
+Include [cuda-oxide](https://github.com/NVlabs/cuda-oxide) among the NVIDIA kernel
+implementation candidates. Evaluate capabilities, numerical behavior, performance
+and integration on the workloads we identify. Examine concrete compiler,
+toolchain and maintenance evidence; its "alpha" label does not determine the
+assessment. Record implications for later AMD work alongside its suitability for
+the first wave.
 
 Candidate improvements should arise from this work: for example, more reliable
 numerics, more accurate or efficient alternatives, better data availability, or
@@ -190,7 +199,8 @@ established. This map is not a completed parity inventory.
 
 1. **Open the breadth, interfaces and data tracks immediately.** Reconcile the
    capability map with public versions and actual workflows; investigate atomic
-   data availability; establish CPU/NVIDIA/AMD library and execution questions.
+   data availability; establish CPU/NVIDIA library and execution questions and
+   record later AMD work.
    These tracks continue alongside the scientific literature work.
 2. **Establish shared mathematics and a complete electronic calculation.** Work
    through buckets 1–7 with bucket 8 close behind. Follow one well-defined
@@ -209,7 +219,7 @@ established. This map is not a completed parity inventory.
    unresolved questions into further study.
 
 This is an order for acquiring understanding. It does not set an implementation
-schedule or narrow alpha capability scope. The work can move between buckets
+schedule or narrow scientific capability scope. The work can move between buckets
 when adjacent context is more useful than forcing closure. Detailed acquisition,
 experiments and follow-up work belong in beads as those tasks are selected.
 

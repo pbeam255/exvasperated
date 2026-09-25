@@ -84,8 +84,8 @@ orientation. The source-study order organizes the first stage of this sequence.
 2. **Synthesize parity and improvement opportunities.** Use the reports to
    establish what researchers need from a replacement and where we see ways to
    improve it. Develop the capability and workflow picture across partitions,
-   including all three alpha execution targets. Keep proposed improvements
-   distinguishable from established findings and evaluate their tradeoffs.
+   including CPU/NVIDIA alpha execution and the later AMD objective. Keep proposed
+   improvements distinguishable from established findings and evaluate their tradeoffs.
 3. **Conduct the major research and reference campaign.** Let that synthesis
    determine the questions and breadth of an extensive investigation of primary
    literature, independent implementations, numerical methods, scientific data,
@@ -96,7 +96,7 @@ orientation. The source-study order organizes the first stage of this sequence.
 4. **Design the system.** Develop the extensive architecture and scientific
    design from the parity requirements, improvement ideas and research findings.
    Resolve component responsibilities, representations, numerical choices,
-   interfaces, failure behavior and execution across CPU, NVIDIA GPU and AMD GPU.
+   interfaces, failure behavior and CPU/NVIDIA execution, with AMD as a second wave.
 5. **Specify and plan.** Make the design precise through equations, domain
    representations, permitted operations and suitable quasi-formal specifications.
    Derive a concrete implementation sequence with scientific acceptance criteria
@@ -126,13 +126,13 @@ exhausted before synthesis or the reference campaign. Claims depending on open
 questions remain provisional. Eventual per-file analysis and the scientific
 acceptance requirements still apply.
 
-### Required v1-alpha execution targets
+### Execution targets and backend evaluation
 
-On 2026-09-24 the user established CPU, NVIDIA GPU and AMD GPU execution as
-requirements of the v1-alpha end state. All three targets constrain the design
-from the beginning. Carry them into the initial build/lifecycle study and into
-representation, memory ownership, numerical-library, precision, parallelism,
-packaging and testing decisions.
+On 2026-09-25 the user revised the target sequence: **CPU and NVIDIA GPU execution
+are required in v1-alpha; AMD GPU execution is a second-wave objective.** This
+supersedes the 2026-09-24 requirement for all three targets in alpha, retained as
+historical context in the first-pass reports. Prioritize CPU/NVIDIA capabilities
+and record the implications of choices for later AMD support.
 
 The alpha acceptance plan must identify the supported hardware and toolchains,
 the scientific workloads covered on each target, and evidence of actual execution
@@ -141,6 +141,14 @@ terms of the observables and numerical methods. Hardware generations, CPU
 architectures, portability mechanisms and performance targets remain design
 questions. This requirement selects execution targets, not a GPU programming
 framework or numerical backend.
+
+The user explicitly requests evaluating cuda-oxide as a candidate on its merits.
+Assess its actual capabilities, numerical behavior, performance, compiler and
+toolchain behavior, and integration using relevant scientific workloads. Its
+"alpha" designation is neither a reason to favor it nor a reason to reject it.
+Concrete limitations and engineering costs matter; a release label alone does
+not settle them. NVIDIA-specific approaches remain candidates while AMD is
+scheduled for the second wave. No backend has been selected.
 
 ### Quarantine and independent reconstruction
 
