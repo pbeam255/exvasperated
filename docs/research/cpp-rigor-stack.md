@@ -264,3 +264,20 @@ not provide compiler diversity. `clang-tidy` and `cppcheck` were absent from PAT
 this is not a comprehensive installed-software audit. A pinned Linux environment
 plus real NVIDIA hardware is the proposed qualification base, with macOS checks
 retained for development. This report records no executed C++ verification result.
+
+### Linux-first development direction
+
+After this survey, the user proposed Linux-first development followed by a macOS
+port. Linux is the primary development/qualification direction. It brings the
+documented FuzzTest setup, MSan and actual NVIDIA execution into the development
+environment. Choose a pinned distribution/compiler/CUDA combination against the
+[CUDA Linux support matrix](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
+and our verification tools; the newest versions are not automatically compatible.
+
+Keep one scientific core with localized OS/backend adapters. Inexpensive macOS
+CPU builds can reveal portability assumptions before full port qualification.
+Editing from the Mac with builds/tests on a Linux machine is a suitable workflow.
+Mac-hosted CPU-only Linux environments may support some checks; they do not
+qualify NVIDIA execution or representative hardware performance. A macOS CPU
+port does not commit us to an Apple GPU backend. No host, distribution or remote
+connection has been selected or configured by this note.

@@ -172,6 +172,15 @@ architectures, portability mechanisms and performance targets remain design
 questions. This requirement selects execution targets, not a GPU programming
 framework or numerical backend.
 
+On 2026-09-25 the user proposed developing on Linux first and deriving macOS
+support from that foundation. Adopt Linux as the primary development and
+qualification direction, with macOS as a secondary port of the same core.
+Keep platform-specific services localized and consider inexpensive macOS CPU
+build checks early to expose portability assumptions. The Mac can remain an
+editing client for Linux execution. This direction selects no distribution,
+server, CPU architecture or deployment setup. Apple GPU support is a separate
+backend question and is not implied by a macOS CPU port.
+
 The user explicitly requests evaluating cuda-oxide as a candidate on its merits.
 Assess its actual capabilities, numerical behavior, performance, compiler and
 toolchain behavior, and integration using relevant scientific workloads. Its
